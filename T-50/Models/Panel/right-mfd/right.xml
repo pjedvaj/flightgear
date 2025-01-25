@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>right.ac</path>
+	
+	<animation>
+        <type>material</type>
+        <object-name>rect</object-name>
+        <object-name>HR.001</object-name>
+        <object-name>HR.002</object-name>
+        <object-name>MN.001</object-name>
+        <object-name>MN.002</object-name>
+        <object-name>g.003</object-name>
+        <object-name>g.002</object-name>
+        <object-name>g.001</object-name>
+        <object-name>asi.003</object-name>
+        <object-name>asi.002</object-name>
+        <object-name>asi.001</object-name>
+        <object-name>alt.005</object-name>
+        <object-name>alt.004</object-name>
+        <object-name>alt.003</object-name>
+        <object-name>alt.002</object-name>
+        <object-name>alt.001</object-name>
+        <emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+        <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+	
+<!-- Air Speed Indicator -->
+	
+	<animation>
+        <type>textranslate</type>
+        <object-name>asi.003</object-name>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>asi.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>asi.002</object-name>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>asi.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>asi.001</object-name>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<!-- Altimeter -->
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>alt.003</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>alt.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>alt.004</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <scroll>20</scroll>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>alt.004</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>1000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>alt.005</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <scroll>20</scroll>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>alt.005</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>10000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>alt.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+<!-- Clock -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>HR.001</object-name>
+        <property>instrumentation/clock/indicated-hour</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>HR.002</object-name>
+        <property>instrumentation/clock/indicated-hour</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>MN.001</object-name>
+        <property>instrumentation/clock/indicated-min</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>MN.002</object-name>
+        <property>instrumentation/clock/indicated-min</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<!-- GMeter -->
+
+	<animation>
+        <type>textranslate</type>
+        <object-name>g.003</object-name>
+		<property>/accelerations/pilot-g</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>g.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/accelerations/pilot-g</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>g.002</object-name>
+		<property>/accelerations/pilot-g</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>g.001</object-name>
+		<property>/accelerations/pilot-g</property>
+        <factor>1</factor>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+	</animation>
+    
+</PropertyList>

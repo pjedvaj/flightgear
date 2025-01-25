@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Macedonian Air Force, 101 Attack Sqdn.</name>
+                <texture>Liveries/MacedAF101AS.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/MacedAF101AS.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

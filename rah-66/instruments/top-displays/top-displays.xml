@@ -1,0 +1,963 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>top-displays.ac</path>
+	
+	<animation>
+        <type>material</type>
+        <object-name>back1</object-name>
+        <object-name>back2</object-name>
+        <object-name>back3</object-name>
+        <object-name>main</object-name>
+        <object-name>gear</object-name>
+        <object-name>bay</object-name>
+        <object-name>stub</object-name>
+        <object-name>rad</object-name>
+        <object-name>wing</object-name>
+        <object-name>pay1</object-name>
+        <object-name>pay2</object-name>
+        <object-name>pay3</object-name>
+        <object-name>pay4</object-name>
+        <object-name>pay5</object-name>
+        <object-name>pay6</object-name>
+        <object-name>whl-brk</object-name>
+        <object-name>rtr-brk</object-name>
+        <object-name>door-pilot</object-name>
+        <object-name>door-gunner</object-name>
+        <object-name>oiltemp</object-name>
+		<object-name>oiltemp.001</object-name>
+		<object-name>oiltemp.002</object-name>
+		<object-name>oiltemp.003</object-name>
+        <object-name>oilpsi</object-name>
+		<object-name>oilpsi.001</object-name>
+		<object-name>oilpsi.002</object-name>
+		<object-name>oilpsi.003</object-name>
+		<object-name>V.001</object-name>
+		<object-name>V.002</object-name>
+		<object-name>V.003</object-name>
+		<object-name>A.001</object-name>
+		<object-name>A.002</object-name>
+		<object-name>A.003</object-name>
+		<object-name>asi.001</object-name>
+		<object-name>asi.002</object-name>
+		<object-name>asi.003</object-name>
+		<object-name>vsi.001</object-name>
+		<object-name>vsi.002</object-name>
+		<object-name>vsi.003</object-name>
+		<object-name>vsi.004</object-name>
+		<object-name>vsi.005</object-name>
+		<object-name>alt.001</object-name>
+		<object-name>alt.002</object-name>
+		<object-name>alt.003</object-name>
+		<object-name>alt.004</object-name>
+		<object-name>alt.005</object-name>
+		<object-name>rect</object-name>
+
+
+        <object-name>maind</object-name>
+        <object-name>engine</object-name>
+        <object-name>wingd</object-name>
+        <object-name>tail</object-name>
+
+        <emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+        <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+    
+<!-- Info -->
+
+	<animation>
+		<type>select</type>
+		<object-name>maind</object-name>
+		<condition>
+                   <greater-than>
+		   <property>/bombable/attributes/damage</property>
+                   <value>0.85</value>
+                   </greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>engine</object-name>
+		<condition>
+                 <and>
+                  <less-than>
+                   <property>rotors/main/rpm</property>
+                   <value>1</value>
+                  </less-than>
+                  <greater-than>
+	           <property>/controls/engines/engine[0]/magnetos</property>
+                   <value>0</value>
+                  </greater-than>
+                 </and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>tail</object-name>
+		<condition>
+                 <and>
+                  <less-than>
+                   <property>rotors/tail/rpm</property>
+                   <value>1</value>
+                  </less-than>
+                  <greater-than>
+	           <property>/controls/engines/engine[0]/magnetos</property>
+                   <value>0</value>
+                  </greater-than>
+                 </and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>main</object-name>
+		<condition>
+                   <less-than>
+		   <property>/bombable/attributes/damage</property>
+                   <value>0.85</value>
+                   </less-than>
+
+                    <not>
+                    <or>
+                 <and>
+                  <less-than>
+                   <property>rotors/main/rpm</property>
+                   <value>1</value>
+                  </less-than>
+                  <greater-than>
+	           <property>/controls/engines/engine[0]/magnetos</property>
+                   <value>0</value>
+                  </greater-than>
+                 </and>
+                 <and>
+                  <less-than>
+                   <property>rotors/tail/rpm</property>
+                   <value>1</value>
+                  </less-than>
+                  <greater-than>
+	           <property>/controls/engines/engine[0]/magnetos</property>
+                   <value>0</value>
+                  </greater-than>
+                 </and>
+                    </or>
+                    </not>
+
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>wing</object-name>
+		<condition>
+                        <and>
+			<property>sim/model/livery/winglets</property>
+			<value type="bool">false</value>
+                        <less-than>
+		        <property>/bombable/attributes/damage</property>
+                        <value>0.85</value>
+                        </less-than>
+                        </and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>wingd</object-name>
+		<condition>
+                        <and>
+			<property>sim/model/livery/winglets</property>
+			<value type="bool">false</value>
+                        <greater-than>
+		        <property>/bombable/attributes/damage</property>
+                        <value>0.85</value>
+                        </greater-than>
+                        </and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>rad</object-name>
+		<condition>
+			<property>sim/model/livery/radar</property>
+			<value type="bool">false</value>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>stub</object-name>
+		<condition>
+			<property>sim/model/livery/stub-wings</property>
+			<value type="bool">false</value>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>bay</object-name>
+		<condition>
+		 <equals>
+		  <property>baydoors/position-norm</property>
+		  <value>1</value>
+		 </equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>gear</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>whl-brk</object-name>
+		<condition>
+			<property>controls/gear/brake-parking</property>
+    		<value type="bool">0</value>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>rtr-brk</object-name>
+		<condition>
+			<property>controls/rotor/brake</property>
+    		<value type="bool">none</value>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>door-pilot</object-name>
+		<condition>
+			<property>sim/multiplay/generic/float[0]</property>
+    		<value type="bool">0</value>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>door-gunner</object-name>
+		<condition>
+			<property>sim/multiplay/generic/float[1]</property>
+    		<value type="bool">0</value>
+		</condition>
+	</animation>
+	
+<!-- Payload Info -->
+
+	<animation>
+		<type>select</type>
+		<object-name>pay1</object-name> <!-- RO -->
+		<condition>
+				<property>sim/weight[7]/weight-lb</property>
+				<value type="bool">0</value>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>pay2</object-name> <!-- RM -->
+		<condition>
+				<property>sim/weight[5]/weight-lb</property>
+				<value type="bool">0</value>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>pay3</object-name> <!-- RI -->
+		<condition>
+				<property>sim/weight[3]/weight-lb</property>
+				<value type="bool">0</value>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>pay4</object-name> <!-- LI -->
+		<condition>
+				<property>sim/weight[2]/weight-lb</property>
+				<value type="bool">0</value>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>pay5</object-name> <!-- LM -->
+		<condition>
+				<property>sim/weight[4]/weight-lb</property>
+				<value type="bool">0</value>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>pay6</object-name> <!-- LO -->
+		<condition>
+				<property>sim/weight[6]/weight-lb</property>
+				<value type="bool">0</value>
+		</condition>
+	</animation>
+
+	<!-- Oil Pressure -->
+
+	<animation>
+		<type>translate</type>
+		<object-name>oilpsi</object-name>
+		<property>engines/engine[0]/oilp-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.0190</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0.0</x>
+			<y>0.0</y>
+			<z>1.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oilpsi.003</object-name>
+		<property>engines/engine[0]/oilp-norm</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>oilpsi.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/oilp-norm</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oilpsi.002</object-name>
+		<property>engines/engine[0]/oilp-norm</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>oilpsi.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/oilp-norm</property>
+				<value>10</value>
+			</greater-than-equals>
+
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oilpsi.001</object-name>
+		<property>engines/engine[0]/oilp-norm</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Oil Temperature -->
+
+	<animation>
+		<type>translate</type>
+		<object-name>oiltemp</object-name>
+		<property>engines/engine[0]/oilt-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.020</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0.0</x>
+			<y>0.0</y>
+			<z>1.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oiltemp.003</object-name>
+		<property>engines/engine[0]/oilt-norm</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>oiltemp.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/oilt-norm</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oiltemp.002</object-name>
+		<property>engines/engine[0]/oilt-norm</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>oiltemp.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/oilt-norm</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oiltemp.001</object-name>
+		<property>engines/engine[0]/oilt-norm</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Voltage -->
+
+    <animation>
+		<type>textranslate</type>
+		<object-name>V.003</object-name>
+		<property>systems/electrical/volts</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>V.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>systems/electrical/volts</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>V.002</object-name>
+		<property>systems/electrical/volts</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>V.001</object-name>
+		<property>systems/electrical/volts</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Amps -->
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>A.003</object-name>
+		<property>systems/electrical/amps</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>A.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>systems/electrical/amps</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>A.002</object-name>
+		<property>systems/electrical/amps</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>A.001</object-name>
+		<property>systems/electrical/amps</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Air Speed Indicator -->
+
+<animation>
+		<type>textranslate</type>
+		<object-name>asi.003</object-name>
+		<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>asi.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>asi.002</object-name>
+		<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>asi.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>asi.001</object-name>
+		<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Vertical Speed Indicator -->
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>vsi.005</object-name>
+		<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+		<factor>0.00001</factor>
+		<step>10000</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>vsi.005</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+				<value>10000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>vsi.004</object-name>
+		<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>vsi.004</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+				<value>1000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>vsi.003</object-name>
+		<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>vsi.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>vsi.002</object-name>
+		<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>vsi.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>vsi.001</object-name>
+		<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Altitude -->
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>alt.005</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.00001</factor>
+		<step>10000</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>alt.005</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/position/altitude-agl-ft</property>
+				<value>10000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>alt.004</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>alt.004</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/position/altitude-agl-ft</property>
+				<value>1000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>alt.003</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>alt.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/position/altitude-agl-ft</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>alt.002</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>alt.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/position/altitude-agl-ft</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>alt.001</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Warnings -->
+
+	<animation> 
+		<type>select</type>
+		<object-name>master-caution</object-name>
+		<condition>
+			<equals>
+				<property>sim/alarms/stall-warning</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation> 
+		<type>material</type>
+		<object-name>master-caution</object-name>
+		<emission> 
+			<red>1</red>
+			<green>0</green>
+			<blue>0</blue>
+		</emission>
+	</animation>
+	
+	<animation> 
+		<type>select</type>
+		<object-name>fuel-low</object-name>
+		<condition>
+			<less-than>
+			<property>consumables/fuel/tank/level-gal_us</property>
+			<value>80</value>
+			</less-than>
+		</condition>
+	</animation>
+	
+	<animation> 
+		<type>material</type>
+		<object-name>fuel-low</object-name>
+		<emission> 
+			<red>1</red>
+			<green>0</green>
+			<blue>0</blue>
+		</emission>
+	</animation>
+	
+	<animation> 
+		<type>select</type>
+		<object-name>rtr-rpm</object-name>
+		<condition>
+                        <or>
+			<less-than>
+			<property>rotors/main/rpm</property>
+			<value>350</value>
+			</less-than>
+			<greater-than>
+			<property>rotors/main/rpm</property>
+			<value>450</value>
+			</greater-than>
+                        </or>
+		</condition>
+	</animation>
+	
+	<animation> 
+		<type>material</type>
+		<object-name>rtr-rpm</object-name>
+		<emission> 
+			<red>1</red>
+			<green>0</green>
+			<blue>0</blue>
+		</emission>
+	</animation>
+	
+	<animation> 
+		<type>select</type>
+		<object-name>trq</object-name>
+		<condition>
+			<less-than>
+			<property>sim/model/rah-66/torque-pct</property>
+			<value>20</value>
+			</less-than>
+		</condition>
+	</animation>
+	
+	<animation> 
+		<type>material</type>
+		<object-name>trq</object-name>
+		<emission> 
+			<red>1</red>
+			<green>0</green>
+			<blue>0</blue>
+		</emission>
+	</animation>
+
+</PropertyList>

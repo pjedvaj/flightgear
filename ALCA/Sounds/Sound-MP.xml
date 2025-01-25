@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <fx>
+
+    <engine>
+      <name>engine</name>
+      <path>Sounds/jet.wav</path>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[7]</property>
+        </not>
+      </condition>
+      <mode>looped</mode>
+      <property>sim/multiplay/generic/int[4]</property>
+      <volume>
+        <property>sim/multiplay/generic/float[4]</property>
+        <type>lin</type>
+        <factor>0.000315457</factor>
+        <!-- Scales to 0-2 for 6340lb engine -->
+      </volume>
+    </engine>
+
+    <engine>
+      <name>whine</name>
+      <path>Aircraft/ALCA/Sounds/whine.wav</path>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[7]</property>
+        </not>
+      </condition>
+      <mode>looped</mode>
+      <property>sim/multiplay/generic/int[4]</property>
+      <pitch>
+        <property>engines/engine/n1</property>
+        <type>lin</type>
+        <factor>.005</factor>
+      </pitch>
+      <volume>
+        <property>engines/engine/n1</property>
+        <type>log</type>
+        <factor>0.1</factor>
+        <!-- 10-100% rpm == 0.1 - 1 factor -->
+        <max>0.05</max>
+      </volume>
+    </engine>
+
+    <rumble>
+      <name>rumble</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <or>
+          <property>gear/gear[0]/wow</property>
+          <property>gear/gear[1]/wow</property>
+          <property>gear/gear[2]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>sim/multiplay/generic/float[1]</property>
+        <type>lin</type>
+        <factor>.012</factor>
+      </volume>
+    </rumble>
+
+    <engine-wake>
+      <name>Engine Wake</name>
+      <mode>looped</mode>
+      <path>wake.wav</path>
+      <condition>
+        <not>
+          <property>sim/multiplay/generic/int[7]</property>
+        </not>
+      </condition>
+      <property>sim/multiplay/generic/int[4]</property>
+      <position>
+        <x>5</x>
+        <y>0</y>
+        <z>-0.25</z>
+      </position>
+      <orientation>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+        <inner-angle>30.0</inner-angle>
+        <outer-angle>90.0</outer-angle>
+        <outer-gain>0.2</outer-gain>
+      </orientation>
+      <volume>
+        <property>engines/engine/n1</property>
+        <factor>0.1</factor>
+        <offset>-7.0</offset>
+        <min>0.00</min>
+        <max>10</max>
+      </volume>
+      <volume>
+        <property>sim/multiplay/generic/float[1]</property>
+        <factor>0.0175</factor>
+        <offset>0.25</offset>
+        <min>0.00</min>
+        <max>1.1</max>
+      </volume>
+      <reference-dist>80</reference-dist>
+      <max-dist>12000</max-dist>
+    </engine-wake>
+
+    <cannon>
+      <name>Plamen Cannon fire</name>
+      <mode>looped</mode>
+      <path>Sounds/gatling.wav</path>
+      <condition>
+        <property>sim/multiplay/generic/int[6]</property>
+      </condition>
+      <volume>
+        <factor>1</factor>
+      </volume>
+    </cannon>
+
+    <explosion>
+      <name>Explosion</name>
+      <mode>once</mode>
+      <path>Explosion.wav</path>
+      <condition>
+        <property>disintegration/explosion/fire</property>
+      </condition>
+      <volume>
+        <value>1</value>
+      </volume>
+      <reference-dist>1500</reference-dist>
+      <max-dist>10000</max-dist>
+    </explosion>
+
+    <fire>
+      <name>Fire</name>
+      <mode>looped</mode>
+      <path>Fire.wav</path>
+      <condition>
+        <property>disintegration/explosion/fire</property>
+      </condition>
+      <volume>
+        <value>1</value>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>4000</max-dist>
+    </fire>
+
+  </fx>
+
+</PropertyList>

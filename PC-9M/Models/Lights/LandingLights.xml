@@ -1,0 +1,142 @@
+<PropertyList>
+
+<path>LandingLights.ac</path>
+
+<animation>
+<type>select</type>
+<object-name>Light1</object-name>
+<object-name>Light2</object-name>
+<condition>
+<and>
+	<property>gear/gear[1]/position-norm</property>
+	<property>controls/lighting/landing-lights</property>
+</and>
+</condition>
+</animation>
+
+	<animation>
+        <type>select</type>
+        <object-name>LandingLightCone_R</object-name>
+        <condition>
+			<and>
+				<property>gear/gear[1]/position-norm</property>
+				<property>controls/lighting/landing-lights</property>
+			</and>
+        </condition>
+    </animation>
+        
+<animation>
+        <type>select</type>
+        <object-name>LandingLightCone_L</object-name>
+        <condition>
+			<and>
+				<property>gear/gear[1]/position-norm</property>
+				<property>controls/lighting/landing-lights</property>
+			</and>
+        </condition>
+    </animation>
+
+	<animation>
+		<type>light</type>
+		<light-type>spot</light-type>
+		<name>LandingLight_L</name>
+		<object-name>LandingLightCone_L</object-name>
+		<nopreview/>
+		<condition>
+			<and>
+				<property>gear/gear[1]/position-norm</property>
+				<property>controls/lighting/landing-lights</property>
+			</and>
+		</condition>
+		<position>
+			<x>-0.5</x>
+			<y>-1.2</y>
+			<z>0.8</z>
+		</position>
+		<direction>
+			<x>-29</x>
+			<y>-3.76</y>
+			<z>-3.6</z>
+		</direction>
+		<ambient>
+			<r>0.15</r>
+			<g>0.15</g>
+			<b>0.15</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.7</r>
+			<g>0.7</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.7</r>
+			<g>0.7</g>
+			<b>0.7</b>
+			<a>1.0</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.002</l>
+			<q>0.00005</q>
+		</attenuation>
+		<exponent>30.0</exponent>
+		<cutoff>100</cutoff>
+		<near-m>2</near-m>
+		<far-m>1000</far-m>
+	</animation>
+ 
+	<animation>
+		<type>light</type>
+		<light-type>spot</light-type>
+		<name>LandingLight_R</name>
+		<object-name>LandingLightCone_R</object-name>
+		<nopreview/>
+		<condition>
+			<and>
+				<property>gear/gear[1]/position-norm</property>
+				<property>controls/lighting/landing-lights</property>
+			</and>
+		</condition>
+		<position>
+			<x>-0.5</x>
+			<y>1.2</y>
+			<z>0.8</z>
+		</position>
+		<direction>
+			<x>-29</x>
+			<y>3.76</y>
+			<z>-3.6</z>
+		</direction>
+		<ambient>
+			<r>0.15</r>
+			<g>0.15</g>
+			<b>0.15</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.7</r>
+			<g>0.7</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.7</r>
+			<g>0.7</g>
+			<b>0.7</b>
+			<a>1.0</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.002</l>
+			<q>0.00005</q>
+		</attenuation>
+		<exponent>30.0</exponent>
+		<cutoff>100</cutoff>
+		<near-m>2</near-m>
+		<far-m>1000</far-m>
+	</animation>
+
+</PropertyList>
+

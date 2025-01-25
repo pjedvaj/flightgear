@@ -1,0 +1,93 @@
+<PropertyList>
+
+		<model>
+			<name>RedLight</name>
+			<path>Aircraft/PC-9M/Models/Lights/RedLight.xml</path>
+			<offsets>
+				<x-m> 0.00</x-m>
+				<y-m> 0.00</y-m>
+				<z-m> 0.00</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>GreenLight</name>
+			<path>Aircraft/PC-9M/Models/Lights/GreenLight.xml</path>
+			<offsets>
+				<x-m> 0.00</x-m>
+				<y-m> 0.00</y-m>
+				<z-m> 0.00</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>StrobeLightR</name>
+			<path>Aircraft/PC-9M/Models/Lights/StrobeLightR.xml</path>
+			<offsets>
+				<x-m> 0.00</x-m>
+				<y-m> 0.00</y-m>
+				<z-m> 0.00</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>StrobeLightL</name>
+			<path>Aircraft/PC-9M/Models/Lights/StrobeLightL.xml</path>
+			<offsets>
+				<x-m> 0.00</x-m>
+				<y-m> 0.00</y-m>
+				<z-m> 0.00</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>BeaconLight1</name>
+			<path>Aircraft/PC-9M/Models/Lights/BeaconLight1.xml</path>
+			<offsets>
+				<x-m> 0.00</x-m>
+				<y-m> 0.00</y-m>
+				<z-m> 0.00</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>BeaconLight2</name>
+			<path>Aircraft/PC-9M/Models/Lights/BeaconLight2.xml</path>
+			<offsets>
+				<x-m> 0.00</x-m>
+				<y-m> 0.00</y-m>
+				<z-m> 0.00</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>PositionLightR</name>
+			<path>Aircraft/PC-9M/Models/Lights/PositionLightR.xml</path>
+			<offsets>
+				<x-m> 0.00</x-m>
+				<y-m> 0.00</y-m>
+				<z-m> 0.00</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>PositionLightL</name>
+			<path>Aircraft/PC-9M/Models/Lights/PositionLightL.xml</path>
+			<offsets>
+				<x-m> 0.00</x-m>
+				<y-m> 0.00</y-m>
+				<z-m> 0.00</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>LandingLights</name>
+			<path>Aircraft/PC-9M/Models/Lights/LandingLights.xml</path>
+			<offsets>
+				<x-m> 0.00</x-m>
+				<y-m> 0.00</y-m>
+				<z-m> 0.00</z-m>
+			</offsets>
+		</model>
+		
+</PropertyList>

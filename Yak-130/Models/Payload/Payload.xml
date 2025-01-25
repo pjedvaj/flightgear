@@ -1,0 +1,273 @@
+<PropertyList>
+
+	<!-- Pylon.7 L -->
+
+	<model>
+		<name>P7-ECML</name>
+		<path>Aircraft/Yak-130/Models/Payload/ECML.ac</path>
+		<offsets>
+			<x-m> 1.8439</x-m>
+			<y-m>-4.9030</y-m>
+			<z-m> 0.3331</z-m>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P7-ECML</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[8]/payload-int</property>
+					<value>5</value>
+				</equals>
+				<!--><equals>
+					<property>controls/armament/station[8]/release</property>
+					<value>false</value>
+				</equals><-->
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- Pylon.5 L -->
+	
+	<model>
+		<name>P5-R-73</name>
+		<path>Aircraft/Yak-130/Models/Payload/R-73.ac</path>
+		<offsets>
+			<x-m>  1.6287</x-m>
+			<y-m> -4.14648</y-m>
+			<z-m> -0.2404</z-m>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P5-R-73</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[7]/payload-int</property>
+					<value>1</value>
+				</equals>
+				<!--><equals>
+					<property>controls/armament/station[7]/release</property>
+					<value>false</value>
+				</equals><-->
+			</and>
+		</condition>
+	</animation>
+
+	<!-- Pylon.3 L -->
+	
+	<model>
+		<name>P3-BL-13</name>
+		<path>Aircraft/Yak-130/Models/Payload/BL-13.ac</path>
+		<offsets>
+			<x-m> 1.23893</x-m>
+			<y-m>-3.11488</y-m>
+			<z-m>-0.3554</z-m>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P3-BL-13</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[6]/payload-int</property>
+					<value>2</value>
+				</equals>
+				<!--><equals>
+					<property>controls/armament/station[6]/release</property>
+					<value>false</value>
+				</equals><-->
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- Pylon.1 L -->
+
+	<model>
+		<name>P1-PTB-450</name>
+		<path>Aircraft/Yak-130/Models/Payload/PTB-450.ac</path>
+		<offsets>
+			<x-m> 1.00353</x-m>
+			<y-m>-2.07074</y-m>
+			<z-m>-0.373109</z-m>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P1-PTB-450</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[5]/payload-int</property>
+					<value>3</value>
+				</equals>
+				<!--><equals>
+					<property>controls/armament/station[5]/release</property>
+					<value>false</value>
+				</equals><-->
+			</and>
+		</condition>
+	</animation>
+		
+	<!-- Pylon.9 C -->
+
+	<model>
+		<name>P9-GSh-23</name>
+		<path>Aircraft/Yak-130/Models/Payload/GSh-23.ac</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P9-GSh-23</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[4]/payload-int</property>
+					<value>4</value>
+				</equals>
+				<!--><equals>
+					<property>controls/armament/station[4]/release</property>
+					<value>false</value>
+				</equals><-->
+			</and>
+		</condition>
+	</animation>
+			
+	<!-- Pylon.2 R -->
+
+	<model>
+		<name>P2-PTB-450</name>
+		<path>Aircraft/Yak-130/Models/Payload/PTB-450.ac</path>
+		<offsets>
+			<x-m> 1.00353</x-m>
+			<y-m> 2.07074</y-m>
+			<z-m>-0.373109</z-m>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P2-PTB-450</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[3]/payload-int</property>
+					<value>3</value>
+				</equals>
+				<!--><equals>
+					<property>controls/armament/station[3]/release</property>
+					<value>false</value>
+				</equals><-->
+			</and>
+		</condition>
+	</animation>
+				
+	<!-- Pylon.4 R -->
+	
+	<model>
+		<name>P4-BL-13</name>
+		<path>Aircraft/Yak-130/Models/Payload/BL-13.ac</path>
+		<offsets>
+			<x-m> 1.23893</x-m>
+			<y-m> 3.11488</y-m>
+			<z-m>-0.3554</z-m>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P4-BL-13</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[2]/payload-int</property>
+					<value>2</value>
+				</equals>
+				<!--><equals>
+					<property>controls/armament/station[2]/release</property>
+					<value>false</value>
+				</equals><-->
+			</and>
+		</condition>
+	</animation>
+				
+	<!-- Pylon.6 R -->
+	
+	<model>
+		<name>P6-R-73</name>
+		<path>Aircraft/Yak-130/Models/Payload/R-73.ac</path>
+		<offsets>
+			<x-m>  1.6287</x-m>
+			<y-m>  4.14648</y-m>
+			<z-m> -0.2404</z-m>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P6-R-73</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[1]/payload-int</property>
+					<value>1</value>
+				</equals>
+				<!--><equals>
+					<property>controls/armament/station[1]/release</property>
+					<value>false</value>
+				</equals><-->
+			</and>
+		</condition>
+	</animation>
+				
+	<!-- Pylon.8 R -->
+	
+	<model>
+		<name>P8-ECMR</name>
+		<path>Aircraft/Yak-130/Models/Payload/ECMR.ac</path>
+		<offsets>
+			<x-m>1.8439</x-m>
+			<y-m>4.9030</y-m>
+			<z-m>0.3331</z-m>
+			<roll-deg>0</roll-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>P8-ECMR</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[0]/payload-int</property>
+					<value>5</value>
+				</equals>
+				<!--><equals>
+					<property>controls/armament/station[0]/release</property>
+					<value>false</value>
+				</equals><-->
+			</and>
+		</condition>
+	</animation>
+	
+</PropertyList>

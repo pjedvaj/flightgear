@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!-- Rob Dosogne -->
+
+<PropertyList>
+
+<sim>
+<model>
+<livery>
+<name type="string">Royal Canadian Air Force 123</name>
+<texture>Liveries/Canada.png</texture>
+</livery>
+<livery-logo>
+<texture>Liveries/Canada.png</texture>
+</livery-logo>
+</model>
+</sim>
+
+</PropertyList>

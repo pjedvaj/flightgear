@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>HSI.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>face</object-name>
+        <object-name>needle</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.8</green>
+            <blue>0.8</blue>
+        </emission>
+    </animation>
+	
+    <animation>
+        <type>material</type>
+		<object-name>bug</object-name>
+	    <emission>
+	        <red>1</red>
+	        <green>0</green>
+	        <blue>0</blue>
+	    </emission>
+</animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>face</object-name>
+        <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+        <factor>-1</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>bug</object-name>
+        <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+        <factor>-1</factor>
+        <center>
+        <x>-0.0057</x>
+        <y>-0.0015</y>
+        <z> 0.001</z>
+        </center>
+        <axis>
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>bug</object-name>
+        <property>/autopilot/settings/heading-bug-deg</property>
+        <center>
+        <x>-0.0057</x>
+        <y>-0.0015</y>
+        <z> 0.001</z>
+        </center>
+        <axis>
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

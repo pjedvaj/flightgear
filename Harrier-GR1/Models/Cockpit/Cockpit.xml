@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<path>Cockpit.ac</path>
+	
+	<model>
+		<path>Aircraft/Harrier-GR1/Panel/Panel.xml</path>
+	</model>
+
+	<model>
+		<path>Aircraft/Harrier-GR1/Models/Cockpit/Seat.xml</path>
+	</model>
+
+	<model>
+		<path>Aircraft/Harrier-GR1/Models/Pilot/Pilot.xml</path>
+		<offsets>
+			<x-m>-15.3</x-m>
+			<y-m>  0.0</y-m>
+			<z-m> -5.9</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+		<condition>
+			<not>
+				<property>/sim/current-view/internal</property>
+			</not>
+		</condition>
+	</model>
+	
+	<!-- Shaders / Materials -->
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>HUDGlass</object-name>
+	</animation>
+
+	<!-- Stick -->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Stick</object-name>	 
+		<property>controls/flight/aileron[0]</property>
+		<factor>17</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-15.74</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.27</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Stick</object-name>	 
+		<property>controls/flight/elevator[0]</property>
+		<factor>17</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-15.74</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.27</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Pedals -->
+
+	<animation>
+		<type>translate</type>
+		<object-name>LPedal</object-name>
+		<property>controls/flight/rudder[0]</property>
+		<factor>.05</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>RPedal</object-name>
+		<property>controls/flight/rudder[0]</property>
+		<factor>.05</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Throttle -->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>ThrottleLever</object-name>	 
+		<property>controls/engines/engine/throttle</property>
+		<factor>45</factor>
+		<offset-deg>-25</offset-deg>
+		<center>
+			<x-m>-15.59</x-m>
+			<y-m>0.33</y-m>
+			<z-m>-6.14</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Nozzle Lever -->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>VectorLever</object-name>	 
+		<property>controls/engines/engine/mixture</property>
+		<factor>45</factor>
+		<offset-deg>-25</offset-deg>
+		<center>
+			<x-m>-15.58</x-m>
+			<y-m>0.29</y-m>
+			<z-m>-6.14</z-m>			
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

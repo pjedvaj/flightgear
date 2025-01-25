@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>FireLightBig.ac</path>
+
+  <animation>
+    <type>select</type>
+    <object-name>Sphere</object-name>
+    <condition>
+      <and>
+        <property>/sim/rendering/rembrandt/enabled</property>
+        <greater-than>
+          <property>/sim/rendering/shaders/lights</property>
+          <value>0</value>
+        </greater-than>
+        <property>sim/multiplay/generic/int[7]</property>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>light</type>
+    <light-type>point</light-type>
+    <name>FireLight</name>
+    <object-name>Sphere</object-name>
+    <nopreview/>
+    <position>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </position>
+    <ambient>
+      <r>0.03</r>
+      <g>0.02</g>
+      <b>0.01</b>
+      <a>1.0</a>
+    </ambient>
+    <diffuse>
+      <r>0.70</r>
+      <g>0.54</g>
+      <b>0.19</b>
+      <a>1.0</a>
+    </diffuse>
+    <specular>
+      <r>0.70</r>
+      <g>0.54</g>
+      <b>0.19</b>
+      <a>1.0</a>
+    </specular>
+    <dim-factor>
+      <expression>
+        <product>
+          <property>disintegration/explosion/flameBright</property>
+          <value>-1</value>
+          <sum>
+            <product>
+              <max>
+                <pow>
+                  <cos>
+                    <property>/sim/time/sun-angle-rad</property>
+                  </cos>
+                  <value>0.3</value>
+                </pow>
+                <value>0</value>
+              </max>
+              <value>0.6</value>
+            </product>
+            <value>-1</value>
+          </sum>
+        </product>
+      </expression>
+    </dim-factor>
+    <attenuation>
+      <c>0.2</c>
+      <l>0.0003</l>
+      <q>0.00005</q>
+    </attenuation>
+    <near-m>0.01</near-m>
+    <far-m>1000</far-m>
+  </animation>
+
+</PropertyList>

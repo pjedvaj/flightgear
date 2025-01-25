@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">USSR Air Force; 18 OShAP</name>
+                <texture>Liveries/USSR18OShAP.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/USSR18OShAP.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

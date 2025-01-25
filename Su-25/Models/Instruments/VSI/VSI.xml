@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>VSI.ac</path>
+
+	<animation>
+		<type>material</type>
+		<object-name>face</object-name>
+		<object-name>needle1</object-name>
+		<object-name>needle2</object-name>
+		<object-name>skidball</object-name>
+		<emission>
+			<red>0.8</red>
+			<green>0.8</green>
+			<blue>0.8</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle2</object-name>
+		<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+		<interpolation>
+			<entry><ind>-656</ind><dep>-140.5</dep></entry>
+			<entry><ind>-492</ind><dep>-119.4</dep></entry>
+			<entry><ind>-328</ind><dep> -99.5</dep></entry>
+			<entry><ind>-164</ind><dep> -78.7</dep></entry>
+			<entry><ind>-114</ind><dep> -66.5</dep></entry>
+			<entry><ind> -65</ind><dep> -49.5</dep></entry>
+			<entry><ind> -32</ind><dep> -33.5</dep></entry>
+			<entry><ind> -16</ind><dep> -16.5</dep></entry>
+			<entry><ind>   0</ind><dep>   0.0</dep></entry>
+			<entry><ind>  16</ind><dep>  16.5</dep></entry>
+			<entry><ind>  32</ind><dep>  33.5</dep></entry>
+			<entry><ind>  65</ind><dep>  49.5</dep></entry>
+			<entry><ind> 114</ind><dep>  66.5</dep></entry>
+			<entry><ind> 164</ind><dep>  78.7</dep></entry>
+			<entry><ind> 328</ind><dep>  99.5</dep></entry>
+			<entry><ind> 492</ind><dep> 119.4</dep></entry>
+			<entry><ind> 656</ind><dep> 140.5</dep></entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y> 0</y>
+			<z> 0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle1</object-name>
+		<property>instrumentation/turn-indicator/indicated-turn-rate</property>
+		<factor>22.5</factor>
+		<min-deg>-22.5</min-deg>
+		<max-deg> 22.5</max-deg>
+		<center>
+			<x-m> 0.000</x-m>
+			<y-m> 0.000</y-m>
+			<z-m>-0.02432</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>skidball</object-name>
+		<property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
+		<factor>5.4</factor>
+		<min-deg>-30</min-deg>
+		<max-deg> 30</max-deg>
+		<center>
+			<x-m>0.00</x-m>
+			<y-m>0.00</y-m>
+			<z-m>0.04</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

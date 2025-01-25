@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Algerian Air Force 16 (Desert)</name>
+                <texture>Liveries/Algeria.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/Algeria.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

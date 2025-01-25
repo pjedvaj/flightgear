@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>ASI.ac</path>
+
+<animation>
+<type>material</type>
+<object-name>needle</object-name>
+<object-name>face</object-name>
+<object-name>ring</object-name>
+<emission>
+<red>0.6</red>
+<green>0.3</green>
+<blue>0.3</blue>
+</emission>
+</animation>
+
+<animation>
+<type>range</type>
+<min-m>0</min-m>
+<max-m>5</max-m>
+</animation>
+
+<animation>
+<type>rotate</type>
+<object-name>needle</object-name>
+<property>velocities/airspeed-kt</property>
+<interpolation>
+<entry><ind>  0</ind><dep>    0</dep></entry>
+<entry><ind> 200</ind><dep>   97</dep></entry>
+<entry><ind> 300</ind><dep>  157</dep></entry>
+<entry><ind> 400</ind><dep>  216</dep></entry>
+<entry><ind> 500</ind><dep>  277</dep></entry>
+<entry><ind> 600</ind><dep>  336.5</dep></entry>
+</interpolation>
+<axis>
+<x>-1.0</x>
+</axis>
+</animation>
+
+</PropertyList>

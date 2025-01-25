@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Qatar Emiri Air Force</name>
+				<texture>Liveries/Qatar.png</texture>
+			</livery>
+			<livery-logo>
+				<texture>Liveries/Qatar.png</texture>
+			</livery-logo>
+		</model>
+	</sim>
+
+</PropertyList>

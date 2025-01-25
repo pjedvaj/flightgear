@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>Weapons.ac</path>
+
+	<animation>
+		<type>material</type>
+		<object-name>box</object-name>
+		<emission>
+			<red>0.8</red>
+			<green>0.8</green>
+			<blue>0.8</blue>
+		</emission>
+	</animation>
+
+</PropertyList>

@@ -1,0 +1,579 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+
+        <!-- Info -->
+        <description>Hawker Siddeley Harrier GR.3</description>
+        <long-description>Hawker Siddeley Harrier GR.3 was a V/STOL combat aircraft produced in the United Kingdom</long-description>
+
+        <author>Petar Jedvaj, Andy Ross, Gary Brown, StuartC, Raptor and Brendan Black</author>
+        <status>Beta</status>
+        <rating>
+            <FDM type="int">4</FDM>
+            <systems type="int">1</systems>
+            <cockpit type="int">3</cockpit>
+            <model type="int">5</model>
+        </rating>
+
+        <tags>
+            <tag>fighter</tag>
+            <tag>1980s</tag>
+            <tag>high-wing</tag>
+            <tag>retractable-gear</tag>
+            <tag>stol</tag>
+            <tag>vtol</tag>
+            <tag>jet</tag>
+            <tag>single-engine</tag>
+        </tags>
+
+        <flight-model>yasim</flight-model>
+        <aero>Harrier-GR3</aero>
+        <fuel-fraction>1</fuel-fraction>
+
+        <startup>
+            <splash-texture>Aircraft/Harrier-GR3/Splash.jpg</splash-texture>
+        </startup>
+
+        <!-- Models -->
+        <model>
+            <path>Aircraft/Harrier-GR3/Models/Harrier-GR3.xml</path>
+            <fallback-model-index type="int">502</fallback-model-index>
+        </model>
+
+        <submodels>
+            <serviceable type="bool">true</serviceable>
+            <path>Aircraft/Harrier-GR3/Submodels.xml</path>
+        </submodels>
+
+        <!-- System Settings -->
+        <systems>
+            <electrical>
+                <path>Aircraft/Generic/generic-electrical.xml</path>
+            </electrical>
+            <autopilot>
+                <path>Aircraft/Harrier-GR3/Systems/Autopilot.xml</path>
+            </autopilot>
+        </systems>
+
+        <sound>
+            <path>Aircraft/Harrier-GR3/Sounds/Sound.xml</path>
+        </sound>
+
+        <flaps>
+            <setting>0.0</setting>
+            <setting>0.2</setting>
+            <setting>0.4</setting>
+            <setting>0.6</setting>
+            <setting>0.8</setting>
+            <setting>1.0</setting>
+        </flaps>
+
+        <!-- View Settings -->
+        <virtual-cockpit archive="y">true</virtual-cockpit>
+        <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+        <view n="0">
+            <internal archive="y">true</internal>
+            <config>
+                <x-offset-m archive="y">0.00</x-offset-m>
+                <y-offset-m archive="y">0.50</y-offset-m>
+                <z-offset-m archive="y">3.85</z-offset-m>
+                <default-field-of-view-deg type="double">85.0</default-field-of-view-deg>
+                <pitch-offset-deg archive="y">-25</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="1">
+            <config>
+                <target-z-offset-m archive="y">8</target-z-offset-m>
+                <pitch-offset-deg archive="y">10</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="2">
+            <config>
+                <target-z-offset-m archive="y">8</target-z-offset-m>
+                <pitch-offset-deg archive="y">10</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="3">
+            <config>
+                <target-z-offset-m archive="y">8</target-z-offset-m>
+                <pitch-offset-deg archive="y">10</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="4">
+            <config>
+                <target-z-offset-m archive="y">8</target-z-offset-m>
+                <pitch-offset-deg archive="y">10</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="5">
+            <config>
+                <target-z-offset-m archive="y">8</target-z-offset-m>
+                <pitch-offset-deg archive="y">10</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="6">
+            <config>
+                <target-z-offset-m archive="y">8</target-z-offset-m>
+                <pitch-offset-deg archive="y">10</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="7">
+            <config>
+                <target-z-offset-m archive="y">7.8</target-z-offset-m>
+            </config>
+        </view>
+
+        <view n="100">
+            <name>Camera pod</name>
+            <type>lookfrom</type>
+            <internal archive="y">true</internal>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+                <x-offset-m archive="y">0.00</x-offset-m>
+                <y-offset-m archive="y">-1.50</y-offset-m>
+                <z-offset-m archive="y">6.50</z-offset-m>
+                <default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
+                <pitch-offset-deg archive="y">-90</pitch-offset-deg>
+            </config>
+        </view>
+
+        <!-- HUD Settings -->
+        <hud>
+            <path n="1">Aircraft/Harrier-GR3/Hud/HUD.xml</path>
+            <visibility n="0" type="bool">false</visibility>
+            <visibility n="1" type="bool">true</visibility>
+            <current-color>0</current-color>
+            <color>
+                <transparent type="bool">true</transparent>
+                <antialiased type="bool">true</antialiased>
+                <brightness type="float">1.0</brightness>
+                <alpha type="float">0.7</alpha>
+            </color>
+            <palette>
+                <color n="0">
+                    <red type="float">0.5</red>
+                    <green type="float">1.0</green>
+                    <blue type="float">0.0</blue>
+                </color>
+                <color n="1">
+                    <red type="float">1.0</red>
+                    <green type="float">0.0</green>
+                    <blue type="float">0.0</blue>
+                </color>
+            </palette>
+            <clipping>
+                <left type="double">-112</left>
+                <right type="double">110</right>
+                <top type="double">70</top>
+                <bottom type="double">-210</bottom>
+            </clipping>
+        </hud>
+
+        <!-- Help -->
+        <help>
+            <title>Hawker Siddeley Harrier GR3</title>
+
+            <key>
+                <name>}</name>
+                <desc>Start Engine</desc>
+            </key>
+
+            <key>
+                <name>m/M</name>
+                <desc>Thrust Vector</desc>
+            </key>
+
+            <key>
+                <name>Alt-m</name>
+                <desc>Thrust Vector Hover Stop</desc>
+            </key>
+
+            <key>
+                <name>c</name>
+                <desc>Canopy</desc>
+            </key>
+
+            <key>
+                <name>e</name>
+                <desc>Eject</desc>
+            </key>
+
+            <key>
+                <name>h</name>
+                <desc>HUD</desc>
+            </key>
+
+            <key>
+                <name>f</name>
+                <desc>Gun</desc>
+            </key>
+            <key>
+                <name>d</name>
+                <desc>Rockets</desc>
+            </key>
+
+            <key>
+                <name>q</name>
+                <desc>Flares</desc>
+            </key>
+
+        </help>
+
+        <!-- Game Menu -->
+        <menubar>
+            <default>
+                <menu n="100">
+                    <label>Harrier</label>
+                    <enabled type="bool">true</enabled>
+                    <item>
+                        <label>Select Livery</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>aircraft.livery.dialog.open()</script>
+                        </binding>
+                    </item>
+                </menu>
+            </default>
+        </menubar>
+
+        <!-- Weight Settings -->
+        <weight n="0">
+            <name>Left Outboard</name>
+            <weight-lb>0</weight-lb>
+            <selected>none</selected>
+            <opt><name>none</name><lbs>0</lbs></opt>
+            <opt><name>Matra 155 SNEB 18x68mm Rocket Pack</name><lbs>700</lbs></opt>
+        </weight>
+
+        <weight n="1">
+            <name>Left Inboard</name>
+            <tank>1</tank>
+            <weight-lb>0</weight-lb>
+            <selected>none</selected>
+            <opt><name>none</name><lbs>0</lbs></opt>
+            <opt><name>100 Gallon Fuel Tank</name><lbs>86</lbs><gals>120</gals></opt>
+        </weight>
+
+        <weight n="2">
+            <name>Left Fuselage</name>
+            <weight-lb>0</weight-lb>
+            <selected>none</selected>
+            <opt><name>none</name><lbs>0</lbs></opt>
+            <opt><name>ADEN 30mm Cannon</name><lbs>192</lbs></opt>
+        </weight>
+
+        <weight n="3">
+            <name>Center Fuselage</name>
+            <weight-lb>0</weight-lb>
+            <selected>none</selected>
+            <opt><name>none</name><lbs>0</lbs></opt>
+            <opt><name>Camera Reconnaissance Pod</name><lbs>134</lbs></opt>
+        </weight>
+
+        <weight n="4">
+            <name>Right Fuselage</name>
+            <weight-lb>0</weight-lb>
+            <selected>none</selected>
+            <opt><name>none</name><lbs>0</lbs></opt>
+            <opt><name>ADEN 30mm Cannon</name><lbs>192</lbs></opt>
+        </weight>
+
+        <weight n="5">
+            <name>Right Inboard</name>
+            <tank>2</tank>
+            <weight-lb>0</weight-lb>
+            <selected>none</selected>
+            <opt><name>none</name><lbs>0</lbs></opt>
+            <opt><name>100 Gallon Fuel Tank</name><lbs>86</lbs><gals>120</gals></opt>
+        </weight>
+
+        <weight n="6">
+            <name>Right Outboard</name>
+            <weight-lb>0</weight-lb>
+            <selected>none</selected>
+            <opt><name>none</name><lbs>0</lbs></opt>
+            <opt><name>Matra 155 SNEB 18x68mm Rocket Pack</name><lbs>700</lbs></opt>
+        </weight>
+
+        <!-- Game Multiplayer -->
+        <multiplay>
+            <generic>
+                <int n="0" type="int">0</int>
+                <int n="1" type="int">0</int>
+                <int n="2" type="int">0</int>
+                <int n="3" type="int">0</int>
+                <int n="4" type="int">0</int>
+                <int n="5" type="int">0</int>
+                <int n="6" type="int">0</int>
+                <int n="7" type="int">0</int>
+                <int n="8" type="int">0</int>
+                <int n="9" type="int">0</int>
+                <int n="10" type="int">0</int>
+                <int n="11" type="int">0</int>
+                <int n="12" type="int">0</int>
+                <float n="0" alias="/gear/gear[0]/sprayspeed-ms"/>
+                <float n="1" alias="/gear/gear[1]/sprayspeed-ms"/>
+                <float n="2" alias="/gear/gear[2]/sprayspeed-ms"/>
+                <float n="3" alias="/gear/gear[0]/spray-density"/>
+                <float n="4" alias="/gear/gear[1]/spray-density"/>
+                <float n="5" alias="/gear/gear[2]/spray-density"/>
+            </generic>
+        </multiplay>
+
+    </sim>
+
+    <!-- Fuel Settings -->
+    <consumables>
+        <fuel>
+            <tank n="0">
+                <tank-num type="int">0</tank-num>
+                <level-gal_us archive="y">756</level-gal_us>
+            </tank>
+            <tank n="1">
+                <tank-num type="int">1</tank-num>
+                <level-gal_us archive="y">120</level-gal_us>
+            </tank>
+            <tank n="2">
+                <tank-num type="int">2</tank-num>
+                <level-gal_us archive="y">120</level-gal_us>
+            </tank>
+        </fuel>
+    </consumables>
+
+
+
+    <!-- Keyboard Shortcuts -->
+    <input>
+        <keyboard>
+
+            <key n="99">
+                <name>c</name>
+                <desc>Toggle Canopy</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>Canopy.canopy_switch(2)</script>
+                </binding>
+            </key>
+
+            <key n="100">
+                <name>d</name>
+                <desc>Fire rockets</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>guns.fire_Rocket()</script>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>nasal</command>
+                        <script>guns.stop_Rocket()</script>
+                    </binding>
+                </mod-up>
+            </key>
+
+            <key n="101">
+                <name>e</name>
+                <desc>Eject</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>Eject.eject();</script>
+                </binding>
+            </key>
+
+            <key n="102">
+                <name>f</name>
+                <desc>Fire gun</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/armament/trigger</property>
+                    <value>true</value>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>controls/armament/trigger</property>
+                        <value>false</value>
+                    </binding>
+                </mod-up>
+            </key>
+
+            <key n="104">
+                <name>h</name>
+                <desc>Toggle HUD</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>sim/hud/visibility[1]</property>
+                </binding>
+            </key>
+
+            <key n="113">
+                <name>q</name>
+                <desc>Deploy countermeasures</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>guns.fire_FL()</script>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>nasal</command>
+                        <script>guns.stop_FL()</script>
+                    </binding>
+                </mod-up>
+            </key>
+
+            <key n="125">
+                <name>}</name>
+                <desc>Engine Autostart</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>engines.engine1.autostart();</script>
+                </binding>
+            </key>
+
+            <!-- Alt-m moves thrust vector (aka mixture) to hover stop, 82 deg. -->
+            <key n="109">
+                <mod-alt>
+                    <name>Alt-m</name>
+                    <desc>Hover stop</desc>
+                    <binding>
+                        <command>property-interpolate</command>
+                        <property>controls/engines/engine/mixture</property>
+                        <value>0.18</value>
+                        <time>1.0</time>
+                    </binding>
+                </mod-alt>
+            </key>
+
+        </keyboard>
+    </input>
+
+    <!-- Misc Settings -->
+    <canopy>
+        <position-norm type="double">0</position-norm>
+    </canopy>
+
+    <controls>
+        <gear>
+            <tailwheel-lock>false</tailwheel-lock>
+            <brake-parking>1</brake-parking>
+        </gear>
+
+        <armament>
+            <trigger>0</trigger>
+            <trigger1>0</trigger1>
+            <trigger2>0</trigger2>
+            <station n="0">
+                <release type="bool">false</release>
+            </station>
+            <station n="1">
+                <release type="bool">false</release>
+            </station>
+            <station n="2">
+                <release type="bool">false</release>
+            </station>
+            <station n="3">
+                <release type="bool">false</release>
+            </station>
+            <station n="4">
+                <release type="bool">false</release>
+            </station>
+            <station n="5">
+                <release type="bool">false</release>
+            </station>
+            <station n="6">
+                <release type="bool">false</release>
+            </station>
+        </armament>
+    </controls>
+
+    <instrumentation>
+        <enav>
+            <selected type="int">3</selected>
+        </enav>
+
+        <efis>
+            <ecam>
+                <display-mode type="string">FUEL</display-mode>
+            </ecam>
+            <nd>
+                <display-mode type="string">VOR</display-mode>
+                <display-mode-knob type="int">2</display-mode-knob>
+                <display-range type="int">40</display-range>
+            </nd>
+            <input>
+                <vor-adf-1 type="int">1</vor-adf-1>
+                <vor-adf-2 type="int">1</vor-adf-2>
+                <CSTR type="bool">1</CSTR>
+                <WPT type="bool">1</WPT>
+                <VORD type="bool">1</VORD>
+                <NDB type="bool">1</NDB>
+                <ARPT type="bool">1</ARPT>
+                <WX type="bool">1</WX>
+                <TERR type="bool">1</TERR>
+                <TRAF type="bool">1</TRAF>
+                <taxi type="bool">1</taxi>
+            </input>
+        </efis>
+
+    </instrumentation>
+
+    <!-- Nasal Scripts -->
+    <nasal>
+        <Harrier-GR3>
+            <file>Aircraft/Harrier-GR3/Nasal/Controls.nas</file>
+            <file>Aircraft/Harrier-GR3/Nasal/Liveries.nas</file>
+            <file>Aircraft/Harrier-GR3/Nasal/HUD.nas</file>
+        </Harrier-GR3>
+
+        <lights>
+        	<file>Aircraft/Harrier-GR3/Nasal/Lights.nas</file>
+        </lights>
+
+        <ENAV>
+            <file>Aircraft/Harrier-GR3/Nasal/ENAV.nas</file>
+        </ENAV>
+
+        <Canopy>
+            <file>Aircraft/Harrier-GR3/Nasal/Canopy.nas</file>
+        </Canopy>
+
+        <Eject>
+            <file>Aircraft/Harrier-GR3/Nasal/eject.nas</file>
+        </Eject>
+
+        <Low>
+            <file>Aircraft/Harrier-GR3/Nasal/Low.nas</file>
+        </Low>
+
+        <terrain-map>
+            <file>Aircraft/Harrier-GR3/Nasal/terrain-map.nas</file>
+        </terrain-map>
+
+        <guns>
+            <file>Aircraft/Harrier-GR3/Nasal/weapons.nas</file>
+        </guns>
+
+        <engines>
+            <file>Aircraft/Harrier-GR3/Nasal/generic-yasim-engine.nas</file>
+            <script>
+                var engine1 = engines.Jet.new(0, 0, 0.01, 5.21, 3, 5, 1, 6);
+                setlistener("sim/signals/fdm-initialized", func
+                {
+                engine1.init();
+                }, 0, 0);
+            </script>
+        </engines>
+    </nasal>
+
+</PropertyList>

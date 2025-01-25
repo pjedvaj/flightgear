@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Soviet Naval Aviation 16</name>
+                <texture>Liveries/Navy.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/Navy.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

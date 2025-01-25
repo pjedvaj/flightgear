@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>Cockpit.ac</path>
+	
+	<!-- Submodels -->
+
+	<!-- Instruments -->
+
+	<model>
+		<path>Aircraft/PC-9M/Models/Instruments.xml</path>
+	</model>
+
+	<!-- Pilots -->
+
+	<!-- Student -->
+
+	<model>
+		<path>Aircraft/PC-9M/Models/Pilot/Pilot.xml</path>
+		<offsets>
+			<x-m>-0.32</x-m>
+			<y-m> 0.00 </y-m>
+			<z-m> 0.92</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+		<condition>
+			<not>
+				<property>/sim/current-view/internal</property>
+			</not>
+		</condition>
+	</model>
+
+	<!-- Instructor -->
+
+	<model>
+		<path>Aircraft/PC-9M/Models/Pilot/Pilot.xml</path>
+		<offsets>
+			<x-m> 1.07</x-m>
+			<y-m> 0.00 </y-m>
+			<z-m> 0.94</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+		<condition>
+			<not>
+				<property>/sim/current-view/internal</property>
+			</not>
+		</condition>
+	</model>
+
+</PropertyList>
+

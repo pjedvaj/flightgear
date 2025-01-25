@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<model>
+		<name>Air Speed Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/ASI/ASI.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m>-0.27</y-m>
+			<z-m>-5.90</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Altimeter</name>
+		<path>Aircraft/Harrier-GR1/Panel/ALT/ALT.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m>-0.16</y-m>
+			<z-m>-5.77</z-m>
+			<pitch-deg>-13</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Angle Of Attack Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/AOA/AOA.xml</path>
+		<offsets>
+			<x-m>-15.92</x-m>
+			<y-m> 0.14</y-m>
+			<z-m>-5.61</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Attitude Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/AI/AI.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m>-0.18</y-m>
+			<z-m>-5.87</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Clock</name>
+		<path>Aircraft/Harrier-GR1/Panel/Clock/Clock.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m> 0.24</y-m>
+			<z-m>-5.95</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Engine Pressure Variation Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/EPR/EPR.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m> 0.17</y-m>
+			<z-m>-5.95</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Fuel Flow Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/FuelFlow/FuelFlow.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m> 0.20</y-m>
+			<z-m>-5.83</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Fuel Indicator P</name>
+		<path>Aircraft/Harrier-GR1/Panel/Fuel/FuelP.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m> 0.17</y-m>
+			<z-m>-5.88</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Fuel Indicator S</name>
+		<path>Aircraft/Harrier-GR1/Panel/Fuel/FuelS.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m> 0.24</y-m>
+			<z-m>-5.88</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Fuel Percent Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/FuelPercent/FuelPercent.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m> 0.28</y-m>
+			<z-m>-5.83</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Landing Gear Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/Gear/Gear.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>G-Force Meter</name>
+		<path>Aircraft/Harrier-GR1/Panel/GMeter/GMeter.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m> 0.15</y-m>
+			<z-m>-5.80</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Heading Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/HI/HI.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m>-0.06</y-m>
+			<z-m>-5.84</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Jet Pipe Temperature</name>
+		<path>Aircraft/Harrier-GR1/Panel/JPT/JPT.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m> 0.15</y-m>
+			<z-m>-5.69</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Magnetic Compass</name>
+		<path>Aircraft/Harrier-GR1/Panel/Compass/Compass.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m>-0.35</y-m>
+			<z-m>-5.84</z-m>
+			<pitch-deg>-28</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Oil Pressure Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/Oil/Oil.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m> 0.24</y-m>
+			<z-m>-5.79</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Engine RPM Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/RPM/RPM.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m> 0.19</y-m>
+			<z-m>-5.74</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Sensors</name>
+		<path>Aircraft/Harrier-GR1/Panel/Sensors/Sensors.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>TACAN</name>
+		<path>Aircraft/Harrier-GR1/Panel/TACAN/TACAN.xml</path>
+		<offsets>
+			<x-m>-15.58</x-m>
+			<y-m>  0.33</y-m>
+			<z-m> -6.12</z-m>
+			<pitch-deg>-3</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Thrust Vector Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/TVI/TVI.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m>-0.15</y-m>
+			<z-m>-5.69</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>UHF Radio</name>
+		<path>Aircraft/Harrier-GR1/Panel/UHF/UHF.xml</path>
+		<offsets>
+			<x-m>-15.85</x-m>
+			<y-m>  0.00</y-m>
+			<z-m> -6.11</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Vertical Speed Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/VSI/VSI.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m>-0.25</y-m>
+			<z-m>-5.81</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Duct Indicator</name>
+		<path>Aircraft/Harrier-GR1/Panel/Duct/Duct.xml</path>
+		<offsets>
+			<x-m>-15.9</x-m>
+			<y-m> 0.24</y-m>
+			<z-m>-5.83</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>FE541</name>
+		<path>Aircraft/Harrier-GR1/Panel/FE541/FE541.xml</path>
+		<offsets>
+			<x-m>-15.9128</x-m>
+			<y-m> 0</y-m>
+			<z-m>-5.98292</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+
+</PropertyList>

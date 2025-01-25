@@ -1,0 +1,46 @@
+<PropertyList>
+
+	<path>Gunsight.ac</path>
+	
+	<!-- Rembrandt auto switching for glass -->
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<condition>
+			<greater-than>
+				<property>sim/multiplay/generic/float[6]</property>
+				<value>9</value>
+			</greater-than>
+			<property>/sim/rendering/rembrandt/enabled</property>
+		</condition>
+		<object-name>Glass</object-name>
+		<object-name>Sight</object-name>
+		<object-name>Projector</object-name>
+	</effect>
+	 
+	<!-- Shaders -->
+	 
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+		<object-name>Projector</object-name>
+	</animation>
+	
+	<animation>
+		<type>noshadow</type>
+		<object-name>Glass</object-name>
+		<object-name>Sight</object-name>
+	</animation>
+    
+	<animation>
+		<type>material</type>
+		<object-name>Sight</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>1.0</green>
+			<blue>1.0</blue>
+		</emission>
+	</animation>
+	
+</PropertyList>

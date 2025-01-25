@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!-- by Petar jedvaj -->
+
+<PropertyList>
+
+<path>Throttle.ac</path>
+
+<animation>
+<type>rotate</type>
+<object-name>lever</object-name>
+<property>controls/engines/engine/throttle</property>
+<factor>-55</factor>
+<center>
+<x-m>-0.76</x-m>
+<y-m> 0.00</y-m>
+<z-m> 0.62</z-m>
+</center>
+<axis>
+<x>0.0</x>
+<y>1.0</y>
+<z>0.0</z>
+</axis>
+</animation>
+
+<animation>
+<type>range</type>
+<min-m>0</min-m>
+<max-m>5</max-m>
+</animation>
+
+</PropertyList>

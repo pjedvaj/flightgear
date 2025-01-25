@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>keyboard.ac</path>
+	
+	<animation>
+        <type>material</type>
+        <object-name>back</object-name>
+        <emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+        <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+
+</PropertyList>

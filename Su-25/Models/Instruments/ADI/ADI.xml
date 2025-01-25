@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>ADI.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>face</object-name>
+        <object-name>attitude</object-name>
+        <object-name>pointer</object-name>
+        <object-name>airplane</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.8</green>
+            <blue>0.8</blue>
+        </emission> 
+    </animation> 
+
+    <animation>
+        <type>rotate</type>
+        <object-name>attitude</object-name>
+        <property>orientation/roll-deg</property>
+        <factor>1</factor>
+        <center>
+            <x-m>-0.0375</x-m>
+            <y-m>0</y-m>
+            <z-m>-0.0030</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>  
+
+    <animation>
+        <type>rotate</type>
+        <object-name>attitude</object-name>
+        <property>orientation/pitch-deg</property>
+        <factor>1</factor>
+        <center>
+            <x-m>-0.0375</x-m>
+            <y-m>0</y-m>
+            <z-m>-0.0030</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>  
+
+    <animation>
+        <type>rotate</type>
+        <object-name>pointer</object-name>
+        <property>orientation/roll-deg</property>
+        <factor>1</factor>
+        <center>
+            <x-m>0.0012</x-m>
+            <y-m>0</y-m>
+            <z-m>-0.0030</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ball</object-name>
+        <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+        <factor>5.729</factor>
+        <min-deg>-15</min-deg>
+        <max-deg>15</max-deg>
+        <center>
+            <x-m> 0.0038</x-m>
+            <y-m> 0.0003</y-m>
+            <z-m>-0.0029</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Iraqi Air Force 5902</name>
+                <texture>Liveries/IQAF-5902.png</texture>
+            </livery>
+        </model>
+    </sim>
+
+</PropertyList>

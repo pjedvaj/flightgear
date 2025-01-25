@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>Heat.ac</path>
+
+  <offsets>
+    <x-m>0.05</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+  </offsets>
+
+  <animation>
+    <type>material</type>
+    <object-name>Heat</object-name>
+    <condition>
+      <not>
+        <property>sim/multiplay/generic/int[7]</property>
+      </not>
+    </condition>
+    <emission>
+      <red>1</red>
+      <green>0.57</green>
+      <blue>0.14</blue>
+      <factor-prop>engines/engine/itt-norm</factor-prop>
+    </emission>
+  </animation>
+
+</PropertyList>

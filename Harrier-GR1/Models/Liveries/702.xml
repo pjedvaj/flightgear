@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name type="string">United States Marine Corps 702</name>
+				<texture>Liveries/702.png</texture>
+			</livery>
+			<livery-logo>
+				<texture>Liveries/702.png</texture>
+			</livery-logo>
+		</model>
+	</sim>
+
+</PropertyList>

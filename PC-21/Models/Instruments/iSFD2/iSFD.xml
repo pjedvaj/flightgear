@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>iSFD.ac</path>
+    
+    <animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+    
+    <animation>
+        <type>material</type>
+        <object-name>ladder</object-name>
+        <object-name>background</object-name>
+        <emission>
+		<red>0.045</red>
+		<green>0.025</green>
+		<blue>0.015</blue>
+        <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+    
+    <animation>
+        <type>texmultiple</type>
+        <object-name>ladder</object-name>
+        <transform>
+            <property>orientation/pitch-deg</property>
+            <subtype>textranslate</subtype>
+            <factor>0.003777</factor>
+            <axis>
+                <x>0</x>
+                <y>1</y>
+                <z>0</z>
+            </axis>
+        </transform>
+        <transform>
+            <property>orientation/roll-deg</property>
+            <subtype>texrotate</subtype>
+            <center>
+                <x>0.125</x>
+                <y>0.5</y>
+            </center>
+            <axis>
+                <x> 0</x>
+                <y> 0</y>
+                <z>-1</z>
+            </axis>
+        </transform>
+    </animation>
+
+</PropertyList>

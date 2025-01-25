@@ -1,0 +1,111 @@
+<PropertyList>
+
+	<!-- Lights -->
+
+		<model>
+			<name>RedLight</name>
+			<path>Aircraft/PC-21/Models/Lights/RedLight.xml</path>
+			<offsets>
+				<x-m> -1.0</x-m>
+				<y-m> -3.65</y-m>
+				<z-m> 0.55</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>GreenLight</name>
+			<path>Aircraft/PC-21/Models/Lights/GreenLight.xml</path>
+			<offsets>
+				<x-m> -1.0</x-m>
+				<y-m> 3.65</y-m>
+				<z-m> 0.55</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>StrobeLightR</name>
+			<path>Aircraft/PC-21/Models/Lights/StrobeWhite.xml</path>
+			<offsets>
+				<x-m> -0.23</x-m>
+				<y-m> -4</y-m>
+				<z-m> 0.66</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>StrobeLightL</name>
+			<path>Aircraft/PC-21/Models/Lights/StrobeWhite.xml</path>
+			<offsets>
+				<x-m> -0.23</x-m>
+				<y-m> 4</y-m>
+				<z-m> 0.66</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>BeaconLight1</name>
+			<path>Aircraft/PC-21/Models/Lights/beacon.xml</path>
+			<offsets>
+				<x-m> 1.51</x-m>
+				<y-m> 0.00</y-m>
+				<z-m> 1.67</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>BeaconLight2</name>
+			<path>Aircraft/PC-21/Models/Lights/beacon.xml</path>
+			<offsets>
+				<x-m> 2.65</x-m>
+				<y-m> 0.00</y-m>
+				<z-m> 0.65</z-m>
+			</offsets>
+		</model>
+
+		<model>
+			<name>PositionLightR</name>
+			<path>Aircraft/PC-21/Models/Lights/light-cone.xml</path>
+			<offsets>
+				<x-m> -1.2</x-m>
+				<y-m> 3.27</y-m>
+				<z-m> 0.55</z-m>
+				<pitch-deg>-5</pitch-deg>
+			</offsets>
+		</model>
+
+		<model>
+			<name>PositionLightL</name>
+			<path>Aircraft/PC-21/Models/Lights/light-cone.xml</path>
+			<offsets>
+				<x-m> -1.2</x-m>
+				<y-m> -3.27</y-m>
+				<z-m> 0.55</z-m>
+				<pitch-deg>-5</pitch-deg>
+			</offsets>
+		</model>
+
+		<model>
+			<name>LandingLights</name>
+			<path>Aircraft/PC-21/Models/Lights/light-cone.xml</path>
+			<offsets>
+				<x-m> -3.05</x-m>
+				<y-m> 0.1</y-m>
+				<z-m> 0.01</z-m>
+				<pitch-deg>-5</pitch-deg>
+				<heading-deg>-8</heading-deg>
+			</offsets>
+		</model>
+
+		<model>
+			<name>LandingLights1</name>
+			<path>Aircraft/PC-21/Models/Lights/light-cone.xml</path>
+			<offsets>
+				<x-m> -3.05</x-m>
+				<y-m> -0.1</y-m>
+				<z-m> 0.01</z-m>
+				<pitch-deg>-5</pitch-deg>
+				<heading-deg>8</heading-deg>
+			</offsets>
+		</model>
+		
+</PropertyList>

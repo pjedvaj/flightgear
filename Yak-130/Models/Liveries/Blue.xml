@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Russian Air Force 54 (Blue)</name>
+                <texture>Liveries/Blue.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/Blue.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

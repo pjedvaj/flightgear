@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Army Camo</name>
+				<texture>liveries/army.png</texture>
+			</livery>
+			<livery-logo>
+				<texture>Liveries/army.png</texture>
+			</livery-logo>
+		</model>
+	</sim>
+
+</PropertyList>

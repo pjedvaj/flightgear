@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>FuelProbe.ac</path>
+
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>/sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>RefuelProbe.glass</object-name>
+  </effect>
+
+  <!-- probe lights -->
+  <animation>
+    <type>material</type>
+    <object-name>ProbeLightReflector.0</object-name>
+    <object-name>ProbeLightReflector.1</object-name>
+    <object-name>RefuelProbe.glass</object-name>
+    <emission>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>0.65</blue>
+      <factor-prop>lightpack/probe-light-intensity</factor-prop>
+    </emission>
+  </animation>
+  <animation>
+    <type>material</type>
+    <object-name>RefuelProbe.reflector</object-name>
+    <emission>
+      <red>0.3</red>
+      <green>0.3</green>
+      <blue>0.28</blue>
+      <factor-prop>lightpack/probe-light-intensity</factor-prop>
+    </emission>
+  </animation>
+  <model>
+    <path>Aircraft/ALCA/Models/Lights/ProbeLight.xml</path>
+    <offsets>
+      <x-m>-4.4867</x-m>
+      <y-m>0.4922</y-m>
+      <z-m>-0.4929</z-m>
+    </offsets>
+  </model>
+  <model>
+    <path>Aircraft/ALCA/Models/Lights/ProbeLight.xml</path>
+    <offsets>
+      <x-m>-4.4971</x-m>
+      <y-m>0.5400</y-m>
+      <z-m>-0.4686</z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<model>
+		<name>FlightComputer</name>
+		<path>Aircraft/OH-58D/Instruments/FlightComputer/FlightComputer.xml</path>
+		<offsets>
+			<x-m>-1.7438</x-m>
+			<y-m>-0.5364</y-m>
+			<z-m> 0.3336</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Torque</name>
+		<path>Aircraft/OH-58D/Instruments/Torque/Torque.xml</path>
+		<offsets>
+			<x-m>-1.8936</x-m>
+			<y-m> 0.1469</y-m>
+			<z-m> 0.3182</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>RPM</name>
+		<path>Aircraft/OH-58D/Instruments/RPM/RPM.xml</path>
+		<offsets>
+			<x-m>-1.8940</x-m>
+			<y-m> 0.1015</y-m>
+			<z-m> 0.3179</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>OilFuel</name>
+		<path>Aircraft/OH-58D/Instruments/OilFuel/OilFuel.xml</path>
+		<offsets>
+			<x-m>-1.8380</x-m>
+			<y-m> 0.0107</y-m>
+			<z-m> 0.1270</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>TACAN</name>
+		<path>Aircraft/OH-58D/Instruments/TACAN/TACAN.xml</path>
+		<offsets>
+			<x-m>-1.8922</x-m>
+			<y-m>-0.0035</y-m>
+			<z-m> 0.3207</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>RWR</name>
+		<path>Aircraft/OH-58D/Instruments/RWR/RWR.xml</path>
+		<offsets>
+			<x-m>-1.8094</x-m>
+			<y-m>-0.0035</y-m>
+			<z-m> 0.4758</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Compass</name>
+		<path>Aircraft/OH-58D/Instruments/Compass/Compass.xml</path>
+		<offsets>
+			<x-m>-1.8405</x-m>
+			<y-m> 0.5290</y-m>
+			<z-m> 0.0998</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Clock</name>
+		<path>Aircraft/OH-58D/Instruments/Clock/Clock.xml</path>
+		<offsets>
+			<x-m>-1.8822</x-m>
+			<y-m> 0.4449</y-m>
+			<z-m> 0.2676</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>ASI</name>
+		<path>Aircraft/OH-58D/Instruments/ASI/ASI.xml</path>
+		<offsets>
+			<x-m>-1.8648</x-m>
+			<y-m>-0.0548</y-m>
+			<z-m> 0.2122</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>ALT</name>
+		<path>Aircraft/OH-58D/Instruments/ALT/ALT.xml</path>
+		<offsets>
+			<x-m>-1.8643</x-m>
+			<y-m> 0.1200</y-m>
+			<z-m> 0.2123</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>ADI</name>
+		<path>Aircraft/OH-58D/Instruments/ADI/ADI.xml</path>
+		<offsets>
+			<x-m>-1.8862</x-m>
+			<y-m> 0.0328</y-m>
+			<z-m> 0.2116</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>LMFD</name>
+		<path>Aircraft/OH-58D/Instruments/LMFD/LMFD.xml</path>
+		<offsets>
+			<x-m>-1.8742</x-m>
+			<y-m>-0.2144</y-m>
+			<z-m> 0.2436</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>RMFD</name>
+		<path>Aircraft/OH-58D/Instruments/RMFD/RMFD.xml</path>
+		<offsets>
+			<x-m>-1.8742</x-m>
+			<y-m> 0.2941</y-m>
+			<z-m> 0.2436</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Pilot Collective</name>
+		<path>Aircraft/OH-58D/Instruments/Collective/Collective.xml</path>
+		<offsets>
+			<x-m>-1.1015</x-m>
+			<y-m> 0.0604</y-m>
+			<z-m>-0.0168</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>CoPilot Collective</name>
+		<path>Aircraft/OH-58D/Instruments/Collective/Collective.xml</path>
+		<offsets>
+			<x-m>-1.1015</x-m>
+			<y-m>-0.5519</y-m>
+			<z-m>-0.0168</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Pilot Cyclic</name>
+		<path>Aircraft/OH-58D/Instruments/Cyclic/Cyclic.xml</path>
+		<offsets>
+			<x-m>-1.5774</x-m>
+			<y-m> 0.3122</y-m>
+			<z-m>-0.0455</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>CoPilot Cyclic</name>
+		<path>Aircraft/OH-58D/Instruments/Cyclic/Cyclic.xml</path>
+		<offsets>
+			<x-m>-1.5774</x-m>
+			<y-m>-0.3122</y-m>
+			<z-m>-0.0455</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Pilot Pedals</name>
+		<path>Aircraft/OH-58D/Instruments/Pedals/Pedals.xml</path>
+		<offsets>
+			<x-m>-1.9419</x-m>
+			<y-m> 0.3464</y-m>
+			<z-m>-0.2026</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>CoPilot Pedals</name>
+		<path>Aircraft/OH-58D/Instruments/Pedals/Pedals.xml</path>
+		<offsets>
+			<x-m>-1.9419</x-m>
+			<y-m>-0.3464</y-m>
+			<z-m>-0.2026</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+</PropertyList>

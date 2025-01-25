@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<sim>
+<model>
+<livery>
+<name type="string">Irish Air Corps 264</name>
+<texture>Liveries/Ireland.png</texture>
+</livery>
+<livery-logo>
+<texture>Liveries/Ireland.png</texture>
+</livery-logo>
+</model>
+</sim>
+
+</PropertyList>

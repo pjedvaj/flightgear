@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>Barometer.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>100-needle</object-name>
+        <object-name>1000-needle</object-name>
+        <object-name>10000-needle</object-name>
+        <object-name>face</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.8</green>
+            <blue>0.8</blue>
+        </emission> 
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>100-needle</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.36</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>  
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+    </animation>  
+
+    <animation>
+        <type>rotate</type>
+        <object-name>1000-needle</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.036</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>  
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+    </animation>  
+
+    <animation>
+        <type>rotate</type>
+        <object-name>10000-needle</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.0036</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>  
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+    </animation>
+
+</PropertyList>

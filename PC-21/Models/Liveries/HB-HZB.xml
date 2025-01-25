@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<sim>
+<model>
+<livery>
+<name type="string">Demonstrator HB-HZB</name>
+<texture>Liveries/HB-HZB.png</texture>
+</livery>
+<livery-logo>
+<texture>Liveries/HB-HZB.png</texture>
+</livery-logo>
+</model>
+</sim>
+
+</PropertyList>

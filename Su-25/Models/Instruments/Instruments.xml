@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/Pedals/Pedals.xml</path>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/Stick/Stick.xml</path>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/Throttle/Throttle.xml</path>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/Weapons/Weapons.xml</path>
+	</model>
+
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/Gunsight/Gunsight.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/Gear/Gear.xml</path>
+		<offsets>
+			<x-m>-3.885</x-m>
+			<y-m>-0.2249</y-m>
+			<z-m> 2.2540</z-m>
+			<heading-deg>13</heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/AOA/AOA.xml</path>
+		<offsets>
+			<x-m>-3.8830</x-m>
+			<y-m>-0.2368</y-m>
+			<z-m> 2.4082</z-m>
+			<heading-deg>13</heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/ASI/ASI.xml</path>
+		<offsets>
+			<x-m>-3.89</x-m>
+			<y-m>-0.1541</y-m>
+			<z-m> 2.4544</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/ALT/Barometer.xml</path>
+		<offsets>
+			<x-m>-3.8830</x-m>
+			<y-m>-0.1541</y-m>
+			<z-m> 2.3687</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/ALT/Radar.xml</path>
+		<offsets>
+			<x-m>-3.8830</x-m>
+			<y-m>-0.1541</y-m>
+			<z-m> 2.2898</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/ADI/ADI.xml</path>
+		<offsets>
+			<x-m>-3.8930</x-m>
+			<y-m>-0.0662</y-m>
+			<z-m> 2.3687</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/Distance/Distance.xml</path>
+		<offsets>
+			<x-m>-3.8930</x-m>
+			<y-m>-0.1541</y-m>
+			<z-m> 2.2265</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/VSI/VSI.xml</path>
+		<offsets>
+			<x-m>-3.8930</x-m>
+			<y-m> 0.0231</y-m>
+			<z-m> 2.3568</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/Clock/Clock.xml</path>
+		<offsets>
+			<x-m>-3.9000</x-m>
+			<y-m> 0.0231</y-m>
+			<z-m> 2.2704</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/Tachometer/Tachometer.xml</path>
+		<offsets>
+			<x-m>-3.9000</x-m>
+			<y-m> 0.1021</y-m>
+			<z-m> 2.3039</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/JPT/JPTL.xml</path>
+		<offsets>
+			<x-m>-3.8950</x-m>
+			<y-m> 0.0932</y-m>
+			<z-m> 2.2309</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/JPT/JPTR.xml</path>
+		<offsets>
+			<x-m>-3.8950</x-m>
+			<y-m> 0.1565</y-m>
+			<z-m> 2.2361</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/HSI/HSI.xml</path>
+		<offsets>
+			<x-m>-3.8950</x-m>
+			<y-m>-0.0662</y-m>
+			<z-m> 2.2495</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/Machometer/Machometer.xml</path>
+		<offsets>
+			<x-m>-3.8950</x-m>
+			<y-m> 0.1021</y-m>
+			<z-m> 2.3851</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/UHF/UHF.xml</path>
+		<offsets>
+			<x-m>-3.86522</x-m>
+			<y-m>-0.278952</y-m>
+			<z-m> 2.24792</z-m>
+			<heading-deg>13</heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/TACAN/TACAN.xml</path>
+		<offsets>
+			<x-m>-3.8758</x-m>
+			<y-m> 0.2514</y-m>
+			<z-m> 2.2928</z-m>
+			<pitch-deg>90</pitch-deg>
+			<heading-deg>-13</heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/FuelQuantity/FuelQuantity.xml</path>
+		<offsets>
+			<x-m>-3.8950</x-m>
+			<y-m> 0.1664</y-m>
+			<z-m> 2.3617</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Su-25/Models/Instruments/RadarWarning/RadarWarning.xml</path>
+		<offsets>
+			<x-m>-3.8950</x-m>
+			<y-m> 0.1445</y-m>
+			<z-m> 2.4802</z-m>
+		</offsets>
+	</model>
+
+</PropertyList>

@@ -1,0 +1,120 @@
+<PropertyList>	
+	
+	<!-- Effects -->
+	
+	<model>
+		<name>sonicboom</name>
+		<path>Aircraft/T-50/Models/Effects/boom/fx.xml</path>
+		<offsets>
+			<x-m>14</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model> 
+	
+	<model>
+		<path>Aircraft/T-50/Models/Effects/Vapour/Vapour.xml</path>
+		<offsets>
+			<x-m>9.5</x-m>
+			<y-m>-1.5</y-m>
+			<z-m>0.9</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>-25</heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/T-50/Models/Effects/Vapour/Vapour.xml</path>
+		<offsets>
+			<x-m>9.5</x-m>
+			<y-m>1.5</y-m>
+			<z-m>0.9</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>25</heading-deg>
+		</offsets>
+	</model>
+ 
+	<model>
+		<path>Aircraft/T-50/Models/Effects/Vapour/Vapour2.xml</path>
+		<offsets>
+			<x-m>13</x-m>
+			<y-m>-4</y-m>
+			<z-m>0.9</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>45</heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/T-50/Models/Effects/Vapour/Vapour2.xml</path>
+		<offsets>
+			<x-m>13</x-m>
+			<y-m>4</y-m>
+			<z-m>0.9</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>-45</heading-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<path>Aircraft/T-50/Models/Effects/trail/trailR.xml</path>
+		<offsets>
+			<x-m> 19.50</x-m>
+			<y-m>  1.45</y-m>
+			<z-m> -0.20</z-m>
+		</offsets>
+	</model>
+    
+	<model>
+		<path>Aircraft/T-50/Models/Effects/trail/trailL.xml</path>
+		<offsets>
+			<x-m> 19.50</x-m>
+			<y-m> -1.45</y-m>
+			<z-m> -0.20</z-m>
+		</offsets>
+	</model>
+  
+	<model>
+		<path>Aircraft/T-50/Models/Effects/smoke/SmokeL.xml</path>
+		<offsets>
+			<x-m> 19.50</x-m>
+			<y-m> -1.45</y-m>
+			<z-m> -0.20</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/T-50/Models/Effects/smoke/SmokeR.xml</path>
+		<offsets>
+			<x-m> 19.50</x-m>
+			<y-m>  1.45</y-m>
+			<z-m> -0.20</z-m>
+		</offsets>
+	</model>
+    
+	<model>
+		<path>Aircraft/T-50/Models/Effects/wash/aircraft_wash.xml</path>
+		<offsets>
+			<x-m>12.3515</x-m>
+			<y-m> 4.6816</y-m>
+			<z-m>-0.1723</z-m>
+			<pitch-deg>0.00</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<path>Aircraft/T-50/Models/Effects/wash/aircraft_wash.xml</path>
+		<offsets>
+			<x-m>12.3515</x-m>
+			<y-m>-4.6816</y-m>
+			<z-m>-0.1723</z-m>
+			<pitch-deg>0.00</pitch-deg>
+		</offsets>
+	</model>
+	
+</PropertyList>

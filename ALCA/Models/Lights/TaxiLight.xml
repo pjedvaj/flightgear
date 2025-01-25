@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <model>
+    <name>TaxiLightFlash</name>
+    <path>Aircraft/ALCA/Models/Lights/Flares/TaxiLight-flash.xml</path>
+  </model>
+
+  <model>
+    <name>TaxiLightRemb</name>
+    <path>Aircraft/ALCA/Models/Lights/Rembrandt/TaxiLight-remb.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>TaxiLightFlash</object-name>
+    <object-name>TaxiLightRemb</object-name>
+    <condition>
+      <and>
+        <property>lightpack/taxi-light-intensity</property>
+        <not>
+          <property>sim/crashed</property>
+        </not>
+      </and>
+    </condition>
+  </animation>
+
+</PropertyList>

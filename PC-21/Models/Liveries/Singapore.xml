@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<sim>
+<model>
+<livery>
+<name type="string">Republic of Singapore Air Force</name>
+<texture>Liveries/Singapore.png</texture>
+</livery>
+<livery-logo>
+<texture>Liveries/Singapore.png</texture>
+</livery-logo>
+</model>
+</sim>
+
+</PropertyList>

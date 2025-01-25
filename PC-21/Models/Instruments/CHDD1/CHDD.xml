@@ -1,0 +1,1289 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>CHDD.ac</path>
+    
+    <animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+	
+<!-- Illumination -->	
+    
+    <animation>
+        <type>material</type>
+        <object-name>background</object-name>
+        <object-name>AB</object-name>
+        <object-name>FU</object-name>
+        <object-name>ladder</object-name>
+        <object-name>eadi-tris</object-name>
+        <object-name>GMeterneedle</object-name>
+        <object-name>gnum10</object-name>
+        <object-name>gnum1</object-name>
+        <object-name>gnum01</object-name>
+        <object-name>ASIneedle</object-name>
+        <object-name>asinum100</object-name>
+        <object-name>asinum10</object-name>
+        <object-name>asinum1</object-name>
+        <object-name>ALTneedle</object-name>
+        <object-name>altnum10000</object-name>
+        <object-name>altnum1000</object-name>
+        <object-name>altnum100</object-name>
+        <object-name>altnum10</object-name>
+        <object-name>altnum1</object-name>
+        <object-name>mbnum1000</object-name>
+        <object-name>mbnum100</object-name>
+        <object-name>mbnum10</object-name>
+        <object-name>mbnum1</object-name>
+        <object-name>VSIneedle</object-name>
+        <object-name>vsinum100</object-name>
+        <object-name>vsinum10</object-name>
+        <object-name>vsinum1</object-name>
+        <object-name>RMI.compass</object-name>
+        <object-name>VORneedle</object-name>
+        <object-name>ADFneedle</object-name>
+        <object-name>aoa</object-name>
+        <object-name>rmi-tris</object-name>
+        <object-name>hinum100</object-name>
+        <object-name>hinum10</object-name>
+        <object-name>hinum1</object-name>
+        <object-name>ktnum100</object-name>
+        <object-name>ktnum10</object-name>
+        <object-name>ktnum1</object-name>
+        <object-name>nmnum100</object-name>
+        <object-name>nmnum10</object-name>
+        <object-name>nmnum1</object-name>
+        <object-name>tasnum100</object-name>
+        <object-name>tasnum10</object-name>
+        <object-name>tasnum1</object-name>
+        <object-name>vornum100</object-name>
+        <object-name>vornum10</object-name>
+        <object-name>vornum1</object-name>
+        <object-name>hdgnum100</object-name>
+        <object-name>hdgnum10</object-name>
+        <object-name>hdgnum1</object-name>
+        <object-name>crsnum100</object-name>
+        <object-name>crsnum10</object-name>
+        <object-name>crsnum1</object-name>
+        <object-name>htnum100</object-name>
+        <object-name>htnum10</object-name>
+        <object-name>htnum1</object-name>
+        <object-name>ranum1000</object-name>
+        <object-name>ranum100</object-name>
+        <object-name>ranum10</object-name>
+        <object-name>ranum1</object-name>
+        <object-name>mnum01</object-name>
+        <object-name>mnum001</object-name>
+        <emission>
+		<red>0.045</red>
+		<green>0.025</green>
+		<blue>0.015</blue>
+        <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+    
+<!-- Airbrake Indicator -->
+    
+    <animation> 
+        <type>select</type>
+        <object-name>ABN</object-name>
+        <condition>
+            <equals>
+            <property>controls/flight/speedbrake</property>
+            <value>true</value>
+        </equals>
+        </condition>
+    </animation>
+    
+<!-- Flaps Indicator -->
+    
+    <animation> 
+        <type>select</type>
+        <object-name>FU</object-name>
+        <condition>
+            <equals>
+            <property>surface-positions/flap-pos-norm</property>
+            <value>true</value>
+        </equals>
+        </condition>
+    </animation>
+    
+<!--Angle Of Attack-->
+
+    <animation>
+        <type>translate</type>
+        <object-name>aoa</object-name>
+        <property>orientation/alpha-deg</property>
+        <factor>0.0011</factor>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+        <center>
+            <x-m> 0.00</x-m>
+            <y-m>-0.05</y-m>
+            <z-m> 0.02</z-m>
+        </center>
+    </animation> 
+    
+<!-- Electronic Attitude Director Indicator -->    
+    
+    <animation>
+        <type>translate</type>
+        <object-name>FDbars</object-name>
+        <property>autopilot/settings/target-pitch-deg</property>
+        <factor>0.00087</factor>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+        <center>
+            <x-m>0.00</x-m>
+            <y-m>0.00</y-m>
+            <z-m>0.07</z-m>
+        </center>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>FDbars</object-name>
+        <property>autopilot/internal/target-roll-deg</property>
+        <axis>
+            <x>-1.0</x>
+            <y> 0.0</y>
+            <z> 0.0</z>
+        </axis>
+        <center>
+            <x-m>0.00</x-m>
+            <y-m>0.00</y-m>
+            <z-m>0.07</z-m>
+        </center>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>FDbars</object-name>
+        <property>orientation/roll-deg</property>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.00</x-m>
+            <y-m>0.00</y-m>
+            <z-m>0.07</z-m>
+        </center>
+    </animation>
+    
+    <animation>
+        <type>translate</type>
+        <object-name>FDbars</object-name>
+        <property>orientation/pitch-deg</property>
+        <factor>0.00087</factor>
+        <axis>
+            <x> 0.00</x>
+            <y> 0.00</y>
+            <z>-1.00</z>
+        </axis>
+        <center>
+            <x-m>0.00</x-m>
+            <y-m>0.00</y-m>
+            <z-m>0.07</z-m>
+        </center>
+    </animation>
+    
+    <animation>
+        <type>texmultiple</type>
+        <object-name>ladder</object-name>
+        <transform>
+            <property>orientation/pitch-deg</property>
+            <subtype>textranslate</subtype>
+            <factor>0.003777</factor>
+            <axis>
+                <x>0</x>
+                <y>1</y>
+                <z>0</z>
+            </axis>
+        </transform>
+        <transform>
+            <property>orientation/roll-deg</property>
+            <subtype>texrotate</subtype>
+            <center>
+                <x>0.125</x>
+                <y>0.5</y>
+            </center>
+            <axis>
+                <x> 0</x>
+                <y> 0</y>
+                <z>-1</z>
+            </axis>
+        </transform>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>eadi-tris</object-name>
+        <property>orientation/roll-deg</property>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.00</x-m>
+            <y-m>0.00</y-m>
+            <z-m>0.07</z-m>
+        </center>
+    </animation>
+    
+<!-- GMeter -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>GMeterneedle</object-name>
+        <property>fdm/jsbsim/accelerations/Nz</property>
+    <interpolation>
+    <entry>
+      <ind>0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>-4</ind>
+      <dep>-50</dep>
+    </entry>
+    <entry>
+      <ind>4</ind>
+      <dep>50.0</dep>
+    </entry>
+    <entry>
+      <ind>8</ind>
+      <dep>105.0</dep>
+    </entry>
+    </interpolation>
+        <center>
+        <x-m> 0.00</x-m>
+        <y-m>-0.06</y-m>
+        <z-m> 0.01</z-m>
+        </center>
+        <axis>
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>gnum10</object-name>
+		<property>fdm/jsbsim/accelerations/Nz</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>gnum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>fdm/jsbsim/accelerations/Nz</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>gnum1</object-name>
+		<property>fdm/jsbsim/accelerations/Nz</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>gnum01</object-name>
+		<property>fdm/jsbsim/accelerations/Nz</property>
+        <factor>1</factor>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+	</animation>
+    
+<!-- Machometer -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>mnum01</object-name>
+		<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>40</ind><dep>16</dep></entry>
+			<entry><ind>75</ind><dep>31</dep></entry>
+			<entry><ind>100</ind><dep>45</dep></entry>
+			<entry><ind>117</ind><dep>61</dep></entry>
+			<entry><ind>135</ind><dep>75</dep></entry>
+			<entry><ind>150</ind><dep>90</dep></entry>
+			<entry><ind>170</ind><dep>104</dep></entry>
+			<entry><ind>185</ind><dep>120</dep></entry>
+			<entry><ind>200</ind><dep>134</dep></entry>
+			<entry><ind>250</ind><dep>156</dep></entry>
+			<entry><ind>300</ind><dep>180</dep></entry>
+			<entry><ind>350</ind><dep>204</dep></entry>
+			<entry><ind>400</ind><dep>224</dep></entry>
+			<entry><ind>500</ind><dep>251</dep></entry>
+			<entry><ind>600</ind><dep>280</dep></entry>
+			<entry><ind>700</ind><dep>305</dep></entry>
+			<entry><ind>800</ind><dep>332</dep></entry>
+			<entry><ind>850</ind><dep>345</dep></entry>
+		</interpolation>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>mnum001</object-name>
+		<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <factor>10</factor>
+        <step>0.01</step>
+        		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>40</ind><dep>16</dep></entry>
+			<entry><ind>75</ind><dep>31</dep></entry>
+			<entry><ind>100</ind><dep>45</dep></entry>
+			<entry><ind>117</ind><dep>61</dep></entry>
+			<entry><ind>135</ind><dep>75</dep></entry>
+			<entry><ind>150</ind><dep>90</dep></entry>
+			<entry><ind>170</ind><dep>104</dep></entry>
+			<entry><ind>185</ind><dep>120</dep></entry>
+			<entry><ind>200</ind><dep>134</dep></entry>
+			<entry><ind>250</ind><dep>156</dep></entry>
+			<entry><ind>300</ind><dep>180</dep></entry>
+			<entry><ind>350</ind><dep>204</dep></entry>
+			<entry><ind>400</ind><dep>224</dep></entry>
+			<entry><ind>500</ind><dep>251</dep></entry>
+			<entry><ind>600</ind><dep>280</dep></entry>
+			<entry><ind>700</ind><dep>305</dep></entry>
+			<entry><ind>800</ind><dep>332</dep></entry>
+			<entry><ind>850</ind><dep>345</dep></entry>
+		</interpolation>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+	</animation>
+    
+<!-- Air Speed Indicator -->
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>ASIneedle</object-name>
+  <property>velocities/airspeed-kt</property>
+  <interpolation>
+    <entry>
+      <ind>0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>100</ind>
+      <dep>50</dep>
+    </entry>
+    <entry>
+      <ind>200</ind>
+      <dep>150.0</dep>
+    </entry>
+    <entry>
+      <ind>300</ind>
+      <dep>250.0</dep>
+    </entry>
+    <entry>
+      <ind>350</ind>
+      <dep>300.0</dep>
+    </entry>
+  </interpolation>   
+  <center>
+   <x-m> 0.00</x-m>
+   <y-m>-0.06</y-m>
+   <z-m> 0.07</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+     <animation>
+        <type>textranslate</type>
+        <object-name>asinum100</object-name>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>asinum100</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>asinum10</object-name>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>asinum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>asinum1</object-name>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+ <!-- Altimeter -->
+ 
+     <animation>
+		<type>select</type>
+		<object-name>altnum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>altnum100</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>altnum100</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>altnum1000</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <scroll>20</scroll>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>altnum1000</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>1000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>altnum10000</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <scroll>20</scroll>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>altnum10000</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>10000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ALTneedle</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.36</factor>
+        <center>
+            <x-m>0.00</x-m>
+            <y-m>0.06</y-m>
+            <z-m>0.07</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y> 0</y>
+            <z> 0</z>
+        </axis>
+    </animation>
+    
+ <!-- Vertical Speed Indicator -->
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>VSIneedle</object-name>
+        <property>autopilot/internal/vert-speed-fpm</property>
+        <interpolation>
+            <entry><ind>-4000.0</ind><dep>-95.0</dep></entry>
+            <entry><ind>-1000.0</ind><dep>-56.0</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>1000.0</ind><dep>56.0</dep></entry>
+            <entry><ind>4000.0</ind><dep>95.0</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0.00</x-m>
+            <y-m>0.06</y-m>
+            <z-m>0.01</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>vsinum100</object-name>
+        <property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>vsinum100</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>vsinum10</object-name>
+        <property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>vsinum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>vsinum1</object-name>
+        <property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<!-- Radio Magnetic Indicator -->
+    
+        <animation>
+        <type>rotate</type>
+        <object-name>RMI.compass</object-name>
+        <property>orientation/heading-magnetic-deg</property>
+        <center>
+            <x-m> 0.00</x-m>
+            <y-m> 0.00</y-m>
+            <z-m>-0.05</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>VORneedle</object-name>
+        <property>orientation/heading-deg</property>
+        <center>
+            <x-m> 0.00</x-m>
+            <y-m> 0.00</y-m>
+            <z-m>-0.05</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>VORneedle</object-name>
+        <property>instrumentation/nav/heading-deg</property>
+        <center>
+            <x-m> 0.00</x-m>
+            <y-m> 0.00</y-m>
+            <z-m>-0.05</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y> 0</y>
+            <z> 0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ADFneedle</object-name>
+        <property>instrumentation/adf/indicated-bearing-deg</property>
+        <center>
+            <x-m> 0.00</x-m>
+            <y-m> 0.00</y-m>
+            <z-m>-0.05</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y> 0</y>
+            <z> 0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>hinum100</object-name>
+        <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>hinum100</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/heading-indicator/indicated-heading-de</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>hinum10</object-name>
+        <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>hinum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/heading-indicator/indicated-heading-de</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>hinum1</object-name>
+        <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<!-- True Air Speed -->
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>tasnum100</object-name>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>tasnum100</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>velocities/airspeed-kt</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>tasnum10</object-name>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>tasnum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>velocities/airspeed-kt</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>tasnum1</object-name>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<!-- Ground Speed Indicator -->
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>ktnum100</object-name>
+        <property>instrumentation/dme/indicated-ground-speed-kt</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>ktnum100</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/dme/indicated-ground-speed-kt</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>ktnum10</object-name>
+        <property>instrumentation/dme/indicated-ground-speed-kt</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>ktnum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/dme/indicated-ground-speed-kt</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>ktnum1</object-name>
+        <property>instrumentation/dme/indicated-ground-speed-kt</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<!-- Distance Measuring Equipment -->
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>nmnum10</object-name>
+        <property>instrumentation/dme/indicated-distance-nm</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>nmnum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/dme/indicated-distance-nm</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>nmnum1</object-name>
+        <property>instrumentation/dme/indicated-distance-nm</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>nmnum1</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/dme/indicated-distance-nm</property>
+				<value>1</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>nmnum01</object-name>
+        <property>instrumentation/dme/indicated-distance-nm</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<!-- 	VHF Omnidirectional Radio Range -->
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>vornum100</object-name>
+        <property>instrumentation/dme/indicated-distance-nm</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>vornum100</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/dme/indicated-distance-nm</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>vornum10</object-name>
+        <property>instrumentation/dme/indicated-distance-nm</property>
+        <factor>0.1</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>vornum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/dme/indicated-distance-nm</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>vornum1</object-name>
+        <property>instrumentation/dme/indicated-distance-nm</property>
+        <factor>1</factor>
+        <step>0.11</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<!-- Heading Indicator -->
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>hdgnum100</object-name>
+        <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>hdgnum100</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/heading-indicator/indicated-heading-deg</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>hdgnum10</object-name>
+        <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+        <factor>0.1</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>hdgnum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/heading-indicator/indicated-heading-deg</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>hdgnum1</object-name>
+        <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+        <factor>1</factor>
+        <step>0.11</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<!-- Course Indicator -->
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>crsnum100</object-name>
+        <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>crsnum100</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/magnetic-compass/indicated-heading-deg</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>crsnum10</object-name>
+        <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+        <factor>0.1</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>crsnum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>instrumentation/magnetic-compass/indicated-heading-deg</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>crsnum1</object-name>
+        <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+        <factor>1</factor>
+        <step>0.11</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<!-- NOT WORKING -->
+
+<!-- Atmospheric Pressure Milibars -->
+    
+    <animation>
+        <type>textranslate</type>
+        <object-name>mbnum1000</object-name>
+        <property>/instrumentation/altimeter/millibars</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>mbnum1000</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/millibars</property>
+				<value>1000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>mbnum100</object-name>
+        <property>/instrumentation/altimeter/millibars</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>mbnum100</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/millibars</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>mbnum10</object-name>
+        <property>/instrumentation/altimeter/millibars</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>select</type>
+		<object-name>mbnum10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/millibars</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>mbnum1</object-name>
+        <property>/instrumentation/altimeter/millibars</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<!-- Radio Altimeter -->
+
+<!-- Acceleration Height -->
+
+</PropertyList>

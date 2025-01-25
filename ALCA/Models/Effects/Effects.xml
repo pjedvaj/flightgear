@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <!-- Effects-->
+
+  <!-- Tiptrails-->
+
+  <model>
+    <name>TiptrailR</name>
+    <path>Aircraft/ALCA/Models/Effects/Tiptrail/TiptrailR.xml</path>
+    <offsets>
+      <x-m>1.5189</x-m>
+      <y-m>4.5473</y-m>
+      <z-m>-0.6480</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>TiptrailL</name>
+    <path>Aircraft/ALCA/Models/Effects/Tiptrail/TiptrailL.xml</path>
+    <offsets>
+      <x-m>1.5189</x-m>
+      <y-m>-4.5473</y-m>
+      <z-m>-0.6480</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Smoke -->
+
+  <model>
+    <name>Smoke</name>
+    <path>Aircraft/ALCA/Models/Effects/Smoke/Smoke.xml</path>
+    <offsets>
+      <x-m>5.2903</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.2145</z-m>
+    </offsets>
+  </model>
+
+  <!-- Tyresmoke -->
+
+  <model>
+    <path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+    <name>tyre-smoke-n</name>
+    <offsets>
+      <x-m>-4.2647</x-m>
+      <y-m>0</y-m>
+      <z-m>-2.0556</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+    <name>tyre-smoke-p</name>
+    <offsets>
+      <x-m>0.3779</x-m>
+      <y-m>-1.2341</y-m>
+      <z-m>-2.1198</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+    <name>tyre-smoke-s</name>
+    <offsets>
+      <x-m>0.3779</x-m>
+      <y-m>1.2341</y-m>
+      <z-m>-2.1198</z-m>
+    </offsets>
+  </model>
+
+  <!-- Contrail -->
+
+  <model>
+    <path>Aircraft/ALCA/Models/Effects/Contrail/Contrail.xml</path>
+    <offsets>
+      <x-m>9.0</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.2145</z-m>
+    </offsets>
+  </model>
+
+  <!-- Heat haze -->
+
+  <model>
+    <name>HeatHaze</name>
+    <path>Aircraft/ALCA/Models/Effects/HeatHaze/HeatHaze.xml</path>
+    <offsets>
+      <x-m>5.2903</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.2145</z-m>
+    </offsets>
+  </model>
+
+  <!-- Vapour -->
+
+  <model>
+    <name>VapourL</name>
+    <path>Aircraft/ALCA/Models/Effects/Vapour/Vapour.xml</path>
+    <offsets>
+      <x-m>0.35</x-m>
+      <y-m>-1.15</y-m>
+      <z-m>-0.58</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>VapourR</name>
+    <path>Aircraft/ALCA/Models/Effects/Vapour/Vapour.xml</path>
+    <offsets>
+      <x-m>0.35</x-m>
+      <y-m>1.15</y-m>
+      <z-m>-0.58</z-m>
+    </offsets>
+  </model>
+
+  <!-- Explosion -->
+
+  <!-- Crash explosion -->
+
+  <model>
+    <path>Aircraft/ALCA/Models/Effects/Explosion/Explode.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+      <heading-deg>0</heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Impact fire -->
+
+  <model>
+    <path>Aircraft/ALCA/Models/Effects/Explosion/ImpactFire.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+      <heading-deg>0</heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Impact fire smoke -->
+  <model>
+    <path>Aircraft/ALCA/Models/Effects/Explosion/ImpactFireSmoke.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+      <heading-deg>0</heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Impact explosion and fire Rembrandt light -->
+
+  <model>
+    <path>Aircraft/ALCA/Models/Effects/Explosion/FireLightBig.xml</path>
+    <name>FireLightBig</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>translate</type>
+    <object-name>FireLightBig</object-name>
+    <expression>
+      <prod>
+        <value>25</value>
+        <sin>
+          <deg2rad>
+            <property>orientation/pitch-deg</property>
+          </deg2rad>
+        </sin>
+      </prod>
+    </expression>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>FireLightBig</object-name>
+    <expression>
+      <prod>
+        <value>25</value>
+        <cos>
+          <deg2rad>
+            <property>orientation/pitch-deg</property>
+          </deg2rad>
+        </cos>
+        <sin>
+          <deg2rad>
+            <property>orientation/roll-deg</property>
+          </deg2rad>
+        </sin>
+      </prod>
+    </expression>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>FireLightBig</object-name>
+    <expression>
+      <prod>
+        <value>25</value>
+        <cos>
+          <deg2rad>
+            <property>orientation/pitch-deg</property>
+          </deg2rad>
+        </cos>
+        <cos>
+          <deg2rad>
+            <property>orientation/roll-deg</property>
+          </deg2rad>
+        </cos>
+      </prod>
+    </expression>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+</PropertyList>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <path>mini-ai.ac</path>
+  <animation>
+    <type>rotate</type>
+    <object-name>ball_ai</object-name>
+    <property>/orientation/roll-deg</property>
+    <center>
+      <x-m>-0.01993</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>ball_ai</object-name>
+    <property>/orientation/pitch-deg</property>
+    <center>
+      <x-m>-0.01993</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>arrow_freccia</object-name>
+    <property>/orientation/roll-deg</property>
+    <center>
+      <x-m>-0.01304</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+   <animation>
+  <type>material</type>
+  <object-name>ball_ai</object-name>
+  <object-name>arrow_freccia</object-name>
+  <emission>
+          <red>0.045</red>
+          <green>0.025</green>
+          <blue>0.015</blue>
+   <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+  </emission>
+ </animation>
+ 
+<animation>
+<type>range</type>
+<min-m>0</min-m>
+<max-m>5</max-m>
+</animation>
+  
+</PropertyList>

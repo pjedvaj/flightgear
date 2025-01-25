@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!-- Johan G -->
+
+<PropertyList>
+
+<sim>
+<model>
+<livery>
+<name type="string">RAF / BAe #2</name>
+<texture>Liveries/RAF_BAE2.png</texture>
+</livery>
+<livery-logo>
+<texture>Liveries/RAF_BAE2.png</texture>
+</livery-logo>
+</model>
+</sim>
+
+</PropertyList>

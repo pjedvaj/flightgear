@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<!-- 100 Gallon Fuel Tanks -->
+	<model>
+		<name>LTank</name>
+		<path>Aircraft/Harrier-GR1/Models/Payload/Tank.ac</path>
+		<offsets>
+			<x-m>-11.2</x-m>
+			<y-m>-1.87</y-m>
+			<z-m>-6.2</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>RTank</name>
+		<path>Aircraft/Harrier-GR1/Models/Payload/Tank.ac</path>
+		<offsets>
+			<x-m>-11.2</x-m>
+			<y-m>1.87</y-m>
+			<z-m>-6.2</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- ADEN 30mm Cannons -->
+	<model>
+		<name>LAden</name>
+		<path>Aircraft/Harrier-GR1/Models/Payload/ADEN.ac</path>
+		<offsets>
+			<x-m>-12.5</x-m>
+			<y-m>-0.42</y-m>
+			<z-m>-6.7</z-m>
+			<roll-deg>-27</roll-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>RAden</name>
+		<path>Aircraft/Harrier-GR1/Models/Payload/ADEN.ac</path>
+		<offsets>
+			<x-m>-12.5</x-m>
+			<y-m> 0.42</y-m>
+			<z-m>-6.7</z-m>
+			<roll-deg>27</roll-deg>
+		</offsets>
+	</model>
+
+	<!-- Matra 155 SNEB 18x68mm Rocket Packs -->
+	<model>
+		<name>LSNEB</name>
+		<path>Aircraft/Harrier-GR1/Models/Payload/SNEB.ac</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>-2.84</y-m>
+			<z-m>-6.2</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>RSNEB</name>
+		<path>Aircraft/Harrier-GR1/Models/Payload/SNEB.ac</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m> 2.84</y-m>
+			<z-m>-6.2</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Camera Reconnaissance Pod -->
+	<model>
+		<name>Camera</name>
+		<path>Aircraft/Harrier-GR1/Models/Payload/Camera.ac</path>
+		<offsets>
+			<x-m>-12.25</x-m>
+			<y-m>0</y-m>
+			<z-m>-6.9</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Animations -->
+
+	<!-- Fuselage -->
+	<animation>
+		<type>select</type>
+		<object-name>Camera</object-name>
+		<condition>   
+			<equals>
+				<property>sim/weight[3]/selected</property>
+				<value>Camera Reconnaissance Pod</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>LAden</object-name>
+		<condition>   
+			<equals>
+				<property>sim/weight[2]/selected</property>
+				<value>ADEN 30mm Cannon</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>RAden</object-name>
+		<condition>   
+			<equals>
+				<property>sim/weight[4]/selected</property>
+				<value>ADEN 30mm Cannon</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<!-- Inboard Pylons -->
+	<animation>
+		<type>select</type>
+		<object-name>LTank</object-name>
+		<condition>   
+			<equals>
+				<property>sim/weight[1]/selected</property>
+				<value>100 Gallon Fuel Tank</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>RTank</object-name>
+		<condition>   
+			<equals>
+				<property>sim/weight[5]/selected</property>
+				<value>100 Gallon Fuel Tank</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<!-- Outboard Pylons -->
+	<animation>
+		<type>select</type>
+		<object-name>LSNEB</object-name>
+		<condition>   
+			<equals>
+				<property>sim/weight[0]/selected</property>
+				<value>Matra 155 SNEB 18x68mm Rocket Pack</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>RSNEB</object-name>
+		<condition>   
+			<equals>
+				<property>sim/weight[6]/selected</property>
+				<value>Matra 155 SNEB 18x68mm Rocket Pack</value>
+			</equals>
+		</condition>
+	</animation>
+
+</PropertyList>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Belarusian Air Force 72 (Camo)</name>
+                <texture>Liveries/Belarusia.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/Belarusia.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

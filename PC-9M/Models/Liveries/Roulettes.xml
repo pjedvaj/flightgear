@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!-- Johan G -->
+
+<PropertyList>
+
+<sim>
+<model>
+<livery>
+<name type="string">RAAF "Roulettes"</name>
+<texture>Liveries/Roulettes.png</texture>
+</livery>
+<livery-logo>
+<texture>Liveries/Roulettes.png</texture>
+</livery-logo>
+</model>
+</sim>
+
+</PropertyList>

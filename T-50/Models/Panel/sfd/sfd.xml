@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>sfd.ac</path>
+    
+	<animation>
+        <type>material</type>
+        <object-name>ladder</object-name>
+        <emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+        <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+    
+    <animation>
+        <type>texmultiple</type>
+        <object-name>ladder</object-name>
+        <transform>
+            <property>orientation/pitch-deg</property>
+            <subtype>textranslate</subtype>
+            <factor>0.003777</factor>
+            <axis>
+                <x>0</x>
+                <y>1</y>
+                <z>0</z>
+            </axis>
+        </transform>
+        <transform>
+            <property>orientation/roll-deg</property>
+            <subtype>texrotate</subtype>
+            <center>
+                <x>0.125</x>
+                <y>0.5</y>
+            </center>
+            <axis>
+                <x> 0</x>
+                <y> 0</y>
+                <z>-1</z>
+            </axis>
+        </transform>
+    </animation>
+
+</PropertyList>

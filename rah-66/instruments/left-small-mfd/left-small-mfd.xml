@@ -1,0 +1,686 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>left-small-mfd.ac</path>
+	
+	<animation>
+        <type>material</type>
+        <object-name>back</object-name>
+        <object-name>fuel.001</object-name>
+        <object-name>fuel.002</object-name>
+        <object-name>fuel.003</object-name>
+        <object-name>ltg</object-name>
+        <object-name>ltg.001</object-name>
+        <object-name>ltg.002</object-name>
+        <object-name>ltg.003</object-name>
+        <object-name>rtg</object-name>
+        <object-name>rtg.001</object-name>
+        <object-name>rtg.002</object-name>
+        <object-name>rtg.003</object-name>
+        <object-name>ltq</object-name>
+        <object-name>ltq.001</object-name>
+        <object-name>ltq.002</object-name>
+        <object-name>ltq.003</object-name>
+        <object-name>rtq</object-name>
+        <object-name>rtq.001</object-name>
+        <object-name>rtq.002</object-name>
+        <object-name>rtq.003</object-name>
+        <object-name>lnp</object-name>
+        <object-name>lnp.001</object-name>
+        <object-name>lnp.002</object-name>
+        <object-name>lnp.003</object-name>
+        <object-name>rnp</object-name>
+        <object-name>rnp.001</object-name>
+        <object-name>rnp.002</object-name>
+        <object-name>rnp.003</object-name>
+        <object-name>nr</object-name>
+        <object-name>nr.001</object-name>
+        <object-name>nr.002</object-name>
+        <object-name>nr.003</object-name>
+        <emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+        <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+    
+<!-- Fuel Level LBS-->
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.001</object-name>
+		<property>consumables/fuel/tank/level-gal_us</property>
+		<factor>0.10</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.002</object-name>
+		<property>consumables/fuel/tank/level-gal_us</property>
+		<factor>0.010</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>fuel.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>consumables/fuel/tank/level-gal_us</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.003</object-name>
+		<property>consumables/fuel/tank/level-gal_us</property>
+		<factor>0.0010</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>fuel.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>consumables/fuel/tank/level-gal_us</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+<!-- NR = RPM % Main Rotor Engine -->
+
+	<animation>
+		<type>translate</type>
+		<object-name>nr</object-name>
+		<property>rotors/main/rpm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.0573</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>nr.001</object-name>
+		<property>rotors/main/rpm</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>nr.002</object-name>
+		<property>rotors/main/rpm</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>nr.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>rotors/main/rpm</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>nr.003</object-name>
+		<property>rotors/main/rpm</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>nr.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>rotors/main/rpm</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+<!-- NP (N2) = RPM % Power Turbine Left Engine -->
+
+	<animation>
+		<type>translate</type>
+		<object-name>lnp</object-name>
+		<property>sim/model/rah-66/turbine-rpm-pct</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.0573</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>lnp.001</object-name>
+		<property>sim/model/rah-66/turbine-rpm-pct</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>lnp.002</object-name>
+		<property>sim/model/rah-66/turbine-rpm-pct</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>lnp.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>sim/model/rah-66/turbine-rpm-pct</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>lnp.003</object-name>
+		<property>sim/model/rah-66/turbine-rpm-pct</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>lnp.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>sim/model/rah-66/turbine-rpm-pct</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+<!-- NP (N2) = RPM % Power Turbine Right Engine -->
+
+	<animation>
+		<type>translate</type>
+		<object-name>rnp</object-name>
+		<property>sim/model/rah-66/turbine-rpm-pct</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.0573</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>rnp.001</object-name>
+		<property>sim/model/rah-66/turbine-rpm-pct</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>rnp.002</object-name>
+		<property>sim/model/rah-66/turbine-rpm-pct</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>rnp.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>sim/model/rah-66/turbine-rpm-pct</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>rnp.003</object-name>
+		<property>sim/model/rah-66/turbine-rpm-pct</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>rnp.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>sim/model/rah-66/turbine-rpm-pct</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+<!-- TG = Turbine Gas Temperature Left Engine -->
+
+	<animation>
+		<type>translate</type>
+		<object-name>ltg</object-name>
+		<property>engines/engine[0]/egt-degf</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.049</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>ltg.001</object-name>
+		<property>engines/engine[0]/egt-degf</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>ltg.002</object-name>
+		<property>engines/engine[0]/egt-degf</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>ltg.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/egt-degf</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>ltg.003</object-name>
+		<property>engines/engine[0]/egt-degf</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>ltg.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/egt-degf</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+<!-- TG = Turbine Gas Temperature Right Engine -->
+	
+	<animation>
+		<type>translate</type>
+		<object-name>rtg</object-name>
+		<property>engines/engine[1]/egt-degf</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.049</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>rtg.001</object-name>
+		<property>engines/engine[1]/egt-degf</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>rtg.002</object-name>
+		<property>engines/engine[1]/egt-degf</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>rtg.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/egt-degf</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>rtg.003</object-name>
+		<property>engines/engine[1]/egt-degf</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>rtg.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/egt-degf</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+    
+<!-- TQ = Turbine Torque (RPM) Left Engine-->
+
+	<animation>
+		<type>translate</type>
+		<object-name>ltq</object-name>
+		<property>sim/model/rah-66/torque-pct</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.0573</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>ltq.001</object-name>
+		<property>sim/model/rah-66/torque-pct</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>ltq.002</object-name>
+		<property>sim/model/rah-66/torque-pct</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>ltq.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>sim/model/rah-66/torque-pct</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>ltq.003</object-name>
+		<property>sim/model/rah-66/torque-pct</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>ltq.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>sim/model/rah-66/torque-pct</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+		
+<!-- Turbine Torque (RPM) Right Engine-->
+    
+	<animation>
+		<type>translate</type>
+		<object-name>rtq</object-name>
+		<property>sim/model/rah-66/torque-pct</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.0573</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>rtq.001</object-name>
+		<property>sim/model/rah-66/torque-pct</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>rtq.002</object-name>
+		<property>sim/model/rah-66/torque-pct</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>rtq.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>sim/model/rah-66/torque-pct</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>rtq.003</object-name>
+		<property>sim/model/rah-66/torque-pct</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>rtq.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>sim/model/rah-66/torque-pct</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+</PropertyList>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>collective.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>collective</object-name>
+		<property>/controls/engines/engine/throttle</property>
+		<factor>-22.5</factor>
+		<offset>45</offset>
+		<center>
+			<x-m> 0.0595</x-m>
+			<y-m> 0.0000</y-m>
+			<z-m>-0.0260</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

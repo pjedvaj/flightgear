@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<!-- by Petar jedvaj -->
+
+<PropertyList>
+
+<path>Flaps.ac</path>
+
+<animation>
+<type>material</type>
+<object-name>face</object-name>
+<object-name>needle</object-name>
+<emission>
+<red>0.045</red>
+<green>0.025</green>
+<blue>0.015</blue>
+<factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+</emission> 
+</animation>  
+
+<animation>
+<type>rotate</type>
+<object-name>needle</object-name>
+<property>surface-positions/flap-pos-norm</property>
+<factor>130</factor>
+<center>
+<x-m>-0.02</x-m>
+<y-m>-0.01</y-m>
+<z-m> 0.01</z-m>
+</center>
+<axis>
+<x>-1</x>
+<y>0</y>
+<z>0</z>
+</axis>
+</animation> 
+
+<animation>
+<type>range</type>
+<min-m>0</min-m>
+<max-m>5</max-m>
+</animation>
+
+</PropertyList>

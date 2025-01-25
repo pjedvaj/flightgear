@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<sim>
+<model>
+<livery>
+<name type="string">UK MTFS Evaluation System</name>
+<texture>Liveries/MTFSEval.png</texture>
+</livery>
+<livery-logo>
+<texture>Liveries/MTFSEval.png</texture>
+</livery-logo>
+</model>
+</sim>
+
+</PropertyList>

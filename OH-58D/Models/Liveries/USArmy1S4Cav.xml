@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name type="string">US Army 1 Sqdn 4 Cav</name>
+				<texture>Liveries/USArmy1S4Cav.png</texture>
+			</livery>
+			<livery-logo>
+				<texture>Liveries/USArmy1S4Cav.png</texture>
+			</livery-logo>
+		</model>
+	</sim>
+
+</PropertyList>

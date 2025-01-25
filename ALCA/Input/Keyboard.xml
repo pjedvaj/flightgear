@@ -1,0 +1,90 @@
+<PropertyList>
+
+  <key n="99">
+    <name>c</name>
+    <desc>Toggle canopy</desc>
+    <binding>
+      <command>nasal</command>
+      <script>canopy.canopy.toggle();</script>
+    </binding>
+  </key>
+
+  <key n="101">
+    <name>e</name>
+    <desc>Guns</desc>
+    <binding>
+      <command>nasal</command>
+      <script>controls.trigger(1);</script>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>nasal</command>
+        <script>
+        	controls.trigger(0);
+        </script>
+      </binding>
+    </mod-up>
+  </key>
+
+  <key n="69">
+    <name>E</name>
+    <desc>PlamenMode</desc>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/armament/mode-fast</property>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>
+        if(getprop("/controls/armament/mode-fast"))
+        	screen.log.write("Plamen set to fast mode (2600 rounds/min)");
+        else
+        	screen.log.write("Plamen set to slow mode (780 rounds/min)");
+      </script>
+    </binding>
+  </key>
+
+  <key n="108">
+    <name>l</name>
+    <desc>Flares release</desc>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/armament/flares-release</property>
+      <value type="bool">true</value>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/armament/flares-release</property>
+        <value type="bool">false</value>
+      </binding>
+    </mod-up>
+  </key>
+
+  <key n="76">
+    <name>L</name>
+    <desc>Chaff release</desc>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/armament/chaff-release</property>
+      <value type="bool">true</value>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/armament/chaff-release</property>
+        <value type="bool">false</value>
+      </binding>
+    </mod-up>
+  </key>
+
+  <key n="70">
+    <name>F</name>
+    <desc>Smokewinder smoke</desc>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/smokewinders</property>
+    </binding>
+  </key>
+
+</PropertyList>

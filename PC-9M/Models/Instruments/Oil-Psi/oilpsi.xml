@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!-- oil psi
+Syd Adams
+-->
+<PropertyList>
+
+    <path>oilpsi.ac</path>
+    
+    <animation>
+        <type>material</type>
+        <object-name>OPface</object-name>
+        <object-name>OPneedle</object-name>
+        <object-name>OP.ind</object-name>
+        <emission>
+            <red>0.045</red>
+            <green>0.025</green>
+            <blue>0.015</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>OPneedle</object-name>
+        <property>engines/engine[0]/oil-pressure-psi</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>40.0</ind><dep>100.0</dep></entry>
+            <entry><ind>80.0</ind><dep>200.0</dep></entry>
+            <entry><ind>125</ind><dep>320</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<animation>
+<type>range</type>
+<min-m>0</min-m>
+<max-m>5</max-m>
+</animation>
+
+</PropertyList>

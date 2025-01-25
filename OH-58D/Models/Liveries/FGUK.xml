@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name type="string">FGUK</name>
+				<texture>Liveries/FGUK.png</texture>
+			</livery>
+			<livery-logo>
+				<texture>Liveries/FGUK.png</texture>
+			</livery-logo>
+		</model>
+	</sim>
+
+</PropertyList>

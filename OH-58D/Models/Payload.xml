@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<!-- AGM-114 Hellfire -->
+
+	<model>
+		<name>L AGM-114 Hellfire</name>
+		<path>Aircraft/OH-58D/Models/Payload/AGM-114/Hellfire.ac</path>
+		<offsets>
+			<x-m> 0.00</x-m>
+			<y-m>-1.39</y-m>
+			<z-m> 0.00</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>R AGM-114 Hellfire</name>
+		<path>Aircraft/OH-58D/Models/Payload/AGM-114/Hellfire.ac</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>1.39</y-m>
+			<z-m>0.00</z-m>
+		</offsets>
+	</model>
+	
+<!-- AIM-92 Stinger -->
+
+	<model>
+		<name>L AIM-92 Stinger</name>
+		<path>Aircraft/OH-58D/Models/Payload/AIM-92/Stinger.ac</path>
+		<offsets>
+			<x-m> 0.00</x-m>
+			<y-m>-1.39</y-m>
+			<z-m> 0.00</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>R AIM-92 Stinger</name>
+		<path>Aircraft/OH-58D/Models/Payload/AIM-92/Stinger.ac</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>1.39</y-m>
+			<z-m>0.00</z-m>
+		</offsets>
+	</model>
+
+<!-- M260 Hydra 70 -->
+
+	<model>
+		<name>L M260 Hydra 70</name>
+		<path>Aircraft/OH-58D/Models/Payload/M260/Hydra.ac</path>
+		<offsets>
+			<x-m> 0.00</x-m>
+			<y-m>-1.39</y-m>
+			<z-m> 0.00</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>R M260 Hydra 70</name>
+		<path>Aircraft/OH-58D/Models/Payload/M260/Hydra.ac</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>1.39</y-m>
+			<z-m>0.00</z-m>
+		</offsets>
+	</model>
+
+<!-- M296 Machine Gun -->
+
+	<model>
+		<name>M296 Machine Gun</name>
+		<path>Aircraft/OH-58D/Models/Payload/M296/Gun.ac</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>0.00</y-m>
+			<z-m>0.00</z-m>
+		</offsets>
+	</model>
+
+	<!-- Animations -->
+	
+	<animation>
+		<type>select</type>
+		<object-name>L AGM-114 Hellfire</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[0]/selected</property>
+					<value>AGM-114 Hellfire</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[0]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>R AGM-114 Hellfire</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[1]/selected</property>
+					<value>AGM-114 Hellfire</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[1]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>L AIM-92 Stinger</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[0]/selected</property>
+					<value>AIM-92 Stinger</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[0]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>R AIM-92 Stinger</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[1]/selected</property>
+					<value>AIM-92 Stinger</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[1]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>L M260 Hydra 70</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[0]/selected</property>
+					<value>M260 Hydra 70</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[0]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>R M260 Hydra 70</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[1]/selected</property>
+					<value>M260 Hydra 70</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[1]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>M296 Machine Gun</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>sim/weight[0]/selected</property>
+					<value>M296 Machine Gun</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station[0]/release</property>
+					<value>false</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+</PropertyList>

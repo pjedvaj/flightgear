@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>FE541.ac</path>
+
+    <model>
+        <path>Aircraft/Harrier-GR3/Panel/FE541/terrain-map-pixel.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+</PropertyList>

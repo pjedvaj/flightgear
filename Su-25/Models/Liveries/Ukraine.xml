@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Ukrainian Navy; 299th ShAP, A-VMF</name>
+                <texture>Liveries/Ukraine.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/Ukraine.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

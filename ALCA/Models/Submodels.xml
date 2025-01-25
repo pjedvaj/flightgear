@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <!-- Plamen cannon bullets -->
+  <PlamenCannon>
+    <model>Aircraft/ALCA/Models/Effects/Guns/blank.xml</model>
+    <speed>3415</speed>
+    <cd>0.25</cd>
+    <weight>0.5776</weight>
+    <eda>0.006763</eda>
+    <fuse-range>0</fuse-range>
+    <life>90</life>
+    <trigger>controls/armament/trigger</trigger>
+    <expiry>true</expiry>
+    <repeat>true</repeat>
+    <count>6000</count>    <!-- expected durability: 6000 rounds -->
+    <wind>false</wind>
+    <collision>true</collision>    <!-- Collision with models -->
+    <collision-report>sim/ai/aircraft/collision/gun</collision-report>
+    <impact>true</impact>    <!-- Ground impact  -->
+    <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
+    <submodel-path>Aircraft/ALCA/Models/Effects/Guns/bullet-submodel.xml</submodel-path>
+    <impact-reports>sim/ai/aircraft/impact/bullet</impact-reports>
+    <pitch-offset>-2</pitch-offset>
+  </PlamenCannon>
+
+  <PlamenCannonTracer>
+    <model>Aircraft/ALCA/Models/Effects/Guns/Tracer.xml</model>
+    <speed>3415</speed>
+    <cd>0.25</cd>
+    <weight>0.5776</weight>
+    <eda>0.006763</eda>
+    <fuse-range>0</fuse-range>
+    <life>90</life>
+    <trigger>controls/armament/trigger</trigger>
+    <expiry>true</expiry>
+    <repeat>true</repeat>
+    <count>2000</count>    <!-- expected durability: 6000 rounds / 3 -->
+    <wind>false</wind>
+    <collision>true</collision>
+    <impact>true</impact>
+    <pitch-offset>-2</pitch-offset>
+  </PlamenCannonTracer>
+
+  <submodel>
+    <name>Middle Plamen bullets - fast - cannon</name>
+    <model alias="../../PlamenCannon/model"/>
+    <trigger>/controls/armament/trigger-fastPlamenC</trigger>
+    <speed alias="../../PlamenCannon/speed"/>
+    <cd alias="../../PlamenCannon/cd"/>
+    <eda alias="../../PlamenCannon/eda"/>
+    <fuse-range alias="../../PlamenCannon/fuse-range"/>
+    <weight alias="../../PlamenCannon/weight"/>
+    <life alias="../../PlamenCannon/life"/>
+    <repeat alias="../../PlamenCannon/repeat"/>
+    <delay>0.023</delay>
+    <count alias="../../PlamenCannon/count"/>
+    <wind alias="../../PlamenCannon/wind"/>
+    <expiry alias="../../PlamenCannon/expiry"/>
+    <collision alias="../../PlamenCannon/collision"/>
+    <impact alias="../../PlamenCannon/impact"/>
+    <impact-reports alias="../../PlamenCannon/impact-reports"/>
+    <submodel-path alias="../../PlamenCannon/submodel-path"/>
+    <x-offset> 13.0396 </x-offset>    <!-- -3.97448m to ft -->
+    <y-offset>  0.02854 </y-offset>    <!-- 0.00870m to ft -->
+    <z-offset> -5.3657 </z-offset>    <!-- -1.63548m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannon/pitch-offset"/>
+  </submodel>
+
+  <submodel>
+    <name>Middle Plamen tracer - fast</name>
+    <model alias="../../PlamenCannonTracer/model"/>
+    <trigger>/controls/armament/trigger-fastPlamenC</trigger>
+    <speed alias="../../PlamenCannonTracer/speed"/>
+    <cd alias="../../PlamenCannonTracer/cd"/>
+    <eda alias="../../PlamenCannonTracer/eda"/>
+    <fuse-range alias="../../PlamenCannonTracer/fuse-range"/>
+    <weight alias="../../PlamenCannonTracer/weight"/>
+    <life alias="../../PlamenCannonTracer/life"/>
+    <repeat alias="../../PlamenCannonTracer/repeat"/>
+    <delay>0.069</delay>    <!-- 0.115 -->
+    <count alias="../../PlamenCannonTracer/count"/>
+    <wind alias="../../PlamenCannonTracer/wind"/>
+    <expiry alias="../../PlamenCannonTracer/expiry"/>
+    <collision alias="../../PlamenCannonTracer/collision"/>
+    <impact alias="../../PlamenCannonTracer/impact"/>
+    <submodel-path alias="../../PlamenCannonTracer/submodel-path"/>
+    <x-offset> 13.0396 </x-offset>    <!-- -3.97448m to ft -->
+    <y-offset>  0.02854 </y-offset>    <!-- 0.00870m to ft -->
+    <z-offset> -5.3657 </z-offset>    <!-- -1.63548m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannonTracer/pitch-offset"/>
+  </submodel>
+
+  <submodel>
+    <name>Middle Plamen bullets - slow - cannon</name>
+    <model alias="../../PlamenCannon/model"/>
+    <trigger>/controls/armament/trigger-slowPlamenC</trigger>
+    <speed alias="../../PlamenCannon/speed"/>
+    <cd alias="../../PlamenCannon/cd"/>
+    <eda alias="../../PlamenCannon/eda"/>
+    <fuse-range alias="../../PlamenCannon/fuse-range"/>
+    <weight alias="../../PlamenCannon/weight"/>
+    <life alias="../../PlamenCannon/life"/>
+    <repeat alias="../../PlamenCannon/repeat"/>
+    <delay>0.077</delay>
+    <count alias="../../PlamenCannon/count"/>
+    <wind alias="../../PlamenCannon/wind"/>
+    <expiry alias="../../PlamenCannon/expiry"/>
+    <collision alias="../../PlamenCannon/collision"/>
+    <impact alias="../../PlamenCannon/impact"/>
+    <impact-reports alias="../../PlamenCannon/impact-reports"/>
+    <submodel-path alias="../../PlamenCannon/submodel-path"/>
+    <x-offset> 13.0396 </x-offset>    <!-- -3.97448m to ft -->
+    <y-offset>  0.02854 </y-offset>    <!-- 0.00870m to ft -->
+    <z-offset> -5.3657 </z-offset>    <!-- -1.63548m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannon/pitch-offset"/>
+  </submodel>
+
+  <submodel>
+    <name>Middle Plamen tracer - slow</name>
+    <model alias="../../PlamenCannonTracer/model"/>
+    <trigger>/controls/armament/trigger-slowPlamenC</trigger>
+    <speed alias="../../PlamenCannonTracer/speed"/>
+    <cd alias="../../PlamenCannonTracer/cd"/>
+    <eda alias="../../PlamenCannonTracer/eda"/>
+    <fuse-range alias="../../PlamenCannonTracer/fuse-range"/>
+    <weight alias="../../PlamenCannonTracer/weight"/>
+    <life alias="../../PlamenCannonTracer/life"/>
+    <repeat alias="../../PlamenCannonTracer/repeat"/>
+    <delay>0.231</delay>    <!-- 0.385 -->
+    <count alias="../../PlamenCannonTracer/count"/>
+    <wind alias="../../PlamenCannonTracer/wind"/>
+    <expiry alias="../../PlamenCannonTracer/expiry"/>
+    <collision alias="../../PlamenCannonTracer/collision"/>
+    <impact alias="../../PlamenCannonTracer/impact"/>
+    <submodel-path alias="../../PlamenCannonTracer/submodel-path"/>
+    <x-offset> 13.0396 </x-offset>    <!-- -3.97448m to ft -->
+    <y-offset>  0.02854 </y-offset>    <!-- 0.00870m to ft -->
+    <z-offset> -5.3657 </z-offset>    <!-- -1.63548m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannonTracer/pitch-offset"/>
+  </submodel>
+
+  <submodel>
+    <name>Right Plamen bullets - fast - cannon</name>
+    <model alias="../../PlamenCannon/model"/>
+    <trigger>/controls/armament/trigger-fastPlamenR</trigger>
+    <speed alias="../../PlamenCannon/speed"/>
+    <cd alias="../../PlamenCannon/cd"/>
+    <eda alias="../../PlamenCannon/eda"/>
+    <fuse-range alias="../../PlamenCannon/fuse-range"/>
+    <weight alias="../../PlamenCannon/weight"/>
+    <life alias="../../PlamenCannon/life"/>
+    <repeat alias="../../PlamenCannon/repeat"/>
+    <delay>0.02571</delay>    <!-- altered - off sync on purpose -->
+    <count alias="../../PlamenCannon/count"/>
+    <wind alias="../../PlamenCannon/wind"/>
+    <expiry alias="../../PlamenCannon/expiry"/>
+    <collision alias="../../PlamenCannon/collision"/>
+    <impact alias="../../PlamenCannon/impact"/>
+    <submodel-path alias="../../PlamenCannon/submodel-path"/>
+    <x-offset> 6.87001 </x-offset>    <!-- -2.09398m to ft -->
+    <y-offset> 6.50262 </y-offset>    <!-- 1.98200m to ft -->
+    <z-offset>-4.62297 </z-offset>    <!-- -1.40908m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannon/pitch-offset"/>
+  </submodel>
+
+  <submodel>
+    <name>Right Plamen tracer - fast</name>
+    <model alias="../../PlamenCannonTracer/model"/>
+    <trigger>/controls/armament/trigger-fastPlamenR</trigger>
+    <speed alias="../../PlamenCannonTracer/speed"/>
+    <cd alias="../../PlamenCannonTracer/cd"/>
+    <eda alias="../../PlamenCannonTracer/eda"/>
+    <fuse-range alias="../../PlamenCannonTracer/fuse-range"/>
+    <weight alias="../../PlamenCannonTracer/weight"/>
+    <life alias="../../PlamenCannonTracer/life"/>
+    <repeat alias="../../PlamenCannonTracer/repeat"/>
+    <delay>0.07913</delay>    <!-- altered - off sync on purpose -->
+    <count alias="../../PlamenCannonTracer/count"/>
+    <wind alias="../../PlamenCannonTracer/wind"/>
+    <expiry alias="../../PlamenCannonTracer/expiry"/>
+    <collision alias="../../PlamenCannonTracer/collision"/>
+    <impact alias="../../PlamenCannonTracer/impact"/>
+    <submodel-path alias="../../PlamenCannonTracer/submodel-path"/>
+    <x-offset> 6.87001 </x-offset>    <!-- -2.09398m to ft -->
+    <y-offset> 6.50262 </y-offset>    <!-- 1.98200m to ft -->
+    <z-offset>-4.62297 </z-offset>    <!-- -1.40908m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannonTracer/pitch-offset"/>
+  </submodel>
+
+
+  <submodel>
+    <name>Right Plamen bullets - slow - cannon</name>
+    <model alias="../../PlamenCannon/model"/>
+    <trigger>/controls/armament/trigger-slowPlamenR</trigger>
+    <speed alias="../../PlamenCannon/speed"/>
+    <cd alias="../../PlamenCannon/cd"/>
+    <eda alias="../../PlamenCannon/eda"/>
+    <fuse-range alias="../../PlamenCannon/fuse-range"/>
+    <weight alias="../../PlamenCannon/weight"/>
+    <life alias="../../PlamenCannon/life"/>
+    <repeat alias="../../PlamenCannon/repeat"/>
+    <delay>0.0783</delay>    <!-- altered - off sync on purpose -->
+    <count alias="../../PlamenCannon/count"/>
+    <wind alias="../../PlamenCannon/wind"/>
+    <expiry alias="../../PlamenCannon/expiry"/>
+    <collision alias="../../PlamenCannon/collision"/>
+    <impact alias="../../PlamenCannon/impact"/>
+    <submodel-path alias="../../PlamenCannon/submodel-path"/>
+    <x-offset> 6.87001 </x-offset>    <!-- -2.09398m to ft -->
+    <y-offset> 6.50262 </y-offset>    <!-- 1.98200m to ft -->
+    <z-offset>-4.62297 </z-offset>    <!-- -1.40908m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannon/pitch-offset"/>
+  </submodel>
+
+  <submodel>
+    <name>Right Plamen tracer - slow</name>
+    <model alias="../../PlamenCannonTracer/model"/>
+    <trigger>/controls/armament/trigger-slowPlamenR</trigger>
+    <speed alias="../../PlamenCannonTracer/speed"/>
+    <cd alias="../../PlamenCannonTracer/cd"/>
+    <eda alias="../../PlamenCannonTracer/eda"/>
+    <fuse-range alias="../../PlamenCannonTracer/fuse-range"/>
+    <weight alias="../../PlamenCannonTracer/weight"/>
+    <life alias="../../PlamenCannonTracer/life"/>
+    <repeat alias="../../PlamenCannonTracer/repeat"/>
+    <delay>0.2349</delay>    <!-- altered - off sync on purpose -->
+    <count alias="../../PlamenCannonTracer/count"/>
+    <wind alias="../../PlamenCannonTracer/wind"/>
+    <expiry alias="../../PlamenCannonTracer/expiry"/>
+    <collision alias="../../PlamenCannonTracer/collision"/>
+    <impact alias="../../PlamenCannonTracer/impact"/>
+    <submodel-path alias="../../PlamenCannonTracer/submodel-path"/>
+    <x-offset> 6.87001 </x-offset>    <!-- -2.09398m to ft -->
+    <y-offset> 6.50262 </y-offset>    <!-- 1.98200m to ft -->
+    <z-offset>-4.62297 </z-offset>    <!-- -1.40908m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannonTracer/pitch-offset"/>
+  </submodel>
+
+  <submodel>
+    <name>Left Plamen bullets - fast - cannon</name>
+    <model alias="../../PlamenCannon/model"/>
+    <trigger>/controls/armament/trigger-fastPlamenL</trigger>
+    <speed alias="../../PlamenCannon/speed"/>
+    <cd alias="../../PlamenCannon/cd"/>
+    <eda alias="../../PlamenCannon/eda"/>
+    <fuse-range alias="../../PlamenCannon/fuse-range"/>
+    <weight alias="../../PlamenCannon/weight"/>
+    <life alias="../../PlamenCannon/life"/>
+    <repeat alias="../../PlamenCannon/repeat"/>
+    <delay>0.02011</delay>    <!-- altered - off sync on purpose -->
+    <count alias="../../PlamenCannon/count"/>
+    <wind alias="../../PlamenCannon/wind"/>
+    <expiry alias="../../PlamenCannon/expiry"/>
+    <collision alias="../../PlamenCannon/collision"/>
+    <impact alias="../../PlamenCannon/impact"/>
+    <submodel-path alias="../../PlamenCannon/submodel-path"/>
+    <x-offset> 6.87001 </x-offset>    <!-- -2.09398m to ft -->
+    <y-offset> -6.44685 </y-offset>    <!-- -1.9650m to ft -->
+    <z-offset>-4.62297 </z-offset>    <!-- -1.40908m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannon/pitch-offset"/>
+  </submodel>
+
+  <submodel>
+    <name>Left Plamen tracer - fast</name>
+    <model alias="../../PlamenCannonTracer/model"/>
+    <trigger>/controls/armament/trigger-fastPlamenL</trigger>
+    <speed alias="../../PlamenCannonTracer/speed"/>
+    <cd alias="../../PlamenCannonTracer/cd"/>
+    <eda alias="../../PlamenCannonTracer/eda"/>
+    <fuse-range alias="../../PlamenCannonTracer/fuse-range"/>
+    <weight alias="../../PlamenCannonTracer/weight"/>
+    <life alias="../../PlamenCannonTracer/life"/>
+    <repeat alias="../../PlamenCannonTracer/repeat"/>
+    <delay>0.06033</delay>    <!-- altered - off sync on purpose -->
+    <count alias="../../PlamenCannonTracer/count"/>
+    <wind alias="../../PlamenCannonTracer/wind"/>
+    <expiry alias="../../PlamenCannonTracer/expiry"/>
+    <collision alias="../../PlamenCannonTracer/collision"/>
+    <impact alias="../../PlamenCannonTracer/impact"/>
+    <submodel-path alias="../../PlamenCannonTracer/submodel-path"/>
+    <x-offset> 6.87001 </x-offset>    <!-- -2.09398m to ft -->
+    <y-offset> -6.44685 </y-offset>    <!-- -1.9650m to ft -->
+    <z-offset>-4.62297 </z-offset>    <!-- -1.40908m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannonTracer/pitch-offset"/>
+  </submodel>
+
+  <submodel>
+    <name>Left Plamen bullets - slow - cannon</name>
+    <model alias="../../PlamenCannon/model"/>
+    <trigger>/controls/armament/trigger-slowPlamenL</trigger>
+    <speed alias="../../PlamenCannon/speed"/>
+    <cd alias="../../PlamenCannon/cd"/>
+    <eda alias="../../PlamenCannon/eda"/>
+    <fuse-range alias="../../PlamenCannon/fuse-range"/>
+    <weight alias="../../PlamenCannon/weight"/>
+    <life alias="../../PlamenCannon/life"/>
+    <repeat alias="../../PlamenCannon/repeat"/>
+    <delay>0.0723</delay>    <!-- altered - off sync on purpose -->
+    <count alias="../../PlamenCannon/count"/>
+    <wind alias="../../PlamenCannon/wind"/>
+    <expiry alias="../../PlamenCannon/expiry"/>
+    <collision alias="../../PlamenCannon/collision"/>
+    <impact alias="../../PlamenCannon/impact"/>
+    <submodel-path alias="../../PlamenCannon/submodel-path"/>
+    <x-offset> 6.87001 </x-offset>    <!-- -2.09398m to ft -->
+    <y-offset> -6.44685 </y-offset>    <!-- -1.9650m to ft -->
+    <z-offset>-4.62297 </z-offset>    <!-- -1.40908m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannon/pitch-offset"/>
+  </submodel>
+
+  <submodel>
+    <name>Left Plamen tracer - slow</name>
+    <model alias="../../PlamenCannonTracer/model"/>
+    <trigger>/controls/armament/trigger-slowPlamenL</trigger>
+    <speed alias="../../PlamenCannonTracer/speed"/>
+    <cd alias="../../PlamenCannonTracer/cd"/>
+    <eda alias="../../PlamenCannonTracer/eda"/>
+    <fuse-range alias="../../PlamenCannonTracer/fuse-range"/>
+    <weight alias="../../PlamenCannonTracer/weight"/>
+    <life alias="../../PlamenCannonTracer/life"/>
+    <repeat alias="../../PlamenCannonTracer/repeat"/>
+    <delay>0.2169</delay>    <!-- altered - off sync on purpose -->
+    <count alias="../../PlamenCannonTracer/count"/>
+    <wind alias="../../PlamenCannonTracer/wind"/>
+    <expiry alias="../../PlamenCannonTracer/expiry"/>
+    <collision alias="../../PlamenCannonTracer/collision"/>
+    <impact alias="../../PlamenCannonTracer/impact"/>
+    <submodel-path alias="../../PlamenCannonTracer/submodel-path"/>
+    <x-offset> 6.87001 </x-offset>    <!-- -2.09398m to ft -->
+    <y-offset> -6.44685 </y-offset>    <!-- -1.9650m to ft -->
+    <z-offset>-4.62297 </z-offset>    <!-- -1.40908m to ft -->
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset alias="../../PlamenCannonTracer/pitch-offset"/>
+  </submodel>
+
+  <!-- Countermeasures -->
+  <submodel>
+    <name>flaresR</name>
+    <model>Aircraft/ALCA/Models/Effects/Countermeasures/flare.xml</model>
+    <trigger>/controls/armament/flares-release</trigger>
+    <speed>75</speed>
+    <repeat>true</repeat>
+    <delay>0.36</delay>
+    <count>-1</count>
+    <x-offset>1.6667</x-offset>
+    <y-offset>0.3176</y-offset>
+    <z-offset>0.4016</z-offset>
+    <yaw-offset>120.0</yaw-offset>
+    <pitch-offset>50</pitch-offset>
+    <life>5</life>
+    <buoyancy>8</buoyancy>
+    <eda>0.2</eda>
+    <collision>false</collision>
+  </submodel>
+
+  <submodel>
+    <name>flaresL</name>
+    <model>Aircraft/ALCA/Models/Effects/Countermeasures/flare.xml</model>
+    <trigger>/controls/armament/flares-release</trigger>
+    <speed>75</speed>
+    <repeat>true</repeat>
+    <delay>0.36</delay>
+    <count>-1</count>
+    <x-offset>1.6667</x-offset>
+    <y-offset>-0.3176</y-offset>
+    <z-offset>0.4016</z-offset>
+    <yaw-offset>-120</yaw-offset>
+    <pitch-offset>50</pitch-offset>
+    <life>5</life>
+    <buoyancy>8</buoyancy>
+    <eda>0.2</eda>
+    <collision>false</collision>
+  </submodel>
+
+  <submodel>
+    <name>chaff</name>
+    <model>Aircraft/ALCA/Models/Effects/Countermeasures/chaff.xml</model>
+    <trigger>/controls/armament/chaff-release</trigger>
+    <speed>0</speed>
+    <weight>0.05</weight>
+    <repeat>true</repeat>
+    <delay>0.4</delay>
+    <count>-1</count>
+    <x-offset>1.6667</x-offset>
+    <y-offset>0</y-offset>
+    <z-offset>0.4016</z-offset>
+    <yaw-offset>-180</yaw-offset>
+    <pitch-offset>50</pitch-offset>
+    <life>0.6</life>
+    <buoyancy>32</buoyancy>
+    <cd>0</cd>
+    <eda>0.0001</eda>
+    <collision>false</collision>
+  </submodel>
+
+</PropertyList>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>ADI.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>Attitude</object-name>
+        <object-name>Pointer</object-name>
+        <object-name>Airplane</object-name>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission> 
+    </animation> 
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Attitude</object-name>
+        <property>orientation/roll-deg</property>
+        <factor>1</factor>
+        <center>
+            <x-m>0.0000</x-m>
+            <y-m>0.0000</y-m>
+            <z-m>0.0021</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>  
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Attitude</object-name>
+        <property>orientation/pitch-deg</property>
+        <factor>1</factor>
+        <center>
+            <x-m>0.0000</x-m>
+            <y-m>0.0000</y-m>
+            <z-m>0.0021</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>  
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Pointer</object-name>
+        <property>orientation/roll-deg</property>
+        <factor>1</factor>
+        <center>
+            <x-m>0.0000</x-m>
+            <y-m>0.0000</y-m>
+            <z-m>0.0021</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

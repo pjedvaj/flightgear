@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Sky Hussars</name>
+                <texture>Liveries/SkyHussars.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/SkyHussars.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

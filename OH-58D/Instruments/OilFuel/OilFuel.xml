@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>OilFuel.ac</path>
+
+	<animation>
+        <type>material</type>
+		<object-name>OilTemp</object-name>
+		<object-name>OilPSI</object-name>
+		<object-name>HydraulicTemp</object-name>
+		<object-name>HydraulicPSI</object-name>
+		<object-name>Fuel</object-name>
+		<object-name>FuelQuantityT1</object-name>
+		<object-name>FuelQuantityT2</object-name>
+		<object-name>Fuel.001</object-name>
+		<object-name>Fuel.002</object-name>
+		<object-name>Fuel.003</object-name>
+		<object-name>FuelT1.001</object-name>
+		<object-name>FuelT1.002</object-name>
+		<object-name>FuelT1.003</object-name>
+		<object-name>FuelT2.001</object-name>
+		<object-name>FuelT2.002</object-name>
+		<object-name>FuelT2.003</object-name>
+        <emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+        </emission>
+    </animation>
+
+<!-- Oil Temperature -->
+
+	<animation>
+		<type>translate</type>
+		<object-name>OilTemp</object-name>
+		<property>engines/engine[0]/oilt-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.0405</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0.0</x>
+			<y>0.0</y>
+			<z>1.0</z>
+		</axis>
+	</animation>
+
+<!-- Oil Pressure -->
+
+	<animation>
+		<type>translate</type>
+		<object-name>OilPSI</object-name>
+		<property>engines/engine[0]/oilp-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.0405</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0.0</x>
+			<y>0.0</y>
+			<z>1.0</z>
+		</axis>
+	</animation>
+
+<!-- Fuel Quantity -->
+
+	<animation>
+		<type>translate</type>
+		<object-name>FuelQuantityT1</object-name>
+		<property>consumables/fuel/tank/level-gal_us</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>167</ind><dep>0.0405</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>FuelQuantityT2</object-name>
+		<property>consumables/fuel/tank[1]/level-gal_us</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>27</ind><dep>0.0405</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Fuel.001</object-name>
+		<property>consumables/fuel/total-fuel-gals</property>
+		<factor>0.10</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>Fuel.002</object-name>
+		<property>consumables/fuel/total-fuel-gals</property>
+		<factor>0.010</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Fuel.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>consumables/fuel/total-fuel-gals</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>Fuel.003</object-name>
+		<property>consumables/fuel/total-fuel-gals</property>
+		<factor>0.0010</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Fuel.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>consumables/fuel/total-fuel-gals</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Fuel.001</object-name>
+		<property>consumables/fuel/total-fuel-gals</property>
+		<factor>0.10</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>FuelT1.002</object-name>
+		<property>consumables/fuel/tank/level-gal_us</property>
+		<factor>0.010</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>FuelT1.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>consumables/fuel/tank/level-gal_us</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>FuelT1.003</object-name>
+		<property>consumables/fuel/tank/level-gal_us</property>
+		<factor>0.0010</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>FuelT1.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>consumables/fuel/tank/level-gal_us</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>FuelT2.002</object-name>
+		<property>consumables/fuel/tank[1]/level-gal_us</property>
+		<factor>0.010</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>FuelT2.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>consumables/fuel/tank[1]/level-gal_us</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>FuelT2.003</object-name>
+		<property>consumables/fuel/tank[1]/level-gal_us</property>
+		<factor>0.0010</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>FuelT2.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>consumables/fuel/tank[1]/level-gal_us</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+</PropertyList>

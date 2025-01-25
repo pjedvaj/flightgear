@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>Gear.ac</path>
+
+	<animation>
+		<type>material</type>
+		<object-name>face</object-name>
+		<object-name>cp</object-name>
+		<object-name>slats</object-name>
+		<object-name>flaps1</object-name>
+		<object-name>flaps2</object-name>
+		<object-name>speedbrake</object-name>
+		<object-name>gearnose</object-name>
+		<object-name>gearleft</object-name>
+		<object-name>gearright</object-name>
+		<object-name>siluet</object-name>
+		<emission>
+			<red>0.8</red>
+			<green>0.8</green>
+			<blue>0.8</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>cp</object-name>
+		<condition>
+            <equals>
+				<property>/canopy/position-norm</property>
+				<value>1</value>
+            </equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>gearnose</object-name>
+		<condition>
+            <equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+            </equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>gearleft</object-name>
+		<condition>
+            <equals>
+				<property>gear/gear[1]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>gearright</object-name>
+		<condition>
+            <equals>
+				<property>gear/gear[2]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>speedbrake</object-name>
+		<condition>
+	            <equals>
+	                <property>controls/flight/speedbrake</property>
+	                <value>1</value>
+				</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>slats</object-name>
+		<condition>
+            <greater-than>
+                <property>surface-positions/flap-pos-norm</property>
+                <value>0</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>flaps1</object-name>
+		<condition>
+            <greater-than>
+                <property>surface-positions/flap-pos-norm</property>
+                <value>0</value>
+            </greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>flaps2</object-name>
+		<condition>
+            <equals>
+                <property>surface-positions/flap-pos-norm</property>
+                <value>1</value>
+            </equals>
+		</condition>
+	</animation>
+
+</PropertyList>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>Radar.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>needle</object-name>
+        <object-name>face</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.8</green>
+            <blue>0.8</blue>
+        </emission> 
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>needle</object-name>
+        <property>/position/altitude-agl-ft</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>65.0</ind><dep>23.0</dep></entry>
+			<entry><ind>328.0</ind><dep>105.0</dep></entry>
+			<entry><ind>656.0</ind><dep>182.0</dep></entry>
+			<entry><ind>1312.0</ind><dep>240.0</dep></entry>
+			<entry><ind>1968.0</ind><dep>270.0</dep></entry>
+			<entry><ind>3280.0</ind><dep>297.0</dep></entry>
+			<entry><ind>4921.0</ind><dep>315.0</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>  
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+    </animation>
+
+</PropertyList>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>R-77Smoke.ac</path>
+    
+	<animation>
+		<type>dist-scale</type>
+		<object-name>r-77</object-name>
+		<interpolation>
+			<entry><ind>0</ind><dep>0.3</dep></entry>
+			<entry><ind>40</ind><dep>1</dep></entry>
+			<entry><ind>16000</ind><dep>4</dep></entry>
+		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>flame</object-name>
+		<emission>
+			<red>255</red>
+			<green>255</green>
+			<blue>254</blue>
+			</emission>
+	</animation>
+
+</PropertyList>

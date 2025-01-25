@@ -1,0 +1,624 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+
+		<!-- info -->
+		<description>Boeing-Sikorsky RAH-66 Comanche</description>
+		<long-description>Boeing-Sikorsky RAH-66 Comanche was a stealth armed reconnaissance helicopter produced in the United States</long-description>
+		<author>Petar Jedvaj, Edin Hozic, Stephen Madeira and Gary Brown</author>
+		<status>1.7.8</status>
+		<license>GPL v3</license>
+
+		<tags>
+			<tag>boeing</tag>
+			<tag>sikorsky</tag>	
+			<tag>helicopter</tag>
+			<tag>2-engine</tag>
+			<tag>1990s</tag>
+		</tags>
+
+		<rating>
+			<FDM type="int">4</FDM>
+			<systems type="int">2</systems>
+			<cockpit type="int">3</cockpit>
+			<model type="int">5</model>
+		</rating>
+
+		<flight-model>yasim</flight-model>
+		<aero>fdm</aero>
+		<fuel-fraction>0.8</fuel-fraction>
+
+		<startup>
+			<splash-texture>Aircraft/rah-66/splash.png</splash-texture>
+		</startup>
+		
+		<!--systems -->
+		<systems>
+			<electrical>
+				<path>Aircraft/rah-66/electrical.xml</path>
+			</electrical>
+			<autopilot>
+				<path>Aircraft/rah-66/systems/autopilot.xml</path>
+			</autopilot>
+		</systems> 
+
+		<!-- models -->
+		<model>
+			<path archive="y">Aircraft/rah-66/models/rah-66.xml</path>
+			<rah-66>
+				<state type="int">0</state>
+				<rotor-step-deg type="float">-1.0</rotor-step-deg>
+				<hide-gsdi>true</hide-gsdi>
+				<binocular_standart type="bool">true</binocular_standart>
+				<binocular_tri type="bool">false</binocular_tri>
+				<particles>
+					<enabled type="bool">true</enabled>
+				</particles>
+			</rah-66>
+			<livery>
+				<file type="string">default</file>
+			</livery>
+		</model>
+
+		<submodels>
+			<serviceable type="bool">true</serviceable>
+			<path>Aircraft/rah-66/models/submodels.xml</path>
+		</submodels>
+		
+		<!-- multiplayer -->
+		<multiplay>
+			<generic>
+				<float n="0" alias="/sim/model/door-positions/PilotDoor/position-norm" />
+				<float n="1" alias="/sim/model/door-positions/GunnerDoor/position-norm" />
+			</generic>
+		</multiplay>
+		
+		<!-- sounds -->
+		<sound>
+			<path>Aircraft/rah-66/sounds/sound.xml</path>
+		</sound>
+		
+		<!-- hud -->
+		<hud>
+			<path n="1">Aircraft/rah-66/hud/hud.xml</path>
+			<visibility n="1">true</visibility>
+   
+			<palette>
+				<color n="0">
+					<alpha type="float">0.85</alpha>
+					<antialiased type="bool">true</antialiased>
+					<brightness type="float">0.85</brightness>
+					<transparent type="bool">true</transparent>
+					<red type="float">0.38</red>
+					<green type="float">1.0</green>
+					<blue type="float">0.22</blue>
+				</color>
+				<color n="1">
+					<alpha type="float">0.85</alpha>
+					<antialiased type="bool">true</antialiased>
+					<brightness type="float">0.85</brightness>
+					<transparent type="bool">true</transparent>
+					<red type="float">1.0</red>
+					<green type="float">0.2</green>
+					<blue type="float">0.0</blue>
+				</color>
+			</palette>
+   
+		</hud>
+		
+		<!--views-->
+		<view n="0">
+			<name>Pilot</name>
+			<type>lookfrom</type>
+			<internal type="bool">true</internal>
+			<config>
+				<x-offset-m type="double"> 0.00</x-offset-m>
+				<y-offset-m type="double"> 2.50</y-offset-m>
+				<z-offset-m type="double">-3.75</z-offset-m>
+				<default-field-of-view-deg type="double">85.0</default-field-of-view-deg>
+				<pitch-offset-deg>-23</pitch-offset-deg>
+			</config>
+		</view>
+		
+		<view n="1">
+			<config>
+				<target-y-offset-m archive="y" type="double">2</target-y-offset-m>
+				<target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="2">
+			<config>
+				<target-y-offset-m archive="y" type="double">2</target-y-offset-m>
+				<target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
+			</config>
+		</view>
+
+		<view n="5">
+			<config>
+				<target-y-offset-m archive="y" type="double">2</target-y-offset-m>
+				<target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
+			</config>
+		</view>
+		
+		<view n="100">
+			<name>Gun</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+				<x-offset-m archive="y">  0.0 </x-offset-m>
+				<y-offset-m archive="y">  0.60  </y-offset-m>
+				<z-offset-m archive="y"> -4.8 </z-offset-m>
+				<heading-offset-deg>0</heading-offset-deg>
+				<default-field-of-view-deg>100</default-field-of-view-deg>
+			</config>
+		</view>
+
+		<view n="101">
+			<name>Gunner</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+				<x-offset-m type="double"> 0.00</x-offset-m>
+				<y-offset-m type="double"> 2.70</y-offset-m>
+				<z-offset-m type="double">-2.25</z-offset-m>
+				<pitch-offset-deg>-23</pitch-offset-deg>
+				<default-field-of-view-deg type="double">75.0</default-field-of-view-deg>
+			</config>
+		</view>
+		
+		<view n="102">
+			<name>Pilot cam</name>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m type="double"> 0.00</x-offset-m>
+				<y-offset-m type="double"> 2.50</y-offset-m>
+				<z-offset-m type="double">-4</z-offset-m>
+				<pitch-offset-deg>0</pitch-offset-deg>
+				<heading-offset-deg>180</heading-offset-deg>
+				<default-field-of-view-deg>95</default-field-of-view-deg>
+			</config>
+		</view>
+	
+		<!-- hud -->
+		<hud>
+			<enable3d>false</enable3d>
+		</hud>  
+		
+		<!-- help -->
+		<help>
+			<title>Boeing-Sikorsky RAH-66 Comanche</title>
+			<key>
+				<name>{ }</name>
+				<desc>Shutdown/Start turbines</desc>
+			</key>
+			<key>
+				<name>Ctrl-d</name>
+				<desc>Toggle weapon baydoors</desc>
+			</key>
+			<key>
+				<name>w</name>
+				<desc>Rotate Gun Up</desc>
+			</key>
+			<key>
+				<name>a</name>
+				<desc>Rotate Gun Left</desc>
+			</key>
+			<key>
+				<name>s</name>
+				<desc>Rotate Gun Down</desc>
+			</key>
+			<key>
+				<name>d</name>
+				<desc>Rotate Gun Right</desc>
+			</key>
+			<key>
+				<name>f</name>
+				<desc>Gun trigger</desc>
+			</key>
+			<key>
+				<name>e</name>
+				<desc>Hydra trigger</desc>
+			</key>
+			<key>
+				<name>q</name>
+				<desc>Hellfire trigger</desc>
+			</key>
+			<key>
+				<name>c</name>
+				<desc>Stinger trigger</desc>
+			</key>       
+			<line>Toggle doors with Left Mouse Button</line>
+			<line>Toggle winglets, stub wings and radar in Configuration menu</line>
+			<line>Parking brake is on, press B to release</line>
+		</help>
+		
+		<!-- menu -->
+		<menubar>
+			<default>
+				<menu n="100">
+					<label>RAH-66</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.toggle()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Configuration</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+								var dlg = gui.Dialog.new("/sim/gui/dialogs/config/dialog", "Aircraft/rah-66/dialogs/configuration.xml");
+							</script>
+						</binding>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>Configuration</dialog-name>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
+		
+		<!-- weight -->
+		<weight n="0">
+			<name>Pilot</name>
+			<weight-lb>180</weight-lb>
+			<max-lb>300</max-lb>
+		</weight>
+
+		<weight n="1">
+			<name>Gunner</name>
+			<weight-lb>180</weight-lb>
+			<max-lb>300</max-lb>
+		</weight>
+		
+		<weight n="2">
+			<name>Left inboard</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt><name>none</name><lbs>0</lbs></opt>
+			<opt><name>AGM-114 Hellfire</name><lbs>100</lbs></opt>
+			<opt><name>Hydra 70</name><lbs>54</lbs></opt>
+			<opt><name>AIM-92 Stinger</name><lbs>35</lbs></opt>
+		</weight>
+		
+		<weight n="3">
+			<name>Right inboard</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt><name>none</name><lbs>0</lbs></opt>
+			<opt><name>AGM-114 Hellfire</name><lbs>100</lbs></opt>
+			<opt><name>Hydra 70</name><lbs>54</lbs></opt>
+			<opt><name>AIM-92 Stinger</name><lbs>35</lbs></opt>
+		</weight>
+		
+		<weight n="4">
+			<name>Left middleboard</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt><name>none</name><lbs>0</lbs></opt>
+			<opt><name>AGM-114 Hellfire</name><lbs>100</lbs></opt>
+			<opt><name>Hydra 70</name><lbs>54</lbs></opt>
+			<opt><name>AIM-92 Stinger</name><lbs>35</lbs></opt>
+		</weight>
+		
+		<weight n="5">
+			<name>Right middleboard</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt><name>none</name><lbs>0</lbs></opt>
+			<opt><name>AGM-114 Hellfire</name><lbs>100</lbs></opt>
+			<opt><name>Hydra 70</name><lbs>54</lbs></opt>
+			<opt><name>AIM-92 Stinger</name><lbs>35</lbs></opt>
+		</weight>
+		
+		<weight n="6">
+			<name>Left outboard</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt><name>none</name><lbs>0</lbs></opt>
+			<opt><name>AGM-114 Hellfire</name><lbs>100</lbs></opt>
+			<opt><name>Hydra 70</name><lbs>54</lbs></opt>
+			<opt><name>AIM-92 Stinger</name><lbs>35</lbs></opt>
+		</weight>
+		
+		<weight n="7">
+			<name>Right outboard</name>
+			<weight-lb>0</weight-lb>
+			<selected>none</selected>
+			<opt><name>none</name><lbs>0</lbs></opt>
+			<opt><name>AGM-114 Hellfire</name><lbs>100</lbs></opt>
+			<opt><name>Hydra 70</name><lbs>54</lbs></opt>
+			<opt><name>AIM-92 Stinger</name><lbs>35</lbs></opt>
+		</weight>
+        
+	</sim>
+
+	<!-- shortcuts -->
+	<input>
+		<keyboard>
+			<key n="4">
+				<name>Ctrl-d</name>
+				<desc>Weapon baydoors</desc>
+				<binding>
+					<command>nasal</command>
+					<script>baydoors.baydoors_switch(2)</script>
+				</binding>
+			</key>
+
+			<key n="97">
+				<name>a</name>
+				<desc>Rotate Gun Left</desc>
+				<repeatable>true</repeatable>
+				<interval-sec>0.001</interval-sec>
+				<binding>
+					<command>property-adjust</command>
+					<property>sim/model/turret-positions/turretx</property>
+					<step>1</step>
+					<!-- <min>0</min> -->
+					<max>110</max>
+				</binding>
+			</key>
+
+			<key n="100">
+				<name>d</name>
+				<desc>Rotate Gun Right</desc>
+				<repeatable>true</repeatable>
+				<interval-sec>0.001</interval-sec>
+				<binding>
+					<command>property-adjust</command>
+					<property>sim/model/turret-positions/turretx</property>
+					<step>-1</step>
+					<!-- <min>-110</min> -->
+					<max>110</max>
+				</binding>
+			</key>
+        
+			<key n="101">
+				<name>e</name>
+				<desc>Gun Trigger</desc> 
+				<binding>
+					<command>property-assign</command>
+					<property>controls/armament/trigger</property>
+					<value>true</value>
+				</binding> 
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/armament/trigger</property>
+						<value>false</value>
+					</binding> 
+				</mod-up>
+			</key>
+        
+			<key n="115">
+				<name>s</name>
+				<desc>Rotate Gun Down</desc>
+				<repeatable>true</repeatable>
+				<interval-sec>0.001</interval-sec>
+				<binding>
+					<command>property-adjust</command>
+					<property>sim/model/turret-positions/turretz</property>
+					<step>-1</step>
+					<min>-60</min>
+					<max>0</max>
+				</binding>
+			</key>
+        
+			<key n="119">
+				<name>w</name>
+				<desc>Rotate Gun Up</desc>
+				<repeatable>true</repeatable>
+				<interval-sec>0.001</interval-sec>
+				<binding>
+					<command>property-adjust</command>
+					<property>sim/model/turret-positions/turretz</property>
+					<step>1</step>
+					<!--<min>0</min>-->
+					<max>0</max>
+				</binding>
+			</key>
+
+			<key n="99">
+				<name>c</name>
+				<desc>Fire AIM-92 Stinger</desc>
+				<binding>
+					<command>nasal</command>
+					<script>guns.fire_Stinger()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>guns.stop_Stinger()</script>
+					</binding>
+				</mod-up>
+			</key>
+
+			<key n="101">
+				<name>e</name>
+				<desc>Fire M260 Hydra 70</desc>
+				<binding>
+					<command>nasal</command>
+					<script>guns.fire_Hydra()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>guns.stop_Hydra()</script>
+					</binding>
+				</mod-up>
+			</key>
+
+			<key n="102">
+				<name>f</name>
+				<desc>Fire Machine Gun</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/armament/trigger</property>
+					<value>true</value>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/armament/trigger</property>
+						<value>false</value>
+					</binding>
+				</mod-up>
+			</key>
+
+			<key n="113">
+				<name>q</name>
+				<desc>Fire AGM-114 Hellfire</desc>
+				<binding>
+					<command>nasal</command>
+					<script>guns.fire_Hellfire()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>guns.stop_Hellfire()</script>
+					</binding>
+				</mod-up>
+			</key>
+		</keyboard>
+	</input>
+
+	<!-- settings -->
+	<controls>
+		<rotor>
+			<engine-throttle type="double">1.0</engine-throttle>
+		</rotor>
+		<engines>
+			<engine n="0">
+				<magnetos>0</magnetos>
+			</engine>
+		</engines>
+		<gear>
+			<tailwheel-lock>false</tailwheel-lock>
+			<brake-parking>1</brake-parking>
+		</gear>
+		<lighting>
+			<strobe type="bool">true</strobe>
+			<beacon type="bool">true</beacon>
+			<nav-lights type="bool">true</nav-lights>
+		</lighting>
+		<flight>
+			<fcs>
+				<roll type="double">0.0</roll>
+				<pitch type="double">0.0</pitch>
+				<yaw type="double">0.0</yaw>
+			</fcs>
+		</flight>
+	</controls>
+
+	<environment>
+    	<turbulence>
+      		<use-cloud-turbulence>true</use-cloud-turbulence>
+    	</turbulence>
+ 	</environment>
+
+	<rotors>
+		<main>
+			<rpm type="double">0</rpm>
+		</main>
+	</rotors>
+
+	<instrumentation>
+		<enav>
+			<selected type="int">3</selected>
+		</enav>
+		<comm n="0">
+			<serviceable type="bool">1</serviceable>
+		</comm>
+		<comm n="1">
+			<serviceable type="bool">1</serviceable>
+		</comm>
+
+		<gsdi>
+			<serviceable type="bool">true</serviceable>
+		</gsdi>
+		<hsi>
+			<serviceable type="bool" archive="y">true</serviceable>
+		</hsi>
+		<radar>
+			<range type="int" archive="y">20</range>
+			<range-factor type="double" archive="n">0.001888</range-factor>
+			<minimized type="bool" archive="y">false</minimized>
+			<selected type="int">3</selected>
+			<enabled type="bool">true</enabled>
+			<az-field type="double">120</az-field>
+			<range type="double">150</range>
+			<range-selected type="double">50</range-selected>
+			<radar2-range type="double">150</radar2-range>
+			<display-rdr type="bool">true</display-rdr>
+			<radar-standby type="int">3</radar-standby>
+			<mode>
+				<rws type="bool">true</rws>
+				<tws-auto type="bool">false</tws-auto>
+			</mode>
+		</radar>
+		<radar2>
+			<sweep-width-m type="double">0.0844</sweep-width-m>
+			<range-width-m type="double">0.0846</range-width-m>
+			<radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+			<hud-eye-dist-m type="double">0.766</hud-eye-dist-m>
+			<hud-radius-m type="double">0.071</hud-radius-m>
+			<hud-vertical-offset-m type="double">-0.025</hud-vertical-offset-m>
+		</radar2>
+		<rwr>
+			<display-lighting-intens type="double">0.4</display-lighting-intens>
+			<symbology-lighting-intens type="double">1</symbology-lighting-intens>
+		</rwr>
+	</instrumentation>
+
+	<!-- nasal -->
+	<nasal>
+		<main>
+			<file>Aircraft/rah-66/nasal/main.nas</file>
+			<file>Aircraft/rah-66/nasal/hud.nas</file>
+			<file>Aircraft/rah-66/nasal/doors.nas</file>
+			<file>Aircraft/rah-66/nasal/vhf22.nas</file>
+		</main>
+	    <lights>
+	    	<file>Aircraft/rah-66/nasal/lights.nas</file>
+	    </lights>
+		<enav>
+			<file>Aircraft/rah-66/nasal/enav.nas</file>
+		</enav>
+		<liveries>
+			<file>Aircraft/rah-66/nasal/liveries.nas</file>
+		</liveries>
+		<baydoors>
+			<file>Aircraft/rah-66/nasal/baydoors.nas</file>
+		</baydoors>
+		<rwr>
+			<file>Aircraft/Instruments-3d/rwr/rwr.nas</file>
+		</rwr> 
+		<radardist>
+			<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+		</radardist>
+		<radar>
+			<file>Aircraft/rah-66/nasal/radar.nas</file>
+		</radar>
+		<radar2>
+			<file>Aircraft/Instruments-3d/radar2/radar2.nas</file>
+		</radar2>
+		 <guns>
+			<file>Aircraft/rah-66/nasal/weapons.nas</file>
+		</guns>
+	</nasal>
+
+</PropertyList>

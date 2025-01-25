@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <!-- Effects -->
+
+    <!-- Gun Flame -->
+    <model>
+        <name>flame</name>
+        <path>Aircraft/Harrier-GR3/Models/Effects/Gun/Flame.xml</path>
+        <condition>
+            <equals>
+                <property>controls/armament/trigger</property>
+                <value type="bool">true</value>
+            </equals>
+        </condition>
+    </model>
+
+    <!-- Nozzle Smoke -->
+    <model>
+        <path>Aircraft/Harrier-GR3/Models/Effects/Smoketrail.xml</path>
+        <offsets>
+            <x-m>-10.65</x-m>
+            <y-m>0.76</y-m>
+            <z-m>-6.25</z-m>
+            <pitch-deg>90</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Harrier-GR3/Models/Effects/Smoketrail.xml</path>
+        <offsets>
+            <x-m>-10.65</x-m>
+            <y-m>-0.76</y-m>
+            <z-m>-6.25</z-m>
+            <pitch-deg>90</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Harrier-GR3/Models/Effects/Smoketrail.xml</path>
+        <offsets>
+            <x-m>-12.60</x-m>
+            <y-m>1.10</y-m>
+            <z-m>-6.20</z-m>
+            <pitch-deg>90</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Harrier-GR3/Models/Effects/Smoketrail.xml</path>
+        <offsets>
+            <x-m>-12.6</x-m>
+            <y-m> -1.1</y-m>
+            <z-m> -6.2</z-m>
+            <pitch-deg>90</pitch-deg>
+        </offsets>
+    </model>
+
+    <!-- Contrails -->
+    <model>
+        <path>Aircraft/Harrier-GR3/Models/Effects/Vortex.xml</path>
+        <offsets>
+            <x-m>-8.76</x-m>
+            <y-m>-3.87</y-m>
+            <z-m>-6.15</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Harrier-GR3/Models/Effects/Vortex.xml</path>
+        <offsets>
+            <x-m>-8.76</x-m>
+            <y-m> 3.87</y-m>
+            <z-m>-6.15</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Harrier-GR3/Models/Effects/Contrail.xml</path>
+        <offsets>
+            <x-m>-2.00</x-m>
+            <y-m>-0.60</y-m>
+            <z-m>-6.01</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Harrier-GR3/Models/Effects/Contrail.xml</path>
+        <offsets>
+            <x-m>-2.00</x-m>
+            <y-m>0.60</y-m>
+            <z-m>-6.01</z-m>
+        </offsets>
+    </model>
+
+    <!-- Gear Smoke -->
+    <model>
+        <path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+        <offsets>
+            <x-m>-14.03</x-m>
+            <y-m>0.00</y-m>
+            <z-m>-6.59</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+        <offsets>
+            <x-m>-10.48</x-m>
+            <y-m>0.00</y-m>
+            <z-m>-6.53</z-m>
+        </offsets>
+    </model>
+
+    <!--- Wash -->
+    <model>
+        <name>wash_l</name>
+        <path>Aircraft/Harrier-GR3/Models/Effects/Wash.xml</path>
+        <condition>
+            <equals>
+                <property>controls/state/low_level</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <offsets>
+            <x-m>25.00</x-m>
+            <y-m>4.50 </y-m>
+            <z-m>0.00</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>wash_r</name>
+        <path>Aircraft/Harrier-GR3/Models/Effects/Wash.xml</path>
+        <condition>
+            <equals>
+                <property>controls/state/low_level</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <offsets>
+            <x-m>25.00</x-m>
+            <y-m>-4.50</y-m>
+            <z-m>0.00</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>translate</type>
+        <object-name>wash_l</object-name>
+        <object-name>wash_r</object-name>
+        <property>position/altitude-agl-ft</property>
+        <condition>
+            <equals>
+                <property>controls/state/low_level</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>300</ind>
+                <dep>-90</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+</PropertyList>

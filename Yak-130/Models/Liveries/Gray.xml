@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Russian Air Force 22 (Gray)</name>
+                <texture>Liveries/Gray.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/Gray.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

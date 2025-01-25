@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<help>
+		<title>Aero L-159A ALCA</title>
+		<key>
+			<name>C</name>
+			<desc>Toggle canopy</desc>
+		</key>
+		<key>
+			<name>E</name>
+			<desc>Trigger cannons</desc>
+		</key>
+		<key>
+			<name>Shift-E</name>
+			<desc>Switch cannon rate of fire</desc>
+		</key>
+		<key>
+			<name>L</name>
+			<desc>Release flares</desc>
+		</key>
+		<key>
+			<name>Shift-L</name>
+			<desc>Release chaff</desc>
+		</key>
+		<key>
+			<name>Shift-F</name>
+			<desc>Toggle smokewinders</desc>
+		</key>
+
+		<line>Takeoff: </line>
+		<line>Set full throttle and one click of flaps. Rotate at 150-160 kts depending on load. </line>
+		<line></line>
+		<line>Landing: </line>
+		<line>Approach at 160 kts with full flaps. Land at 140 kts or more depending on load. </line>
+		<line></line>
+		<line>Flaps have three settings: </line>
+		<line>- 0 deg (retracted)</line>
+		<line>- 25 deg (takeoff)</line>
+		<line>- 44 deg (landing)</line>
+		<line>Flaps retract automatically at 170 and 200 KIAS. </line>
+		<line></line>
+		<line>You can use the ALCA menu to control lights, toggle ammo count reporting and </line>
+		<line>reload the cannon. The "Fuel and Payload" menu controls numerous payload options, </line>
+		<line>including fuel tanks, the PL-20 Plamen cannon pod and an experimental fuel probe. </line>
+		<line></line>
+		<line>You don't need to care about switching fuel tanks, fuel system automatically transfers </line>
+		<line>fuel to the Engine feed tank. Droptanks are emptied first. All tanks are also switched </line>
+		<line>on when performing aerial refueling. </line>
+		<line></line>
+
+	</help>
+</PropertyList>

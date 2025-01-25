@@ -1,0 +1,775 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>CHDD.ac</path>
+    
+    <animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+	
+<!-- Illumination -->
+    
+    <animation>
+        <type>material</type>
+        <object-name>background</object-name>
+        <object-name>engine.glass</object-name>
+		<object-name>engine.needle.torque</object-name>
+		<object-name>engine.needle.itt</object-name>
+		<object-name>engine.needle.n1</object-name>
+		<object-name>engine.TR.001</object-name>
+		<object-name>engine.TR.002</object-name>
+		<object-name>engine.TR.003</object-name>
+		<object-name>engine.ITT.001</object-name>
+		<object-name>engine.ITT.002</object-name>
+		<object-name>engine.ITT.003</object-name>
+		<object-name>engine.N1.001</object-name>
+		<object-name>engine.N1.002</object-name>
+		<object-name>engine.N1.003</object-name>
+		<object-name>engine.OAT.001</object-name>
+		<object-name>engine.OAT.002</object-name>
+		<object-name>engine.NP.001</object-name>
+		<object-name>engine.NP.002</object-name>
+		<object-name>engine.NP.003</object-name>
+        <object-name>oil.glass</object-name>
+		<object-name>oil.needle.temp</object-name>
+		<object-name>oil.needle.psi</object-name>
+		<object-name>oil.needle.hp</object-name>
+		<object-name>oil.TEMP.001</object-name>
+		<object-name>oil.TEMP.002</object-name>
+		<object-name>oil.TEMP.003</object-name>
+		<object-name>oil.PSI.001</object-name>
+		<object-name>oil.PSI.002</object-name>
+		<object-name>oil.PSI.003</object-name>
+		<object-name>oil.HP.001</object-name>
+		<object-name>oil.HP.002</object-name>
+		<object-name>oil.HP.003</object-name>
+		<object-name>oil.HP.004</object-name>
+		<object-name>oil.V.001</object-name>
+		<object-name>oil.V.002</object-name>
+		<object-name>oil.V.003</object-name>
+		<object-name>oil.A.001</object-name>
+		<object-name>oil.A.002</object-name>
+		<object-name>oil.A.003</object-name>
+        <emission>
+		<red>0.045</red>
+		<green>0.025</green>
+		<blue>0.015</blue>
+        <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+    
+<!-- Torque -->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>engine.needle.torque</object-name>
+        <property>engines/engine[0]/thrust_lb</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>3000</ind><dep>245.0</dep></entry>
+        </interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.0101</y-m>
+			<z-m>0.0717</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.TR.001</object-name>
+		<property>engines/engine[0]/torque_p</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>3475</ind><dep>100.0</dep></entry>
+        </interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>engine.TR.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/torque_p</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.TR.002</object-name>
+		<property>engines/engine[0]/torque_p</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>3475</ind><dep>100.0</dep></entry>
+        </interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>engine.TR.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/torque_p</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.TR.003</object-name>
+		<property>engines/engine[0]/torque_p</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>3475</ind><dep>100.0</dep></entry>
+        </interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- ITT -->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>engine.needle.itt</object-name>
+		<property>engines/engine[0]/itt-degc</property>
+		<interpolation>
+			<entry><ind>250.0</ind><dep>0.0</dep></entry>
+			<entry><ind>1000.0</ind><dep>185.0</dep></entry>
+		</interpolation>
+		<axis>
+				<x>-1</x>
+				<y>0</y>
+				<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.0</x-m>
+			<y-m>0.020</y-m>
+			<z-m>0.029</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.ITT.001</object-name>
+		<property>engines/engine[0]/itt-degc</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>engine.ITT.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/itt-degc</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.ITT.002</object-name>
+		<property>engines/engine[0]/itt-degc</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>engine.ITT.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/itt-degc</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.ITT.003</object-name>
+		<property>engines/engine[0]/itt-degc</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- N1 -->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>engine.needle.n1</object-name>
+		<property>engines/engine[0]/n1</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>104.0</ind><dep>265.0</dep></entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.0</x-m>
+			<y-m>0.0233</y-m>
+			<z-m>0.0290</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.N1.001</object-name>
+		<property>engines/engine[0]/n1</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>engine.N1.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/n1</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.N1.002</object-name>
+		<property>engines/engine[0]/n1</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>engine.N1.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/n1</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.N1.003</object-name>
+		<property>engines/engine[0]/n1</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Temperature -->
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.OAT.001</object-name>
+		<property>environment/temperature-degc</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>engine.OAT.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>environment/temperature-degc</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.OAT.002</object-name>
+		<property>environment/temperature-degc</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- NP -->
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.NP.001</object-name>
+		<property>engines/engine[0]/n2</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>engine.NP.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/n2</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.NP.002</object-name>
+		<property>engines/engine[0]/n2</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>engine.NP.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/n2</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>engine.NP.003</object-name>
+		<property>engines/engine[0]/n2</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Oil Temperature -->
+    
+    <animation>
+		<type>rotate</type>
+		<object-name>oil.needle.temp</object-name>
+		<property>engines/engine[0]/oil-temp-c</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>110</ind><dep>247.5</dep></entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m> 0.00</x-m>
+			<y-m> 0.03</y-m>
+			<z-m>-0.02</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oil.TEMP.001</object-name>
+		<property>engines/engine[0]/oil-temp-c</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>oil.TEMP.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/oil-temp-c</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>oil.TEMP.002</object-name>
+		<property>engines/engine[0]/oil-temp-c</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>oil.TEMP.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/oil-temp-c</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>oil.TEMP.003</object-name>
+		<property>engines/engine[0]/oil-temp-c</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	
+<!-- Oil Pressure -->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>oil.needle.psi</object-name>
+		<property>engines/engine[0]/oil-pressure-psi</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>200</ind><dep>270</dep></entry>
+		</interpolation>
+		<axis>
+				<x>-1</x>
+				<y>0</y>
+				<z>0</z>
+		</axis>
+		<center>
+			<x-m> 0.00</x-m>
+			<y-m> 0.0260</y-m>
+			<z-m>-0.0320</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oil.PSI.001</object-name>
+		<property>engines/engine[0]/oil-pressure-psi</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>oil.PSI.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/oil-pressure-psi</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>oil.PSI.002</object-name>
+		<property>engines/engine[0]/oil-pressure-psi</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>oil.PSI.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/oil-pressure-psi</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>oil.PSI.003</object-name>
+		<property>engines/engine[0]/oil-pressure-psi</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Hydraulic Pressure -->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>oil.needle.hp</object-name>
+        <property>engines/engine[0]/n2</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>30.0</ind><dep>0.0</dep></entry>
+            <entry><ind>70.0</ind><dep>210.0</dep></entry>
+            <entry><ind>100</ind><dep>250</dep></entry>
+        </interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-0.0014</x-m>
+			<y-m>-0.0244</y-m>
+			<z-m>-0.0730</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oil.HP.001</object-name>
+		<property>engines/engine[0]/n2</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>oil.HP.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/n2</property>
+				<value>1000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oil.HP.002</object-name>
+		<property>engines/engine[0]/n2</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>oil.HP.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/n2</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oil.HP.003</object-name>
+		<property>engines/engine[0]/n2</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>oil.HP.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/n2</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>oil.HP.004</object-name>
+		<property>engines/engine[0]/n2</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Voltage -->
+
+    <animation>
+		<type>textranslate</type>
+		<object-name>oil.V.001</object-name>
+		<property>systems/electrical/volts</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>oil.V.002</object-name>
+		<property>systems/electrical/volts</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>oil.V.003</object-name>
+		<property>systems/electrical/volts</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Amps -->
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>oil.A.001</object-name>
+		<property>systems/electrical/amps</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>oil.A.002</object-name>
+		<property>systems/electrical/amps</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+    
+    <animation>
+		<type>textranslate</type>
+		<object-name>oil.A.003</object-name>
+		<property>systems/electrical/amps</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

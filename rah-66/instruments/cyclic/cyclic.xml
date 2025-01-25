@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>cyclic.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>cyclic</object-name>
+		<property>/controls/flight/elevator</property>
+		<factor>16</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m> 0.00</x-m>
+			<y-m> 0.00</y-m>
+			<z-m>-0.10</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>cyclic</object-name>
+		<property>/controls/flight/aileron</property>
+		<factor>8.94</factor>
+		<offset>0</offset>
+		<center>
+			<x-m> 0.00</x-m>
+			<y-m> 0.00</y-m>
+			<z-m>-0.10</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

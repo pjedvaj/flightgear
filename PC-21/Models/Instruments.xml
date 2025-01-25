@@ -1,0 +1,231 @@
+<PropertyList>
+
+	<!-- Instruments -->
+
+	<!-- Student -->
+
+	<model>
+		<name>HUD</name>
+		<path>Aircraft/PC-21/Models/Instruments/HUD/HUD.xml</path>
+		<offsets>
+			<x-m>-1.86</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 1.33</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>CHDD1</name>
+		<path>Aircraft/PC-21/Models/Instruments/CHDD1/CHDD.xml</path>
+		<offsets>
+			<x-m>-1.79</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 1.00</z-m>
+		</offsets>
+	</model>
+
+	<model>
+
+		<name>CHDD2</name>
+		<path>Aircraft/PC-21/Models/Instruments/CHDD2/CHDD.xml</path>
+		<offsets>
+			<x-m>-1.79</x-m>
+			<y-m> 0.21</y-m>
+			<z-m> 1.02</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>CHDD3</name>
+		<path>Aircraft/PC-21/Models/Instruments/CHDD3/CHDD.xml</path>
+		<offsets>
+			<x-m>-1.79</x-m>
+			<y-m>-0.21</y-m>
+			<z-m> 1.02</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>iSFD1</name>
+		<path>Aircraft/PC-21/Models/Instruments/iSFD1/iSFD.xml</path>
+		<offsets>
+			<x-m>-1.79</x-m>
+			<y-m> 0.16</y-m>
+			<z-m> 1.21</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>iSFD2</name>
+		<path>Aircraft/PC-21/Models/Instruments/iSFD2/iSFD.xml</path>
+		<offsets>
+			<x-m>-1.79</x-m>
+			<y-m>-0.16</y-m>
+			<z-m> 1.21</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Compass</name>
+		<path>Aircraft/PC-21/Models/Instruments/Compass/Compass.xml</path>
+		<offsets>
+			<x-m>-1.86</x-m>
+			<y-m> 0.28</y-m>
+			<z-m> 1.27</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Clock</name>
+		<path>Aircraft/PC-21/Models/Instruments/Clock/Clock.xml</path>
+		<offsets>
+			<x-m>-1.70</x-m>
+			<y-m> 0.32</y-m>
+			<z-m> 1.223</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Warning</name>
+		<path>Aircraft/PC-21/Models/Instruments/Warning/Warning.xml</path>
+		<offsets>
+			<x-m> 0.00</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.00</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Stick</name>
+		<path>Aircraft/PC-21/Models/Instruments/Stick/Stick.xml</path>
+		<offsets>
+			<x-m>-1.63</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.55</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Throttle</name>
+		<path>Aircraft/PC-21/Models/Instruments/Throttle/Throttle.xml</path>
+		<offsets>
+			<x-m>-0.70</x-m>
+			<y-m> 0.02</y-m>
+			<z-m> 0.11</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Pedals</name>
+		<path>Aircraft/PC-21/Models/Instruments/Pedals/Pedals.xml</path>
+		<offsets>
+			<x-m>-2.05</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.58</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>GearHandle</name>
+		<path>Aircraft/PC-21/Models/Instruments/Gear/Gear.xml</path>
+		<offsets>
+			<x-m>-1.76</x-m>
+			<y-m>-0.35</y-m>
+			<z-m> 0.81</z-m>
+		</offsets>
+	</model>
+
+	<!-- Instructor -->
+
+	<model>
+		<name>FakeRadar</name>
+		<path>Aircraft/PC-21/Models/Instruments/FakeRadar/FakeRadar.xml</path>
+		<offsets>
+			<x-m>-0.58</x-m>
+			<y-m>0.0079</y-m>
+			<z-m>1.4675</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>CHDD12</name>
+		<path>Aircraft/PC-21/Models/Instruments/CHDD1/CHDD.xml</path>
+		<offsets>
+			<x-m>-0.57</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 1.21</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>CHDD22</name>
+		<path>Aircraft/PC-21/Models/Instruments/CHDD2/CHDD.xml</path>
+		<offsets>
+			<x-m>-0.57</x-m>
+			<y-m> 0.21</y-m>
+			<z-m> 1.23</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>CHDD32</name>
+		<path>Aircraft/PC-21/Models/Instruments/CHDD3/CHDD.xml</path>
+		<offsets>
+			<x-m>-0.57</x-m>
+			<y-m>-0.21</y-m>
+			<z-m> 1.23</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>iSFD12</name>
+		<path>Aircraft/PC-21/Models/Instruments/iSFD1/iSFD.xml</path>
+		<offsets>
+			<x-m>-0.57</x-m>
+			<y-m> 0.16</y-m>
+			<z-m> 1.43</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>iSFD22</name>
+		<path>Aircraft/PC-21/Models/Instruments/iSFD2/iSFD.xml</path>
+		<offsets>
+			<x-m>-0.57</x-m>
+			<y-m>-0.16</y-m>
+			<z-m> 1.43</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>Stick2</name>
+		<path>Aircraft/PC-21/Models/Instruments/Stick/Stick.xml</path>
+		<offsets>
+			<x-m>-0.41</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.76</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>Throttle2</name>
+		<path>Aircraft/PC-21/Models/Instruments/Throttle/Throttle.xml</path>
+		<offsets>
+			<x-m> 0.52</x-m>
+			<y-m> 0.02</y-m>
+			<z-m> 0.33</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>Pedals2</name>
+		<path>Aircraft/PC-21/Models/Instruments/Pedals/Pedals.xml</path>
+		<offsets>
+			<x-m>-0.83</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.79</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>GearHandle2</name>
+		<path>Aircraft/PC-21/Models/Instruments/Gear/Gear.xml</path>
+		<offsets>
+			<x-m>-0.53</x-m>
+			<y-m>-0.35</y-m>
+			<z-m> 1.02</z-m>
+		</offsets>
+	</model>
+
+</PropertyList>

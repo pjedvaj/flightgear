@@ -1,0 +1,109 @@
+<PropertyList>
+
+	<!-- Effects -->
+
+	<model>
+		<name>Engine</name>
+		<path>Aircraft/PC-9M/Models/Effects/Fire.xml</path>
+		<condition>
+			<equals>
+				<property>sim/crashed</property>
+				<value type="bool">true</value>
+			</equals>
+		</condition>
+		<offsets>
+			<x-m>-2.72</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.81</z-m>
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Cockpit</name>
+		<path>Aircraft/PC-9M/Models/Effects/Fire.xml</path>
+		<condition>
+			<equals>
+				<property>sim/crashed</property>
+				<value type="bool">true</value>
+			</equals>
+		</condition>
+		<offsets>
+			<x-m>0.22</x-m>
+			<y-m>0.00</y-m>
+			<z-m>1.45</z-m>
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0 </pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+		<name>tyre-smoke-n</name>
+		<offsets>
+			<x-m>-2.44</x-m>
+			<y-m> 0.00</y-m>
+			<z-m>-0.59</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+		<name>tyre-smoke-p</name>
+		<offsets>
+			<x-m> 0.00</x-m>
+			<y-m>-1.30</y-m>
+			<z-m>-0.54</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+		<name>tyre-smoke-s</name>
+		<offsets>
+			<x-m> 0.00</x-m>
+			<y-m> 1.30</y-m>
+			<z-m>-0.54</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/PC-9M/Models/Effects/Condensation-Left.xml</path>
+		<offsets>
+			<x-m> 0.73</x-m>
+			<y-m> 5.21</y-m>
+			<z-m> 0.64</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/PC-9M/Models/Effects/Condensation-Right.xml</path>
+		<offsets>
+			<x-m> 0.73</x-m>
+			<y-m>-5.21</y-m>
+			<z-m> 0.64</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/PC-9M/Models/Effects/Contrail.xml</path>
+		<offsets>
+			<x-m>-2.71</x-m>
+			<y-m> 0.69</y-m>
+			<z-m> 0.82</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/PC-9M/Models/Effects/Contrail.xml</path>
+		<offsets>
+			<x-m>-2.71</x-m>
+			<y-m>-0.69</y-m>
+			<z-m> 0.82</z-m>
+		</offsets>
+	</model>
+
+</PropertyList>

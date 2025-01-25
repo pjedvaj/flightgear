@@ -1,0 +1,582 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <!-- horizontal situation indicator -->
+  <name>HSI</name>
+  <path>A-10-HSI.ac</path>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>HSI-compass-card</object-name>
+    <object-name>bearing-needle-1</object-name>
+    <object-name>HSI-course-card</object-name>
+    <object-name>course-deviation-indi</object-name>
+    <object-name>to-from-to</object-name>
+    <object-name>to-from-from</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+    </condition>
+  
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation> 
+
+<!--BEARING NEEDLE 1      HDG bug-->
+  <animation>
+    <type>rotate</type>
+    <object-name>bearing-needle-1</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+    </condition>
+   
+   <property>autopilot/settings/heading-bug-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <!--COURSE-->
+    <animation>
+    <type>rotate</type>
+   <object-name>HSI-course-card</object-name>
+    <object-name>course-deviation-indi</object-name>
+    <object-name>to-from-to</object-name>
+    <object-name>to-from-from</object-name>
+  
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+    </condition>
+   
+   <property>instrumentation/nav/radials/selected-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+     <object-name>course-deviation-indi</object-name>
+     <property>instrumentation/nav/heading-needle-deflection</property>
+        <interpolation>
+            <entry><ind>-10.0</ind><dep>-0.0172</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>10.0</ind><dep>0.0172</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+  </animation>
+  
+  <animation>
+        <type>select</type>
+        <object-name>to-from-to</object-name>
+        <condition>
+            <property>instrumentation/nav/to-flag</property>
+        </condition>
+    </animation>
+    
+    <animation>
+        <type>select</type>
+        <object-name>to-from-from</object-name>
+        <condition>
+            <property>instrumentation/nav/from-flag</property>
+        </condition>
+    </animation>
+
+
+<!--Dme miles Flag-->
+  <animation>
+    <type>select</type>
+    <object-name>miles-flag</object-name>
+    <condition>
+    <not>        
+          <property>instrumentation/nav/dme-in-range</property>
+ 
+    </not>        
+    </condition>
+  </animation>
+  
+
+<!--Off Flag-->
+  <animation>
+    <type>select</type>
+    <object-name>off-flag</object-name>
+    <condition>
+      <less-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </less-than>
+    </condition>
+  </animation>
+
+<!-- dme distance digital display -->
+  <animation>
+    <type>textranslate</type>
+    <object-name>miles-drum-1</object-name>
+    <property>instrumentation/dme/indicated-distance-nm</property>
+    <factor>0.1</factor>
+    <offset>-1</offset>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>textranslate</type>
+    <object-name>miles-drum-2</object-name>
+    <property>instrumentation/dme/indicated-distance-nm</property>
+    <factor>0.01</factor>
+    <offset>-10</offset>
+    <step>10</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>textranslate</type>
+    <object-name>miles-drum-3</object-name>
+    <property>instrumentation/dme/indicated-distance-nm</property>
+    <factor>0.001</factor>
+    <offset>-100</offset>
+    <step>100</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!-- course digital display -->
+  <animation>
+    <type>textranslate</type>
+    <object-name>course-drum-1</object-name>
+ 
+    <property>instrumentation/nav/radials/selected-deg</property>
+    
+    <factor>0.1</factor>
+    <offset>-1</offset>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>textranslate</type>
+    <object-name>course-drum-2</object-name>
+ 
+   <property>instrumentation/nav/radials/selected-deg</property>  
+    
+    <factor>0.01</factor>
+    <offset>-10</offset>
+    <step>10</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>textranslate</type>
+    <object-name>course-drum-3</object-name>
+  
+     <property>instrumentation/nav/radials/selected-deg</property>
+    
+    <factor>0.001</factor>
+    <offset>-100</offset>
+    <step>100</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+
+<!--		COURSE KNOB          -->
+
+<animation>
+	<type>pick</type>
+	<object-name>course-knob</object-name>
+	<action>
+		<button>3</button> <!--  scroll up -->
+		<repeatable>false</repeatable>
+		<binding>
+			<command>property-adjust</command>
+			<property>instrumentation/nav/radials/selected-deg</property>
+			<step>1</step>
+			<min>1</min>
+			<max>361</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>course-knob</object-name>
+	<action>
+		<button>4</button> <!--  scroll down -->
+		<repeatable>false</repeatable>
+		<binding>
+			<command>property-adjust</command>
+			<property>instrumentation/nav/radials/selected-deg</property>
+			<step>-1</step>
+			<min>1</min>
+			<max>361</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<!--	CW	-->
+<animation>
+	<type>pick</type>
+	<object-name>course.cw</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			<property>instrumentation/nav/radials/selected-deg</property>
+			<step>1</step>
+			<min>1</min>
+			<max>361</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>course.cw</object-name>
+	<action>
+		<button>1</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+			<binding>
+			<command>property-adjust</command>
+			<property>instrumentation/nav/radials/selected-deg</property>
+			<step>10</step>
+			<min>1</min>
+			<max>361</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<!--	CCW	-->
+
+<animation>
+	<type>pick</type>
+	<object-name>course.ccw</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			<property>instrumentation/nav/radials/selected-deg</property>
+			<step>-1</step>
+			<min>1</min>
+			<max>361</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>course.ccw</object-name>
+	<action>
+		<button>1</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+			<binding>
+			<command>property-adjust</command>
+			<property>instrumentation/nav/radials/selected-deg</property>
+			<step>-10</step>
+			<min>1</min>
+			<max>361</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>course-knob</object-name>
+  <property>instrumentation/nav/radials/selected-deg</property>
+  <center>
+    <x-m>0.0075</x-m>
+    <y-m>0.0491</y-m>
+    <z-m>-0.0413</z-m>
+  </center>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+
+<!-- HEADING SET KNOB -->
+
+<animation>
+	<type>pick</type>
+	<object-name>heading-set-knob</object-name>
+	<action>
+		<button>3</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>property-adjust</command>					
+			<property>autopilot/settings/heading-bug-deg</property>
+			<step>1</step>
+			<min>1</min>
+			<max>361</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>heading-set-knob</object-name>
+	<action>
+		<button>4</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>property-adjust</command>					
+			<property>autopilot/settings/heading-bug-deg</property>
+			<step>-1</step>
+			<min>1</min>
+			<max>361</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<!--	CW	-->
+<animation>
+	<type>pick</type>
+		<object-name>hdg.cw</object-name>
+			<action>
+				<button>0</button>
+		
+				<repeatable>true</repeatable>
+				<interval-sec>0.2</interval-sec>
+				<binding>
+					<command>property-adjust</command>					
+					<property>autopilot/settings/heading-bug-deg</property>
+					<step>1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>hdg.cw</object-name>
+	<action>
+		<button>1</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+
+		<binding>
+			<command>property-adjust</command>
+			
+			<property>autopilot/settings/heading-bug-deg</property>
+			<step>10</step>
+			<min>0</min>
+
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<!--	CCW	-->
+
+<animation>
+
+	<type>pick</type>
+	<object-name>hdg.ccw</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			
+			<property>autopilot/settings/heading-bug-deg</property>
+
+			<step>-1</step>
+			<min>0</min>
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>hdg.ccw</object-name>
+	<action>
+		<button>1</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+			<binding>
+			<command>property-adjust</command>
+			
+			<property>autopilot/settings/heading-bug-deg</property>
+
+			<step>-10</step>
+			<min>0</min>
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>heading-set-knob</object-name>
+ 
+  <property>autopilot/settings/heading-bug-deg</property>
+
+  <center>
+    <x-m>0.0075</x-m>
+    <y-m>-0.0491</y-m>
+    <z-m>-0.0413</z-m>
+  </center>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+ </animation>
+
+<!-- lighting -->
+
+  <animation>
+   
+   <object-name>heading-set-knob</object-name>
+   <object-name>lubber-line</object-name>
+   <object-name>course-knob</object-name>
+   
+   <type>material</type>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+<red>0.045</red>
+<green>0.025</green>
+<blue>0.015</blue>
+      </emission>
+  </animation> 
+
+  <animation>
+    <object-name>HSI-compass-card</object-name>
+    <object-name>HSI-course-card</object-name>
+    <object-name>course-deviation-indi</object-name>
+     <object-name>off-flag</object-name>
+     <object-name>miles-flag</object-name>
+     <object-name>miles-drum-1</object-name>
+     <object-name>miles-drum-2</object-name>
+     <object-name>miles-drum-3</object-name>
+      <object-name>course-drum-1</object-name>
+     <object-name>course-drum-2</object-name>
+     <object-name>course-drum-3</object-name>
+    
+    <type>material</type>
+    <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+<red>0.045</red>
+<green>0.025</green>
+<blue>0.015</blue>
+    </emission>
+  </animation> 
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
+
+</PropertyList>

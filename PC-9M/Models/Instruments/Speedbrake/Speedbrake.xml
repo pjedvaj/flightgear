@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<!-- by Petar jedvaj -->
+
+<PropertyList>
+
+<path>Speedbrake.ac</path>
+
+<animation> 
+<type>select</type>
+<object-name>sbb</object-name>
+<condition>
+<equals>
+<property>controls/flight/speedbrake</property>
+<value>true</value>
+</equals>
+</condition>
+</animation>
+
+<animation> 
+<type>material</type>
+<object-name>sbb1</object-name>
+<emission> 
+<red>0</red>
+<green>1</green>
+<blue>0</blue>
+</emission>
+</animation>
+
+<animation>
+<type>range</type>
+<min-m>0</min-m>
+<max-m>5</max-m>
+</animation>
+
+</PropertyList>
+

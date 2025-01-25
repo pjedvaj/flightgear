@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name type="string">US Army 10 Mtn Div.</name>
+				<texture>Liveries/USArmy10Mtn.png</texture>
+			</livery>
+			<livery-logo>
+				<texture>Liveries/USArmy10Mtn.png</texture>
+			</livery-logo>
+		</model>
+	</sim>
+
+</PropertyList>

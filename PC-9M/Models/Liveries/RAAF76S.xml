@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!-- Johan G -->
+
+<PropertyList>
+
+<sim>
+<model>
+<livery>
+<name type="string">RAAF 76th Sqdn</name>
+<texture>Liveries/RAAF76S.png</texture>
+</livery>
+<livery-logo>
+<texture>Liveries/RAAF76S.png</texture>
+</livery-logo>
+</model>
+</sim>
+
+</PropertyList>

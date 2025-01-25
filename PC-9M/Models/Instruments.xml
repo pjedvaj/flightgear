@@ -1,0 +1,749 @@
+<PropertyList>
+
+	<!-- Instruments -->
+
+	<!-- Student -->
+
+	<model>
+		<name>Stick</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Stick/Stick.xml</path>
+		<offsets>
+			<x-m>-0.73</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.47</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Throttle</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Throttle/Throttle.xml</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>0.00</y-m>
+			<z-m>0.00</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Pedals</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Pedals/Pedals.xml</path>
+		<offsets>
+			<x-m>-1.28</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.59</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Magnetic Compass</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Compass/Compass.xml</path>
+		<offsets>
+			<x-m>-1.00</x-m>
+			<y-m> 0.29</y-m>
+			<z-m> 1.26</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Flaps Indicator</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Flaps/Flaps.xml</path>
+		<offsets>
+			<x-m>-0.97</x-m>
+			<y-m>-0.29</y-m>
+			<z-m> 0.835</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Landing Gear Indicator</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Gear/Gear.xml</path>
+		<offsets>
+			<x-m>-0.93</x-m>
+			<y-m>-0.34</y-m>
+			<z-m> 0.73</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Nose Wheel Steering Switch</name>
+		<path>Aircraft/PC-9M/Models/Instruments/NWS/NWS.xml</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>0.03</y-m>
+			<z-m>0.04</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Speedbrake Switch</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Speedbrake/Speedbrake.xml</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>0.03</y-m>
+			<z-m>0.04</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Warning Switches</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Warning/Warning.xml</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>0.00</y-m>
+			<z-m>0.00</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Air Cooling</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Air/Air.xml</path>
+		<offsets>
+			<x-m>0.00</x-m>
+			<y-m>0.00</y-m>
+			<z-m>0.00</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Clock</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Clock/Clock.xml</path>
+		<offsets>
+			<x-m>-0.712</x-m>
+			<y-m>-0.343</y-m>
+			<z-m> 0.955</z-m>
+			<heading-deg>11</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Altimeter</name>
+		<path>Aircraft/PC-9M/Models/Instruments/ALT/altimeter1.xml</path>
+		<offsets>
+			<x-m>-0.97</x-m>
+			<y-m>0.11</y-m>
+			<z-m>1.18</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Vertical Speed Indicator</name>
+		<path>Aircraft/PC-9M/Models/Instruments/VSI/vsi.xml</path>
+		<offsets>
+			<x-m>-0.97</x-m>
+			<y-m> 0.11</y-m>
+			<z-m> 1.09</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Air Speed Indicator</name>
+		<path>Aircraft/PC-9M/Models/Instruments/ASI/asi300.xml</path>
+		<offsets>
+			<x-m>-0.97</x-m>
+			<y-m>-0.12</y-m>
+			<z-m>1.18</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>  
+
+	<model>
+		<name>Attitude Indicator</name>
+		<path>Aircraft/PC-9M/Models/Instruments/ADI/A-10-adi.xml</path>
+		<offsets>
+			<x-m>-0.96</x-m>
+			<y-m>-0.005</y-m>
+			<z-m>1.16</z-m>
+			<pitch-deg>-0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>Horizontal Situation Indicator</name>
+		<path>Aircraft/PC-9M/Models/Instruments/HSI/A-10-HSI.xml</path>
+		<offsets>
+			<x-m>-0.97</x-m>
+			<y-m>-0.005</y-m>
+			<z-m>1.02</z-m>
+			<pitch-deg>-0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>Radio Magnetic Indicator</name>
+		<path>Aircraft/PC-9M/Models/Instruments/RMI/rmi.xml</path>
+		<offsets>
+			<x-m>-0.97</x-m>
+			<y-m>-0.12</y-m>
+			<z-m>1.045</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Standby Gyro</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Mini-AI/mini-ai.xml</path>
+		<offsets>
+			<x-m>-0.98</x-m>
+			<y-m>-0.2</y-m>
+			<z-m>1.14</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Turn and Bank Indicator</name>  
+		<path>Aircraft/PC-9M/Models/Instruments/TC/tc.xml</path>
+		<offsets>
+			<x-m>-0.968</x-m>
+			<y-m>-0.2</y-m>
+			<z-m>1.045</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>Angle of Attack</name>
+		<path>Aircraft/PC-9M/Models/Instruments/AOA/aoa-gauge.xml</path>
+		<offsets> 
+			<x-m>-0.97</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>1.045</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+		<animation>
+			<type>noshadow</type>
+		</animation>
+	</model>
+		
+	<model>
+		<name>G Meter</name>
+		<path>Aircraft/PC-9M/Models/Instruments/AOA/accelerometer.xml</path>
+		<offsets> 
+			<x-m>-0.97</x-m>
+			<y-m>0.11</y-m>
+			<z-m>1.01</z-m>
+		</offsets>
+		<animation>
+			<type>noshadow</type>
+		</animation>
+	</model>
+	
+	
+	<model>
+		<name>Distance Measuring Equipment</name>
+		<path>Aircraft/PC-9M/Models/Instruments/DME/dme.xml</path>
+		<offsets>
+			<x-m>-0.97</x-m>
+			<y-m>-0.12</y-m>
+			<z-m>1.11</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+   
+	<model>
+		<name>VOR Navigation 1</name>
+		<path>Aircraft/PC-9M/Models/Instruments/kx165/kx165-1.xml</path>
+		<offsets>
+			<x-m>-0.97</x-m>
+			<y-m>-0.165</y-m>
+			<z-m>0.97</z-m>
+			<pitch-deg>-10</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>VOR Navigation 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/kx165/kx165-2.xml</path>
+		<offsets>
+			<x-m>-0.97</x-m>
+			<y-m>-0.165</y-m>
+			<z-m>0.915</z-m>
+			<pitch-deg>-10</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Automatic Direction Finder</name>
+		<path>Aircraft/PC-9M/Models/Instruments/kr87/kr87.xml</path>
+		<offsets>
+			<x-m>-0.97</x-m>
+			<y-m>-0.165</y-m>
+			<z-m>0.87</z-m>
+			<pitch-deg>-10</pitch-deg>
+		</offsets>
+	</model>
+  
+	<model>
+		<name>gma</name>
+		<path>Aircraft/PC-9M/Models/Instruments/gma340/gma340.xml</path>
+		<offsets>
+			<x-m>-0.97</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.92</z-m>
+			<pitch-deg>-10</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Engine Switch</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Engine-Switch/Engine-Switch.xml</path>
+		<offsets>
+			<x-m>-0.96</x-m>
+			<y-m> 0.34</y-m>
+			<z-m> 0.72</z-m>
+			<pitch-deg>90</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Torque</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Torque/torque.xml</path>
+		<offsets>
+			<x-m>-0.94</x-m>
+			<y-m>0.185</y-m>
+			<z-m>1.155</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Propeller RPM</name>
+		<path>Aircraft/PC-9M/Models/Instruments/RPM/prop-rpm.xml</path>
+		<offsets>
+			<x-m>-0.94</x-m>
+			<y-m>0.185</y-m>
+			<z-m>1.085</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>    
+
+	<model>
+		<name>T5</name>
+		<path>Aircraft/PC-9M/Models/Instruments/T5/t5.xml</path>
+		<offsets>
+			<x-m>-0.94</x-m>
+			<y-m>0.185</y-m>
+			<z-m>1.015</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Gas Generator RPM</name>
+		<path>Aircraft/PC-9M/Models/Instruments/GGRPM/ggrpm.xml</path>
+		<offsets>
+			<x-m>-0.94</x-m>
+			<y-m>0.185</y-m>
+			<z-m>0.945</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Fuel Flow</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Fuel-Flow/fuelflow.xml</path>
+		<offsets>
+			<x-m>-0.94</x-m>
+			<y-m>0.24</y-m>
+			<z-m>1.12</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Oil Temperature</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Oil-Temp/oiltemp.xml</path>
+		<offsets>
+			<x-m>-0.94</x-m>
+			<y-m>0.24</y-m>
+			<z-m>1.05</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Oil Pressure</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Oil-Psi/oilpsi.xml</path>
+		<offsets>
+			<x-m>-0.94</x-m>
+			<y-m>0.24</y-m>
+			<z-m>0.98</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Fuel Quantity 1</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Fuel-Qt/fuel-qty0.xml</path>
+		<offsets>
+			<x-m>-0.94</x-m>
+			<y-m>0.29</y-m>
+			<z-m>1.015</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Fuel Quantity 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Fuel-Qt/fuel-qty1.xml</path>
+		<offsets>
+			<x-m>-0.94</x-m>
+			<y-m>0.29</y-m>
+			<z-m>0.945</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Instructor -->
+
+	<model>
+		<name>Stick 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Stick/Stick.xml</path>
+		<offsets>
+			<x-m> 0.63</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.51</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Throttle 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Throttle/Throttle.xml</path>
+		<offsets>
+			<x-m>1.36</x-m>
+			<y-m>0.00</y-m>
+			<z-m>0.04</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Pedals 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Pedals/Pedals.xml</path>
+		<offsets>
+			<x-m> 0.08</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.63</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Magnetic Compass 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Compass/Compass.xml</path>
+		<offsets>
+			<x-m> 0.36</x-m>
+			<y-m> 0.29</y-m>
+			<z-m> 1.30</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Flaps Indicator 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Flaps/Flaps.xml</path>
+		<offsets>
+			<x-m> 0.39</x-m>
+			<y-m>-0.29</y-m>
+			<z-m> 0.875</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Landing Gear Indicator 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Gear/Gear.xml</path>
+		<offsets>
+			<x-m> 0.43</x-m>
+			<y-m>-0.34</y-m>
+			<z-m> 0.77</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Nose Wheel Steering Switch 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/NWS/NWS.xml</path>
+		<offsets>
+			<x-m>1.36</x-m>
+			<y-m>0.03</y-m>
+			<z-m>0.08</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Speedbrake Switch 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Speedbrake/Speedbrake.xml</path>
+		<offsets>
+			<x-m>1.36</x-m>
+			<y-m>0.03</y-m>
+			<z-m>0.08</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Warning Switches 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Warning/Warning.xml</path>
+		<offsets>
+			<x-m>1.36</x-m>
+			<y-m>0.00</y-m>
+			<z-m>0.04</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Air Cooling 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Air/Air.xml</path>
+		<offsets>
+			<x-m>1.36</x-m>
+			<y-m>0.00</y-m>
+			<z-m>0.04</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Clock 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Clock/Clock.xml</path>
+		<offsets>
+			<x-m>  0.63</x-m>
+			<y-m> -0.338</y-m>
+			<z-m> 1.032</z-m>
+			<heading-deg>11</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Altimeter 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/ALT/altimeter1.xml</path>
+		<offsets>
+			<x-m>0.39</x-m>
+			<y-m>0.11</y-m>
+			<z-m>1.22</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Vertical Speed Indicator 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/VSI/vsi.xml</path>
+		<offsets>
+			<x-m>0.39</x-m>
+			<y-m>0.11</y-m>
+			<z-m>1.13</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Air Speed Indicator 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/ASI/asi300.xml</path>
+		<offsets>
+			<x-m> 0.39</x-m>
+			<y-m>-0.12</y-m>
+			<z-m> 1.22</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>  
+
+	<model>
+		<name>Attitude Indicator 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/ADI/A-10-adi.xml</path>
+		<offsets>
+			<x-m> 0.40</x-m>
+			<y-m>-0.005</y-m>
+			<z-m> 1.20</z-m>
+			<pitch-deg>-0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>Horizontal Situation Indicator 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/HSI/A-10-HSI.xml</path>
+		<offsets>
+			<x-m> 0.39</x-m>
+			<y-m>-0.005</y-m>
+			<z-m> 1.06</z-m>
+			<pitch-deg>-0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>Radio Magnetic Indicator 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/RMI/rmi.xml</path>
+		<offsets>
+			<x-m> 0.39</x-m>
+			<y-m>-0.12</y-m>
+			<z-m>1.085</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Standby Gyro 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Mini-AI/mini-ai.xml</path>
+		<offsets>
+			<x-m> 0.38</x-m>
+			<y-m>-0.20</y-m>
+			<z-m> 1.18</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Turn and Bank Indicator 2</name>  
+		<path>Aircraft/PC-9M/Models/Instruments/TC/tc.xml</path>
+		<offsets>
+			<x-m> 0.392</x-m>
+			<y-m>-0.20</y-m>
+			<z-m> 1.085</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>Angle of Attack 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/AOA/aoa-gauge.xml</path>
+		<offsets> 
+			<x-m> 0.39</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>1.085</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+		<animation>
+			<type>noshadow</type>
+		</animation>
+	</model>
+		
+	<model>
+		<name>G Meter 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/AOA/accelerometer.xml</path>
+		<offsets> 
+			<x-m>0.39</x-m>
+			<y-m>0.11</y-m>
+			<z-m>1.05</z-m>
+		</offsets>
+		<animation>
+			<type>noshadow</type>
+		</animation>
+	</model>
+	
+	
+	<model>
+		<name>Distance Measuring Equipment 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/DME/dme.xml</path>
+		<offsets>
+			<x-m> 0.39</x-m>
+			<y-m>-0.12</y-m>
+			<z-m> 1.15</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+   
+	<model>
+		<name>Engine Switch 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Engine-Switch/Engine-Switch.xml</path>
+		<offsets>
+			<x-m> 0.40</x-m>
+			<y-m> 0.34</y-m>
+			<z-m> 0.76</z-m>
+			<pitch-deg>90</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Torque 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Torque/torque.xml</path>
+		<offsets>
+			<x-m> 0.42</x-m>
+			<y-m>0.185</y-m>
+			<z-m>1.195</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Propeller RPM 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/RPM/prop-rpm.xml</path>
+		<offsets>
+			<x-m> 0.42</x-m>
+			<y-m>0.185</y-m>
+			<z-m>1.125</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>    
+
+	<model>
+		<name>T5 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/T5/t5.xml</path>
+		<offsets>
+			<x-m> 0.42</x-m>
+			<y-m>0.185</y-m>
+			<z-m>1.055</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Gas Generator RPM 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/GGRPM/ggrpm.xml</path>
+		<offsets>
+			<x-m> 0.42</x-m>
+			<y-m>0.185</y-m>
+			<z-m>0.985</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Fuel Flow 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Fuel-Flow/fuelflow.xml</path>
+		<offsets>
+			<x-m>0.42</x-m>
+			<y-m>0.24</y-m>
+			<z-m>1.16</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Oil Temperature 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Oil-Temp/oiltemp.xml</path>
+		<offsets>
+			<x-m>0.42</x-m>
+			<y-m>0.24</y-m>
+			<z-m>1.09</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Oil Pressure 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Oil-Psi/oilpsi.xml</path>
+		<offsets>
+			<x-m>0.42</x-m>
+			<y-m>0.24</y-m>
+			<z-m>1.02</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<name>Fuel Quantity 1 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Fuel-Qt/fuel-qty0.xml</path>
+		<offsets>
+			<x-m> 0.42</x-m>
+			<y-m> 0.29</y-m>
+			<z-m>1.055</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Fuel Quantity 2 2</name>
+		<path>Aircraft/PC-9M/Models/Instruments/Fuel-Qt/fuel-qty1.xml</path>
+		<offsets>
+			<x-m> 0.42</x-m>
+			<y-m> 0.29</y-m>
+			<z-m>0.985</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+</PropertyList>

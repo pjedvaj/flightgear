@@ -1,0 +1,185 @@
+<PropertyList>
+
+	<path>weapons.ac</path> 
+
+<!-- lighting -->
+
+    <animation>
+        <type>material</type>
+        <object-name>bay</object-name>
+        <object-name>weapon1</object-name>
+        <object-name>weapon2</object-name>
+        <object-name>weapon3</object-name>
+        <object-name>weapon4</object-name>
+        <object-name>weapon5</object-name>
+        <object-name>weapon6</object-name>
+        <emission>
+            <red>1.0</red>
+            <green>1.0</green>
+            <blue>1.0</blue>
+            <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission> 
+    </animation>
+    
+<!-- weapons -->
+
+	<animation>
+		<type>select</type>
+		<object-name>bay</object-name>
+		<condition>
+			<property>baydoors/position-norm</property>
+    		<value type="bool">0</value>
+		</condition>
+	</animation>
+    
+	<animation>
+		<type>select</type>
+		<object-name>weapon1</object-name>
+		<condition>
+			<not>
+				<property>fdm/jsbsim/systems/armament/station5/released</property>
+				<value type="bool">1</value>
+			</not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>weapon6</object-name>
+		<condition>
+			<not>
+				<property>fdm/jsbsim/systems/armament/station6/released</property>
+				<value type="bool">1</value>
+			</not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>weapon2</object-name>
+		<condition>
+			<not>
+				<property>fdm/jsbsim/systems/armament/station1/released</property>
+				<value type="bool">1</value>
+			</not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>weapon5</object-name>
+		<condition>
+			<not>
+				<property>fdm/jsbsim/systems/armament/station2/released</property>
+				<value type="bool">1</value>
+			</not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>weapon3</object-name>
+		<condition>
+			<not>
+				<property>fdm/jsbsim/systems/armament/station3/released</property>
+				<value type="bool">1</value>
+			</not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>weapon4</object-name>
+		<condition>
+			<not>
+				<property>fdm/jsbsim/systems/armament/station4/released</property>
+				<value type="bool">1</value>
+			</not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+			<object-name>weapon1</object-name>
+				<action>
+					<button>0</button>
+					<repeatable>false</repeatable>
+					 <binding>
+					 <command>property-assign</command>
+					 <property>fdm/jsbsim/systems/armament/station5/selected</property>
+					 <value>1</value>
+					 </binding>
+				</action>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+			<object-name>weapon6</object-name>
+				<action>
+					<button>0</button>
+					<repeatable>false</repeatable>
+					 <binding>
+					 <command>property-assign</command>
+					 <property>fdm/jsbsim/systems/armament/station6/selected</property>
+					 <value>1</value>
+					 </binding>
+				</action>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+			<object-name>weapon2</object-name>
+				<action>
+					<button>0</button>
+					<repeatable>false</repeatable>
+					 <binding>
+					 <command>property-assign</command>
+					 <property>fdm/jsbsim/systems/armament/station1/selected</property>
+					 <value>1</value>
+					 </binding>
+				</action>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+			<object-name>weapon5</object-name>
+				<action>
+					<button>0</button>
+					<repeatable>false</repeatable>
+					 <binding>
+					 <command>property-assign</command>
+					 <property>fdm/jsbsim/systems/armament/station2/selected</property>
+					 <value>1</value>
+					 </binding>
+				</action>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+			<object-name>weapon3</object-name>
+				<action>
+					<button>0</button>
+					<repeatable>false</repeatable>
+					 <binding>
+					 <command>property-assign</command>
+					 <property>fdm/jsbsim/systems/armament/station3/selected</property>
+					 <value>1</value>
+					 </binding>
+				</action>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+			<object-name>weapon4</object-name>
+				<action>
+					<button>0</button>
+					<repeatable>false</repeatable>
+					 <binding>
+					 <command>property-assign</command>
+					 <property>fdm/jsbsim/systems/armament/station4/selected</property>
+					 <value>1</value>
+					 </binding>
+				</action>
+	</animation>
+	
+</PropertyList>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Czech Air Force 6066</name>
+                <texture>Liveries/CZAF-6066.png</texture>
+            </livery>
+        </model>
+    </sim>
+
+</PropertyList>

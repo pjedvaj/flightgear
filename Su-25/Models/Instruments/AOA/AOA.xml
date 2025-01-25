@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<path>AOA.ac</path>
+
+	<animation>
+		<type>material</type>
+		<object-name>needle1</object-name>
+		<object-name>needle2</object-name>
+		<object-name>needle3</object-name>
+		<object-name>face</object-name>
+		<object-name>cylinder</object-name>
+		<object-name>cylinder1</object-name>
+		<emission>
+			<red>0.8</red>
+			<green>0.8</green>
+			<blue>0.8</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle1</object-name>
+		<property>/orientation/alpha-deg</property>
+		<interpolation>
+			<entry><ind>-5</ind><dep>-18.5</dep></entry>
+			<entry><ind> 0</ind><dep>  0.0</dep></entry>
+			<entry><ind>30</ind><dep>102.5</dep></entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y> 0</y>
+			<z> 0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle2</object-name>
+		<property>accelerations/pilot-g</property>
+		<interpolation>
+			<entry><ind>-4</ind><dep>-45.0</dep></entry>
+			<entry><ind> 0</ind><dep>  0.0</dep></entry>
+			<entry><ind>10</ind><dep>105.0</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle3</object-name>
+		<property>accelerations/pilot-g</property>
+		<interpolation>
+			<entry><ind> 0</ind><dep>  0.0</dep></entry>
+			<entry><ind>10</ind><dep>105.0</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

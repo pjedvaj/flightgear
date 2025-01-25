@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>Clock.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>Face</object-name>
+        <object-name>Sec</object-name>
+        <object-name>Min</object-name>
+        <object-name>Hour</object-name>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission> 
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Sec</object-name>
+        <property>/instrumentation/clock/indicated-sec</property>
+        <factor>6</factor>
+        <axis>
+            <x>-1.0</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Min</object-name>
+        <property>/instrumentation/clock/indicated-sec</property>
+        <factor>0.1</factor>
+        <axis>
+            <x>-1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Hour</object-name>
+        <property>/instrumentation/clock/indicated-sec</property>
+        <factor>0.008333</factor>
+        <axis>
+            <x>-1.0</x>
+            <y>0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

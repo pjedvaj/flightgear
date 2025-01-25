@@ -1,0 +1,137 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
+OBJECT world
+kids 7
+OBJECT poly
+name "bay"
+loc 0 0.0904942 0.000586703
+texture "bay.png"
+crease 45.000000
+numvert 4
+0 -0.0268979 -0.0268979
+0 -0.0268979 0.0268979
+0 0.0268979 0.0268979
+0 0.0268979 -0.0268979
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+3 1 1
+2 0 1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "weapon5"
+loc 0 -0.0813245 -0.0507899
+texture "weapon.png"
+crease 45.000000
+numvert 4
+0 0.0143432 -0.0143432
+0 0.0143432 0.0143432
+0 -0.0143432 0.0143432
+0 -0.0143432 -0.0143432
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+0 1 1
+1 0 1
+2 0 0
+3 1 0
+kids 0
+OBJECT poly
+name "weapon6"
+loc 0 -0.0813245 -0.0847404
+texture "weapon.png"
+crease 45.000000
+numvert 4
+0 -0.0143432 -0.0143432
+0 -0.0143432 0.0143432
+0 0.0143432 0.0143432
+0 0.0143432 -0.0143432
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+3 1 1
+2 0 1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "weapon4"
+loc 0 -0.0813245 -0.0163556
+texture "weapon.png"
+crease 45.000000
+numvert 4
+0 0.0143432 -0.0143432
+0 0.0143432 0.0143432
+0 -0.0143432 0.0143432
+0 -0.0143432 -0.0143432
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+0 1 1
+1 0 1
+2 0 0
+3 1 0
+kids 0
+OBJECT poly
+name "weapon2"
+loc 0 -0.0813245 0.0517547
+texture "weapon.png"
+crease 45.000000
+numvert 4
+0 -0.0143432 -0.0143432
+0 -0.0143432 0.0143432
+0 0.0143432 0.0143432
+0 0.0143432 -0.0143432
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+3 1 1
+2 0 1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "weapon3"
+loc 0 -0.0813245 0.0178042
+texture "weapon.png"
+crease 45.000000
+numvert 4
+0 0.0143432 -0.0143432
+0 0.0143432 0.0143432
+0 -0.0143432 0.0143432
+0 -0.0143432 -0.0143432
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+0 1 1
+1 0 1
+2 0 0
+3 1 0
+kids 0
+OBJECT poly
+name "weapon1"
+loc 0 -0.0813245 0.0861889
+texture "weapon.png"
+crease 45.000000
+numvert 4
+0 -0.0143432 -0.0143432
+0 -0.0143432 0.0143432
+0 0.0143432 0.0143432
+0 0.0143432 -0.0143432
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+3 1 1
+2 0 1
+1 0 0
+0 1 0
+kids 0

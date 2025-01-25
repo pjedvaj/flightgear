@@ -1,0 +1,553 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>iSFD.ac</path>
+    
+    <animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+    
+<!-- Illumination -->    
+    
+    <animation>
+        <type>material</type>
+        <object-name>background</object-name>
+        <type>material</type>
+		<object-name>fuel.glass</object-name>
+		<object-name>fuel.needle.left</object-name>
+		<object-name>fuel.needle.right</object-name>
+		<object-name>fuel.TR.001</object-name>
+		<object-name>fuel.TR.002</object-name>
+		<object-name>fuel.TR.003</object-name>
+		<object-name>fuel.ITT.001</object-name>
+		<object-name>fuel.ITT.002</object-name>
+		<object-name>fuel.ITT.003</object-name>
+		<object-name>fuel.ITT.004</object-name>
+		<object-name>fuel.N1.001</object-name>
+		<object-name>fuel.N1.002</object-name>
+		<object-name>fuel.N1.003</object-name>
+		<object-name>fuel.CP.001</object-name>
+		<object-name>fuel.CP.002</object-name>
+		<object-name>fuel.CP.003</object-name>
+		<object-name>fuel.CA.001</object-name>
+		<object-name>fuel.CA.002</object-name>
+		<object-name>fuel.CA.003</object-name>
+		<object-name>fuel.CA.004</object-name>
+		<object-name>fuel.CA.005</object-name>
+		<object-name>fuel.FF.001</object-name>
+		<object-name>fuel.FF.002</object-name>
+		<object-name>fuel.FF.003</object-name>
+		<object-name>fuel.FF.004</object-name>
+        <emission>
+		<red>0.045</red>
+		<green>0.025</green>
+		<blue>0.015</blue>
+        <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+    
+<!-- Fuel Quantity --> 
+    
+    <animation>
+		<type>rotate</type>
+		<object-name>fuel.needle.left</object-name>
+		<property>consumables/fuel/tank/level-lbs</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>700</ind><dep>124</dep></entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m> 0.0</x-m>
+			<y-m>-0.0064</y-m>
+			<z-m>-0.0092</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>fuel.needle.right</object-name>
+		<property>consumables/fuel/tank[1]/level-lbs</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>700</ind><dep>-124</dep></entry>
+		</interpolation>
+		<axis>
+				<x>-1</x>
+				<y>0</y>
+				<z>0</z>
+		</axis>
+		<center>
+			<x-m> 0.0</x-m>
+			<y-m>-0.0064</y-m>
+			<z-m>-0.0092</z-m>
+		</center>
+	</animation>
+	
+<!-- Torque Indicator --> 
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.TR.001</object-name>
+		<property>engines/engine/torque_p</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>fuel.TR.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine/torque_p</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.TR.002</object-name>
+		<property>engines/engine/torque_p</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>fuel.TR.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine/torque_p</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.TR.003</object-name>
+		<property>engines/engine/torque_p</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- N1 (Gas Generator Section RPM)--> 
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.N1.001</object-name>
+		<property>engines/engine[0]/n1</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>fuel.N1.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/n1</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.N1.002</object-name>
+		<property>engines/engine[0]/n1</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>fuel.N1.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine[0]/n1</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.N1.003</object-name>
+		<property>engines/engine[0]/n1</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Fuel Flow --> 
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.FF.001</object-name>
+		<property>engines/engine/fuel-flow_pph</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>fuel.FF.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine/fuel-flow_pph</property>
+				<value>1000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.FF.002</object-name>
+		<property>engines/engine/fuel-flow_pph</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>fuel.FF.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine/fuel-flow_pph</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+		<animation>
+		<type>textranslate</type>
+		<object-name>fuel.FF.003</object-name>
+		<property>engines/engine/fuel-flow_pph</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>fuel.FF.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine/fuel-flow_pph</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.FF.004</object-name>
+		<property>engines/engine/fuel-flow_pph</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+<!-- Altitude Indicator -->
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.CA.005</object-name>
+		<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.CA.004</object-name>
+		<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.CA.003</object-name>
+		<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	    <animation>
+        <type>textranslate</type>
+        <object-name>fuel.CA.002</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <scroll>20</scroll>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>fuel.CA.001</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <scroll>20</scroll>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>fuel.CA.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>10000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+		<animation>
+		<type>select</type>
+		<object-name>fuel.CA.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>1000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>fuel.CA.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>fuel.CA.004</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+<!-- Pressure Indicator --> 
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.CP.001</object-name>
+		<property>environment/pressure-inhg</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.CP.002</object-name>
+		<property>environment/pressure-inhg</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.CP.003</object-name>
+		<property>environment/pressure-inhg</property>
+		<factor>10</factor>
+		<step>0.1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>fuel.CP.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>environment/pressure-inhg</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+	
+<!-- NOT WORKING -->
+	
+<!-- Inter-Turbine Temperature --> 
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.ITT.001</object-name>
+		<property>engines/engine/itt-degc</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>fuel.ITT.001</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine/itt-degc</property>
+				<value>1000</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.ITT.002</object-name>
+		<property>engines/engine/itt-degc</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>fuel.ITT.002</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine/itt-degc</property>
+				<value>100</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.ITT.003</object-name>
+		<property>engines/engine/itt-degc</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>fuel.ITT.003</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>engines/engine/itt-degc</property>
+				<value>10</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel.ITT.004</object-name>
+		<property>engines/engine/itt-degc</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

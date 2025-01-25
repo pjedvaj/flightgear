@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>Torque.ac</path>
+
+	<animation>
+        <type>material</type>
+		<object-name>LTQ</object-name>
+		<object-name>RTQ</object-name>
+	    <emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+        </emission>
+    </animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>LTQ</object-name>
+		<property>sim/model/OH-58D/torque-pct</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.0843</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>RTQ</object-name>
+		<property>sim/model/OH-58D/torque-pct</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind><dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind><dep>0.0843</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+</PropertyList>

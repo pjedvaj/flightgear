@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Prototype</name>
+                <texture>Liveries/Prototype.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/Prototype.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

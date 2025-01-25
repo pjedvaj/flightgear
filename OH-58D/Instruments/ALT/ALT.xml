@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>ALT.ac</path>
+
+	<animation>
+		<type>material</type>
+		<object-name>Face</object-name>
+		<object-name>Needle100</object-name>
+		<object-name>FT1000</object-name>
+		<object-name>FT100</object-name>
+		<object-name>FT10</object-name>
+		<object-name>FT1</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle100</object-name>
+		<object-name>axis</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<interpolation>
+			<entry><ind>  0</ind><dep>  0</dep></entry>
+			<entry><ind>100</ind><dep> 90</dep></entry>
+			<entry><ind>200</ind><dep>180</dep></entry>
+			<entry><ind>300</ind><dep>185</dep></entry>
+			<entry><ind>500</ind><dep>200</dep></entry>
+			<entry><ind>1000</ind><dep>235</dep></entry>
+			<entry><ind>1500</ind><dep>270</dep></entry>
+		</interpolation>
+		<center>
+			<x-m> 0.0028</x-m>
+			<y-m>-0.0002</y-m>
+			<z-m> 0.0012</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>FT1000</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>FT100</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>FT10</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>FT1</object-name>
+		<property>/position/altitude-agl-ft</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

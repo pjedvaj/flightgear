@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>gear.ac</path>
+	
+	<animation>
+        <type>material</type>
+        <object-name>ldg-gear</object-name>
+        <object-name>tail-whl</object-name>
+        <object-name>ldg-gear.1</object-name>
+        <object-name>tail-whl.1</object-name>
+        <emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+        <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>ldg-gear</object-name>	 
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>tail-whl</object-name>	 
+		<condition>
+			<equals>
+				<property>gear/gear[2]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>ldg-gear.1</object-name>
+		<condition>
+			<greater-than>
+				<property>gear/gear[0]/position-norm</property>
+				<value>0</value>
+			</greater-than>
+			<less-than>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</less-than>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>tail-whl.1</object-name>
+		<condition>
+			<greater-than>
+				<property>gear/gear[2]/position-norm</property>
+				<value>0</value>
+			</greater-than>
+			<less-than>
+				<property>gear/gear[2]/position-norm</property>
+				<value>1</value>
+			</less-than>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>gear-fail</object-name>	 
+		<condition>
+			<equals>
+				<property>sim/failure-manager/controls/gear/gear-down/mcbf</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation> 
+		<type>material</type>
+		<object-name>gear-fail</object-name>
+		<emission> 
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+
+</PropertyList>

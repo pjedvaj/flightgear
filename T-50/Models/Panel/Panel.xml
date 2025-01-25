@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>10</max-m>
+	</animation>
+    
+	<model>
+		<path>Aircraft/T-50/Models/Panel/left-mfd/left-mfd.xml</path>
+		<offsets>
+			<pitch-deg>-15</pitch-deg>   
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<x-m> 4.1294</x-m>
+			<y-m>-0.1750</y-m>
+			<z-m> 0.0000</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/T-50/Models/Panel/left-mfd/weapons.xml</path>
+		<offsets>
+			<pitch-deg>-15</pitch-deg>   
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<x-m> 4.1294</x-m>
+			<y-m>-0.1750</y-m>
+			<z-m> 0.0000</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/T-50/Models/Panel/right-mfd/right-mfd.xml</path>
+		<offsets>
+			<pitch-deg>-15</pitch-deg>   
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<x-m> 4.1294</x-m>
+			<y-m> 0.1750</y-m>
+			<z-m> 0.0000</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/T-50/Models/Panel/right-mfd/right.xml</path>
+		<offsets>
+			<pitch-deg>-15</pitch-deg>   
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<x-m> 4.1294</x-m>
+			<y-m> 0.1750</y-m>
+			<z-m> 0.0000</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/T-50/Models/Panel/sfd/sfd.xml</path>
+		<offsets>
+			<pitch-deg>-15</pitch-deg>   
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<x-m> 4.1049</x-m>
+			<y-m> 0.2014</y-m>
+			<z-m> 0.2257</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/T-50/Models/Panel/mfd/terrain-map-pixel.xml</path>
+		<offsets>
+			<x-m> 4.3067</x-m>
+			<y-m>-0.4202</y-m>
+			<z-m>-0.1800</z-m>
+			<pitch-deg>-64.2</pitch-deg>   
+			<heading-deg>-3</heading-deg>
+			<roll-deg>-2</roll-deg>
+		</offsets>
+	   
+	</model>
+
+</PropertyList>

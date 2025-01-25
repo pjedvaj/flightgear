@@ -1,0 +1,172 @@
+
+<PropertyList>
+
+ <path>smokewinder.ac</path>
+ 
+   <particlesystem>
+    <name>smoke</name>
+
+    <texture>smoke.png</texture>
+
+    <condition>
+      <and>
+      <property>controls/switches/smokewinders</property>
+      <not><property>sim/crashed</property></not>
+      </and>
+    </condition>
+
+	<offsets>
+	 <x-m>1.5</x-m>
+	</offsets>
+	
+    <emissive>false</emissive>
+    <lighting>false</lighting>
+    <align>billboard</align> <!-- billboard / fixed -->
+    <attach>world</attach> <!-- world / local-->
+
+    <placer>
+      <type>point</type> <!-- sector / segments / point -->
+    </placer>
+
+    <shooter>
+      <theta-min-deg>10</theta-min-deg>
+      <theta-max-deg>86</theta-max-deg>
+      <phi-min-deg>-1.5</phi-min-deg>
+      <phi-max-deg>8</phi-max-deg>
+      <speed-mps>
+        <value>10</value>
+        <spread>2.5</spread>
+      </speed-mps>
+      <rotation-speed>
+        <x-min-deg-sec>-60</x-min-deg-sec>
+        <y-min-deg-sec>-60</y-min-deg-sec>
+        <z-min-deg-sec>-60</z-min-deg-sec>
+        <x-max-deg-sec>60</x-max-deg-sec>
+        <y-max-deg-sec>60</y-max-deg-sec>
+        <z-max-deg-sec>60</z-max-deg-sec>
+      </rotation-speed>
+    </shooter>
+
+    <counter>
+      <particles-per-sec>
+        <value>100</value>
+        <spread>1</spread>
+      </particles-per-sec>
+    </counter>
+
+    <particle>
+      <start>
+        <color>
+          <!-- take color of the clouds and manipulate it slightly -->
+          <red>
+            <expression>
+              <sum>
+                <property>/rendering/dome/cloud/red</property>
+                <prod>
+                  <sqr>
+                    <property>/rendering/dome/cloud/red</property>
+                  </sqr>
+                  <value>3</value>
+                </prod>
+              </sum>
+            </expression>
+          </red>
+          <green>
+            <expression>
+              <sum>
+                <property>/rendering/dome/cloud/green</property>
+                <prod>
+                  <sqr>
+                    <property>/rendering/dome/cloud/green</property>
+                  </sqr>
+                  <value>3</value>
+                </prod>
+              </sum>
+            </expression>
+          </green>
+          <blue>
+            <expression>
+              <sum>
+                <property>/rendering/dome/cloud/blue</property>
+                <prod>
+                  <sqr>
+                    <property>/rendering/dome/cloud/blue</property>
+                  </sqr>
+                  <value>2</value>
+                </prod>
+              </sum>
+            </expression>
+          </blue>
+          <alpha><value> 0.3 </value></alpha>
+        </color>
+        <size>
+          <value>0.3</value>
+        </size>
+      </start>
+
+      <end>
+        <color>
+          <!-- take color of the clouds and manipulate it slightly -->
+          <red>
+            <expression>
+              <sum>
+                <property>/rendering/dome/cloud/red</property>
+                <prod>
+                  <sqr>
+                    <property>/rendering/dome/cloud/red</property>
+                  </sqr>
+                  <value>3</value>
+                </prod>
+              </sum>
+            </expression>
+          </red>
+          <green>
+            <expression>
+              <sum>
+                <property>/rendering/dome/cloud/green</property>
+                <prod>
+                  <sqr>
+                    <property>/rendering/dome/cloud/green</property>
+                  </sqr>
+                  <value>3</value>
+                </prod>
+              </sum>
+            </expression>
+          </green>
+          <blue>
+            <expression>
+              <sum>
+                <property>/rendering/dome/cloud/blue</property>
+                <prod>
+                  <sqr>
+                    <property>/rendering/dome/cloud/blue</property>
+                  </sqr>
+                  <value>2</value>
+                </prod>
+              </sum>
+            </expression>
+          </blue>
+          <alpha><value> 0.001 </value></alpha>
+        </color>
+        <size>
+          <value>30.0</value>
+        </size>
+      </end>
+
+      <life-sec>
+        <value>15</value>
+      </life-sec>
+       
+      <mass-kg>0.001</mass-kg>
+      <radius-m>1.0</radius-m>
+    </particle>
+     
+    <program>
+      <fluid>air</fluid>         <!-- air / water -->
+      <gravity>false</gravity>
+      <wind>true</wind>
+    </program>
+     
+  </particlesystem>
+ 
+</PropertyList>

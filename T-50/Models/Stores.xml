@@ -1,0 +1,83 @@
+<PropertyList>
+	
+	<model>
+		<path>Aircraft/T-50/Models/Stores/Chute.xml</path>
+		<offsets>
+			<x-m>19.93</x-m>
+			<y-m> 0.10</y-m>
+			<z-m> 0.20</z-m>
+			<yaw-deg>-30.00</yaw-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/T-50/Models/Stores/Chute.xml</path>
+		<offsets>
+			<x-m>19.93</x-m>
+			<y-m> 0.10</y-m>
+			<z-m> 0.20</z-m>
+			<yaw-deg> 30.00</yaw-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/T-50/Models/Stores/R-74L.xml</path>
+		<offsets>
+			<x-m>11.4105</x-m>
+			<y-m>-2.7835</y-m>
+			<z-m>-0.3099</z-m>
+			<pitch-deg>-4.00</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<path>Aircraft/T-50/Models/Stores/R-74R.xml</path>
+		<offsets>
+			<x-m>11.4105</x-m>
+			<y-m> 2.7835</y-m>
+			<z-m>-0.3099</z-m>
+			<pitch-deg>-4.00</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<path>Aircraft/T-50/Models/Stores/R-77FL.xml</path>
+		<offsets>
+			<x-m>10.6189</x-m>
+			<y-m>-0.2794</y-m>
+			<z-m>-0.4602</z-m>
+			<pitch-deg>-4.00</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<path>Aircraft/T-50/Models/Stores/R-77FR.xml</path>
+		<offsets>
+			<x-m>10.6189</x-m>
+			<y-m> 0.2794</y-m>
+			<z-m>-0.4602</z-m>
+			<pitch-deg>-4.00</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<path>Aircraft/T-50/Models/Stores/R-77BL.xml</path>
+		<offsets>
+			<x-m>16.3143</x-m>
+			<y-m>-0.2794</y-m>
+			<z-m>-0.1766</z-m>
+			<pitch-deg>-4.00</pitch-deg>
+		</offsets>
+	</model>
+    
+	<model>
+		<path>Aircraft/T-50/Models/Stores/R-77BR.xml</path>
+		<offsets>
+			<x-m>16.3143</x-m>
+			<y-m> 0.2794</y-m>
+			<z-m>-0.1766</z-m>
+			<pitch-deg>-4.00</pitch-deg>
+		</offsets>
+	</model>
+	
+</PropertyList>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<sim>
+		<model>
+			<livery>
+				<name type="string">US Army 160 SOAR(R)</name>
+				<texture>Liveries/USArmy160SOAR.png</texture>
+			</livery>
+			<livery-logo>
+				<texture>Liveries/USArmy160SOAR.png</texture>
+			</livery-logo>
+		</model>
+	</sim>
+
+</PropertyList>

@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+
+<!-- Effects by Raptor and Petar Jedvaj -->
+
+<PropertyList>
+
+	<!-- Weapons effects -->
+	
+	<model>
+		<name>flame</name>
+		<path>Aircraft/Su-25/Models/Effects/Gun/Flame.xml</path>
+		<condition>
+			<equals>
+				<property>controls/armament/trigger</property>
+				<value type="bool">true</value>
+			</equals>
+		</condition>
+	</model>
+	
+	<!-- Engines effects -->
+
+	<model>
+		<name>fire</name>
+		<path>Aircraft/Su-25/Models/Effects/Engine/Fire.xml</path>
+		<condition>
+			<equals>
+				<property>sim/crashed</property>
+				<value type="bool">true</value>
+			</equals>
+		</condition>
+		<offsets>
+			<x-m>1.05</x-m>
+			<y-m>0.00</y-m>
+			<z-m>1.75</z-m>
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>smoke-left</name>
+		<path>Aircraft/Su-25/Models/Effects/Engine/SmokeL.xml</path>
+		<offsets>
+			<x-m> 3.63</x-m>
+			<y-m> 0.84</y-m>
+			<z-m> 1.37</z-m>
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>smoke right</name>
+		<path>Aircraft/Su-25/Models/Effects/Engine/SmokeR.xml</path>
+		<offsets>
+			<x-m> 3.63</x-m>
+			<y-m>-0.84</y-m>
+			<z-m> 1.37</z-m>
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- Engine effects -->
+	
+	<model>
+		<name>contrail-left</name>
+		<path>Aircraft/Su-25/Models/Effects/Wing/Contrail.xml</path>
+		<offsets>
+			<x-m> 2.69</x-m>
+			<y-m>-7.04</y-m>
+			<z-m> 1.83</z-m>
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>contrail-right</name>
+		<path>Aircraft/Su-25/Models/Effects/Wing/Contrail.xml</path>
+		<offsets>
+			<x-m>2.69</x-m>
+			<y-m>7.04</y-m>
+			<z-m>1.83</z-m>
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>wash-left</name>
+		<path>Aircraft/Su-25/Models/Effects/Wing/Wash.xml</path>
+		<offsets>
+			<x-m> 0.63</x-m>
+			<y-m>-3.78</y-m>
+			<z-m> 2.21</z-m>
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>wash-right</name>
+		<path>Aircraft/Su-25/Models/Effects/Wing/Wash.xml</path>
+		<offsets>
+			<x-m>0.63</x-m>
+			<y-m>3.78</y-m>
+			<z-m>2.21</z-m>
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- Landing gear effects -->
+	
+    <model>
+        <path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+        <name>NoseTyre</name>
+        <offsets>
+            <x-m>-2.88</x-m>
+            <y-m>-0.05</y-m>
+            <z-m> 0.01</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+        <name>LeftTyre</name>
+        <offsets>
+            <x-m> 0.59</x-m>
+            <y-m>-1.24</y-m>
+            <z-m> 0.01</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+        <name>RightTyre</name>
+        <offsets>
+            <x-m>0.59</x-m>
+            <y-m>1.24</y-m>
+            <z-m>0.01</z-m>
+        </offsets>
+    </model>
+
+</PropertyList>

@@ -1,0 +1,725 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <sim include="Dialogs/Help.xml">
+
+    <!-- Info -->
+
+    <description>Aero L-159A ALCA</description>
+    <long-description>Aero L-159A ALCA is a light subsonic attack jet produced in the Czech Republic</long-description>
+
+    <author>pjedvaj, Tomaskom</author>
+    <authors>
+      <author>
+        <name>Petar Jedvaj</name>
+        <nick>pjedvaj</nick>
+        <description>3D designer</description>
+      </author>
+      <author>
+        <name>Tomáš Komárek</name>
+        <nick>Tomaskom</nick>
+        <description>Programmer</description>
+      </author>
+    </authors>
+
+    <urls>
+      <code-repository>https://github.com/pjedvaj/ALCA</code-repository>
+      <wikipedia>https://en.wikipedia.org/wiki/Aero_L-159_Alca</wikipedia>
+    </urls>
+
+    <status>beta</status>
+    <flight-model>yasim</flight-model>
+    <aero>ALCA-yasim</aero>
+
+    <rating>
+      <FDM type="int">4</FDM>
+      <systems type="int">1</systems>
+      <cockpit type="int">3</cockpit>
+      <model type="int">5</model>
+    </rating>
+
+    <tags>
+      <tag>aero</tag>
+      <tag>retractable-gear</tag>
+      <tag>single-engine</tag>
+      <tag>attack</tag>
+      <tag>jet</tag>
+      <tag>2000s</tag>
+    </tags>
+
+    <startup>
+      <splash-texture>Aircraft/ALCA/Splash.jpg</splash-texture>
+    </startup>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <!-- Models -->
+
+    <model>
+      <path>Aircraft/ALCA/Models/ALCA.xml</path>
+      <livery>
+        <file type="string" />
+      </livery>
+    </model>
+
+    <submodels>
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/ALCA/Models/Submodels.xml</path>
+    </submodels>
+
+    <!-- Altitude -->
+
+    <systems>
+      <property-rule n="100">
+        <path>Aircraft/ALCA/Systems/Altitude.xml</path>
+      </property-rule>
+    </systems>
+
+    <!-- Autopilot -->
+
+    <systems>
+      <autopilot>
+        <path>Aircraft/ALCA/Systems/Autopilot.xml</path>
+      </autopilot>
+    </systems>
+
+    <!-- Flaps positions: 0 deg, 25 deg (takeoff), 44 deg (landing) -->
+
+    <flaps>
+      <setting>0.00</setting>
+      <setting>0.568</setting>
+      <setting>1.00</setting>
+    </flaps>
+
+    <!-- HUD -->
+
+    <hud>
+      <path n="1">Aircraft/ALCA/HUD/HUD.xml</path>
+      <visibility n="1">true</visibility>
+      <palette>
+        <color n="0">
+          <alpha type="float">0.85</alpha>
+          <antialiased type="bool">true</antialiased>
+          <brightness type="float">0.85</brightness>
+          <transparent type="bool">true</transparent>
+          <red type="float">0.38</red>
+          <green type="float">1.0</green>
+          <blue type="float">0.22</blue>
+        </color>
+        <color n="1">
+          <alpha type="float">0.85</alpha>
+          <antialiased type="bool">true</antialiased>
+          <brightness type="float">0.85</brightness>
+          <transparent type="bool">true</transparent>
+          <red type="float">1.0</red>
+          <green type="float">0.2</green>
+          <blue type="float">0.0</blue>
+        </color>
+      </palette>
+    </hud>
+
+    <!-- Views -->
+
+    <virtual-cockpit archive="y">true</virtual-cockpit>
+
+    <chase-distance-m type="double" archive="y">-20.0</chase-distance-m>
+
+    <view n="0">
+      <internal type="bool" archive="y">true</internal>
+      <config>
+        <x-offset-m type="double" archive="y">0.00</x-offset-m>
+        <y-offset-m type="double" archive="y">0.10</y-offset-m>
+        <z-offset-m type="double" archive="y">-3.09</z-offset-m>
+        <pitch-offset-deg type="double">-22</pitch-offset-deg>
+        <default-field-of-view-deg type="double">85</default-field-of-view-deg>
+      </config>
+      <dynamic>
+        <enabled type="bool">0</enabled>
+      </dynamic>
+    </view>
+
+    <view n="1">
+      <config>
+        <target-z-offset-m archive="y" type="double">0.4</target-z-offset-m>
+        <target-y-offset-m archive="y" type="double">-0.3</target-y-offset-m>
+      </config>
+    </view>
+
+    <view n="2">
+      <config>
+        <target-z-offset-m archive="y" type="double">0.4</target-z-offset-m>
+        <target-y-offset-m archive="y" type="double">-0.3</target-y-offset-m>
+      </config>
+    </view>
+
+    <view n="3">
+      <config>
+        <target-z-offset-m archive="y" type="double">0.4</target-z-offset-m>
+        <target-y-offset-m archive="y" type="double">-0.3</target-y-offset-m>
+      </config>
+    </view>
+
+    <view n="4">
+      <config>
+        <target-z-offset-m archive="y" type="double">0.4</target-z-offset-m>
+        <target-y-offset-m archive="y" type="double">-0.3</target-y-offset-m>
+      </config>
+    </view>
+
+    <view n="5">
+      <config>
+        <target-z-offset-m archive="y" type="double">0.4</target-z-offset-m>
+        <target-y-offset-m archive="y" type="double">-0.3</target-y-offset-m>
+      </config>
+    </view>
+
+    <view n="6">
+      <config>
+        <target-z-offset-m archive="y" type="double">0.4</target-z-offset-m>
+        <target-y-offset-m archive="y" type="double">-0.3</target-y-offset-m>
+      </config>
+    </view>
+
+    <view n="7">
+      <config>
+        <target-z-offset-m archive="y" type="double">0.4</target-z-offset-m>
+        <target-y-offset-m archive="y" type="double">-0.3</target-y-offset-m>
+      </config>
+    </view>
+
+    <!-- Menu -->
+
+    <menubar>
+      <default>
+        <menu n="99">
+          <label>ALCA</label>
+          <enabled type="bool">true</enabled>
+
+          <item>
+            <label>Select livery</label>
+            <binding>
+              <command>nasal</command>
+              <script>aircraft.livery.dialog.toggle();</script>
+            </binding>
+          </item>
+
+          <item>
+            <label>External lights control</label>
+            <binding>
+              <command>nasal</command>
+              <script>ALCA.lights_dialog.toggle();</script>
+            </binding>
+          </item>
+
+          <item>
+            <label>Ground refuel</label>
+            <binding>
+              <command>nasal</command>
+              <script>if(fuelsystem.refuel_galsPerSec == 0) {
+                    	fuelsystem.refuel(4);
+                    	screen.log.write("Refueling all tanks, 4 gal/s.", 1, 0.6, 0.1);
+                    }
+                    else {
+                    	fuelsystem.refuel(0);
+                    	screen.log.write("Stopped refueling.", 1, 0.6, 0.1);
+                    }
+              </script>
+            </binding>
+          </item>
+
+          <item>
+            <label>Reload Plamen cannons</label>
+            <binding>
+              <command>nasal</command>
+              <script>weapons.reloadPlamen();</script>
+            </binding>
+          </item>
+
+          <item>
+            <label>Toggle ammo reports</label>
+            <binding>
+              <command>property-toggle</command>
+              <property>/controls/armament/report-ammo</property>
+            </binding>
+            <binding>
+              <command>nasal</command>
+              <script>
+            	if(getprop("/controls/armament/report-ammo")) {
+            		gui.popupTip("Plamen rounds left: " ~ getprop("/controls/armament/roundsLeft") ~ "\nAmmo reporting on");
+            	}
+            	else
+            		gui.popupTip("Ammo reporting off");
+              </script>
+            </binding>
+          </item>
+        </menu>
+      </default>
+    </menubar>
+
+    <!-- Sounds -->
+
+    <sound>
+      <audible>true</audible>
+      <path>Aircraft/ALCA/Sounds/Sounds.xml</path>
+    </sound>
+
+    <!-- Multiplayer -->
+
+    <multiplay>
+      <generic>
+        <!-- Alpha for tiptrail and vapour animations -->
+        <float n="0" alias="/orientation/alpha-deg" />
+        <!-- IAS -->
+        <float n="1" alias="/velocities/airspeed-kt" />
+        <!-- Groundspeed -->
+        <float n="2" alias="/velocities/groundspeed-kt" />
+        <!-- Groundspeed -->
+        <float n="3" alias="/position/altitude-agl-ft" />
+        <!-- Engine thrust: float[4] defined later -->
+        <!-- Formation lights -->
+        <float n="5" type="double">0</float>
+        <!-- Nav lights on -->
+        <int n="0" alias="/controls/lighting/nav-lights-switch" />
+        <!-- Beacon on -->
+        <int n="1" alias="/controls/lighting/beacon-switch" />
+        <!-- Landing lights on -->
+        <int n="2" alias="/controls/lighting/landing-lights-switch" />
+        <!-- Taxi light on -->
+        <int n="3" alias="/controls/lighting/taxi-light-switch" />
+        <!-- Engine on -->
+        <int n="4" alias="/engines/engine[0]/running" />
+        <!-- Engine thrust -->
+        <float n="4" alias="/engines/engine/prop-thrust" />
+        <!--Contrail -->
+        <int n="5" alias="/environment/contrail" />
+        <!-- int[6] reserved for MP trigger -->
+        <int n="6" type="int">0</int>
+        <!-- Crashed -->
+        <int n="7" alias="/sim/crashed" />
+        <!-- Smokewinders on -->
+        <int n="8" alias="/controls/switches/smokewinders" />
+        <!-- Show all pylons? -->
+        <int n="10" alias="/sim/weight[0]/payload-int" />
+        <!-- Payloads (pylons numbered from right to left)
+           Read Nasal/Weapons.nas for details -->
+        <int n="11" alias="/sim/weight[1]/payload-int" />
+        <int n="12" alias="/sim/weight[2]/payload-int" />
+        <int n="13" alias="/sim/weight[3]/payload-int" />
+        <int n="14" alias="/sim/weight[4]/payload-int" />
+        <int n="15" alias="/sim/weight[5]/payload-int" />
+        <int n="16" alias="/sim/weight[6]/payload-int" />
+        <int n="17" alias="/sim/weight[7]/payload-int" />
+        <!-- Fuel probe -->
+        <int n="18" alias="/systems/refuel/serviceable" />
+      </generic>
+    </multiplay>
+
+    <!-- Payloads -->
+
+    <weight n="0">
+      <name>Pylons</name>
+      <weight-lb>0</weight-lb>
+      <selected>Mount all pylons</selected>
+      <opt>
+        <name>Mount only used pylons</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>Mount all pylons</name>
+        <lbs>0</lbs>
+      </opt>
+    </weight>
+
+    <weight n="1">      <!-- Right wing outer pylon -->
+      <name>Right wing pylon 3</name>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9</name>
+        <lbs>190</lbs>
+      </opt>
+      <opt>
+        <name>Mk82</name>
+        <lbs>540</lbs>
+      </opt>
+      <opt>
+        <name>Smokewinder</name>
+        <lbs>190</lbs>
+      </opt>
+    </weight>
+
+    <weight n="2">      <!-- Right wing middle pylon -->
+      <name>Right wing pylon 2</name>
+      <tank>11</tank>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AGM-65 Maverick</name>
+        <lbs>485</lbs>
+      </opt>
+      <opt>
+        <name>GBU-12 Paveway II</name>
+        <lbs>650</lbs>
+      </opt>
+      <opt>
+        <name>Mk82</name>
+        <lbs>540</lbs>
+      </opt>
+      <opt>
+        <name>350l Tactical droptank</name>
+        <lbs>150</lbs>
+        <gals>92.46</gals>
+      </opt>
+    </weight>
+
+    <weight n="3">      <!-- Right wing inner pylon -->
+      <name>Right wing pylon 1</name>
+      <tank>9</tank>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>PL-20 Plamen</name>
+        <lbs>474</lbs>
+      </opt>
+      <opt>
+        <name>AGM-65 Maverick</name>
+        <lbs>485</lbs>
+      </opt>
+      <opt>
+        <name>GBU-12 Paveway II</name>
+        <lbs>650</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16 Paveway II</name>
+        <lbs>1092</lbs>
+      </opt>
+      <opt>
+        <name>Mk82</name>
+        <lbs>540</lbs>
+      </opt>
+      <opt>
+        <name>Mk83</name>
+        <lbs>1014</lbs>
+      </opt>
+      <opt>
+        <name>350l Tactical droptank</name>
+        <lbs>150</lbs>
+        <gals>92.46</gals>
+      </opt>
+      <opt>
+        <name>500l Ferry droptank</name>
+        <lbs>200</lbs>
+        <gals>132.1</gals>
+      </opt>
+    </weight>
+
+    <weight n="4">      <!-- Fuselage pylon -->
+      <name>Fuselage pylon</name>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>PL-20 Plamen</name>
+        <lbs>474</lbs>
+      </opt>
+    </weight>
+
+    <weight n="5">      <!-- Left wing inner pylon -->
+      <name>Left wing pylon 1</name>
+      <tank>8</tank>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>PL-20 Plamen</name>
+        <lbs>474</lbs>
+      </opt>
+      <opt>
+        <name>AGM-65 Maverick</name>
+        <lbs>485</lbs>
+      </opt>
+      <opt>
+        <name>GBU-12 Paveway II</name>
+        <lbs>650</lbs>
+      </opt>
+      <opt>
+        <name>GBU-16 Paveway II</name>
+        <lbs>1092</lbs>
+      </opt>
+      <opt>
+        <name>Mk82</name>
+        <lbs>540</lbs>
+      </opt>
+      <opt>
+        <name>Mk83</name>
+        <lbs>1014</lbs>
+      </opt>
+      <opt>
+        <name>350l Tactical droptank</name>
+        <lbs>150</lbs>
+        <gals>92.46</gals>
+      </opt>
+      <opt>
+        <name>500l Ferry droptank</name>
+        <lbs>200</lbs>
+        <gals>132.1</gals>
+      </opt>
+    </weight>
+
+    <weight n="6">      <!-- Left wing middle pylon -->
+      <name>Left wing pylon 2</name>
+      <tank>10</tank>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AGM-65 Maverick</name>
+        <lbs>485</lbs>
+      </opt>
+      <opt>
+        <name>GBU-12 Paveway II</name>
+        <lbs>650</lbs>
+      </opt>
+      <opt>
+        <name>Mk82</name>
+        <lbs>540</lbs>
+      </opt>
+      <opt>
+        <name>350l Tactical droptank</name>
+        <lbs>150</lbs>
+        <gals>92.46</gals>
+      </opt>
+    </weight>
+
+    <weight n="7">      <!-- Left wing outer pylon -->
+      <name>Left wing pylon 3</name>
+      <weight-lb>0</weight-lb>
+      <selected>None</selected>
+      <opt>
+        <name>None</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>AIM-9</name>
+        <lbs>190</lbs>
+      </opt>
+      <opt>
+        <name>Mk82</name>
+        <lbs>540</lbs>
+      </opt>
+      <opt>
+        <name>Smokewinder</name>
+        <lbs>190</lbs>
+      </opt>
+    </weight>
+
+    <weight n="8">      <!-- Fixed refueling probe -->
+      <name>Refueling probe</name>
+      <weight-lb>0</weight-lb>
+      <selected>No probe</selected>
+      <opt>
+        <name>No probe</name>
+        <lbs>0</lbs>
+      </opt>
+      <opt>
+        <name>Probe mounted</name>
+        <lbs>0</lbs>
+      </opt>
+    </weight>
+
+  </sim>
+
+  <!-- Fuel -->
+
+  <systems>
+    <refuel>
+      <type type="string">probe</type>
+      <serviceable type="bool">true</serviceable>
+      <max-fuel-transfer-lbs-min type="double">6000</max-fuel-transfer-lbs-min>
+      <offset-x-m type="double">-4.98147</offset-x-m>
+      <offset-y-m type="double">0.71732</offset-y-m>
+      <offset-z-m type="double">-0.37059</offset-z-m>
+    </refuel>
+  </systems>
+
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <name>Engine feed tank</name>
+        <level-gal_us archive="y">1</level-gal_us>
+      </tank>
+
+      <tank n="1">
+        <name>Fuselage tank 1</name>
+        <level-gal_us archive="y">62.2</level-gal_us>
+      </tank>
+
+      <tank n="2">
+        <name>Fuselage tank 2</name>
+        <level-gal_us archive="y">62.2</level-gal_us>
+      </tank>
+
+      <tank n="3">
+        <name>Fuselage tank 3</name>
+        <level-gal_us archive="y">62.2</level-gal_us>
+      </tank>
+
+      <tank n="4">
+        <name>Fuselage tank 4</name>
+        <level-gal_us archive="y">62.2</level-gal_us>
+      </tank>
+
+      <tank n="5">
+        <name>Fuselage tank 5</name>
+        <level-gal_us archive="y">62.2</level-gal_us>
+      </tank>
+
+      <tank n="6">
+        <name>Left wingtip tank</name>
+        <level-gal_us archive="y">61.0</level-gal_us>
+      </tank>
+
+      <tank n="7">
+        <name>Right wingtip tank</name>
+        <level-gal_us archive="y">61.0</level-gal_us>
+      </tank>
+
+      <tank n="8">
+        <name>Inner left droptank</name>
+        <selected type="bool">false</selected>
+        <level-gal_us archive="y">132.1</level-gal_us>
+      </tank>
+
+      <tank n="9">
+        <name>Inner right droptank</name>
+        <selected type="bool">false</selected>
+        <level-gal_us archive="y">132.1</level-gal_us>
+      </tank>
+
+      <tank n="10">
+        <name>Outer left droptank</name>
+        <selected type="bool">false</selected>
+        <level-gal_us archive="y">92.46</level-gal_us>
+      </tank>
+
+      <tank n="11">
+        <name>Outer right droptank</name>
+        <selected type="bool">false</selected>
+        <level-gal_us archive="y">92.46</level-gal_us>
+      </tank>
+
+    </fuel>
+  </consumables>
+
+  <!-- Systems -->
+
+  <instrumentation>
+    <radar>
+      <range type="int" archive="y">20</range>
+      <minimized type="bool" archive="y">false</minimized>
+    </radar>
+  </instrumentation>
+
+  <controls>
+    <gear>
+      <brake-parking type="double">1.0</brake-parking>
+    </gear>
+    <switches>
+      <smokewinders type="bool">false</smokewinders>
+    </switches>
+  </controls>
+
+  <environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+
+  <!-- Keyboard -->
+
+  <input>
+    <keyboard include="Input/Keyboard.xml" />
+  </input>
+
+  <!-- Nasal -->
+
+  <nasal>
+    <version>
+      <script>
+      var s = split(".", getprop("/sim/version/flightgear"));
+      props.globals.initNode("/sim/version/fg-major", s[0], "INT");
+      props.globals.initNode("/sim/version/fg-minor", s[1], "INT");
+      </script>
+    </version>
+    <preinit>
+      <file>Aircraft/ALCA/Nasal/Preinit.nas</file>
+    </preinit>
+    <!-- Ait-to-Air refueling -->
+    <aar>
+      <file>Aircraft/Generic/aar.nas</file>
+    </aar>
+    <lights>
+      <file>Aircraft/ALCA/Nasal/Lights.nas</file>
+    </lights>
+    <payloads>
+      <file>Aircraft/ALCA/Nasal/Payloads.nas</file>
+    </payloads>
+    <weapons>
+      <file>Aircraft/ALCA/Nasal/Weapons.nas</file>
+    </weapons>
+    <weight>
+      <file>Aircraft/ALCA/Nasal/Weight.nas</file>
+    </weight>
+    <fuelsystem>
+      <file>Aircraft/ALCA/Nasal/FuelSystem.nas</file>
+    </fuelsystem>
+    <flaps>
+      <file>Aircraft/ALCA/Nasal/Flaps.nas</file>
+    </flaps>
+    <speedbrake>
+      <file>Aircraft/ALCA/Nasal/Speedbrake.nas</file>
+    </speedbrake>
+    <canopy>
+      <file>Aircraft/ALCA/Nasal/Canopy.nas</file>
+    </canopy>
+    <tyresmoke>
+      <file>Aircraft/ALCA/Nasal/Tyresmoke.nas</file>
+    </tyresmoke>
+    <explosion>
+      <file>Aircraft/ALCA/Nasal/Explosion.nas</file>
+    </explosion>
+    <disintegration>
+      <file>Aircraft/ALCA/Nasal/Disintegration.nas</file>
+    </disintegration>
+    <MpStr>
+      <file>Aircraft/ALCA/Nasal/MpEncode.nas</file>
+    </MpStr>
+    <ALCA>
+      <file>Aircraft/ALCA/Nasal/Postinit.nas</file>
+      <file>Aircraft/ALCA/Nasal/HUD.nas</file>
+    </ALCA>
+  </nasal>
+
+</PropertyList>

@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>10</max-m>
+    </animation>
+
+<!-- pilot instruments -->
+
+	<model>
+		<name>pilot gear</name>
+		<path>Aircraft/rah-66/instruments/gear/gear.xml</path>
+		<offsets>
+			<x-m>-4.37</x-m>
+			<y-m>-0.125</y-m>
+			<z-m> 1.98</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>pilot cyclic</name>
+		<path>Aircraft/rah-66/instruments/cyclic/cyclic.xml</path>
+		<offsets>
+			<x-m>-3.9664</x-m>
+			<y-m> 0.4217</y-m>
+			<z-m> 1.7139</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>pilot collective</name>
+		<path>Aircraft/rah-66/instruments/collective/collective.xml</path>
+		<offsets>
+			<x-m>-3.6811</x-m>
+			<y-m>-0.4193</y-m>
+			<z-m> 1.6530</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>pilot left mfd</name>
+		<path>Aircraft/rah-66/instruments/left-mfd/left-mfd.xml</path>
+		<offsets>
+			<x-m>-4.37</x-m>
+			<y-m>-0.1158</y-m>
+			<z-m> 1.98</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>pilot right mfd</name>
+		<path>Aircraft/rah-66/instruments/right-mfd/right-mfd.xml</path>
+		<offsets>
+			<x-m>-4.37</x-m>
+			<y-m> 0.12</y-m>
+			<z-m> 1.98</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>pilot right display</name>
+		<path>Aircraft/rah-66/instruments/right-display/right-display.xml</path>
+		<offsets>
+			<x-m>-4.245</x-m>
+			<y-m> 0.285</y-m>
+			<z-m> 2.125</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>pilot top displays</name>
+		<path>Aircraft/rah-66/instruments/top-displays/top-displays.xml</path>
+		<offsets>
+			<x-m>-4.285</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 2.20</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>pilot left small mfd</name>
+		<path>Aircraft/rah-66/instruments/left-small-mfd/left-small-mfd.xml</path>
+		<offsets>
+			<x-m>-4.30</x-m>
+			<y-m>-0.325</y-m>
+			<z-m> 1.845</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>pilot right small mfd</name>
+		<path>Aircraft/rah-66/instruments/right-small-mfd/right-small-mfd.xml</path>
+		<offsets>
+			<x-m>-4.30</x-m>
+			<y-m> 0.315</y-m>
+			<z-m> 1.845</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>pilot keyboard</name>
+		<path>Aircraft/rah-66/instruments/keyboard/keyboard.xml</path>
+		<offsets>
+			<x-m>-4.27</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 1.71</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+<!-- gunner instruments -->
+
+	<model>
+		<name>gunner gear</name>
+		<path>Aircraft/rah-66/instruments/gear/gear.xml</path>
+		<offsets>
+			<x-m>-2.9975</x-m>
+			<y-m>-0.125</y-m>
+			<z-m> 2.1084</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>gunner cyclic</name>
+		<path>Aircraft/rah-66/instruments/cyclic/cyclic.xml</path>
+		<offsets>
+			<x-m>-2.5939</x-m>
+			<y-m> 0.4217</y-m>
+			<z-m> 1.8423</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>gunner collective</name>
+		<path>Aircraft/rah-66/instruments/collective/collective.xml</path>
+		<offsets>
+			<x-m>-2.3086</x-m>
+			<y-m>-0.4193</y-m>
+			<z-m> 1.7814</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>gunner left mfd</name>
+		<path>Aircraft/rah-66/instruments/left-mfd/left-mfd.xml</path>
+		<offsets>
+			<x-m>-2.9975</x-m>
+			<y-m>-0.1158</y-m>
+			<z-m> 2.1084</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>gunner right mfd</name>
+		<path>Aircraft/rah-66/instruments/right-mfd/right-mfd.xml</path>
+		<offsets>
+			<x-m>-2.9975</x-m>
+			<y-m> 0.12</y-m>
+			<z-m> 2.1084</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>gunner right display</name>
+		<path>Aircraft/rah-66/instruments/right-display/right-display.xml</path>
+		<offsets>
+			<x-m>-2.8725</x-m>
+			<y-m> 0.285</y-m>
+			<z-m> 2.2534</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>gunner top displays</name>
+		<path>Aircraft/rah-66/instruments/top-displays/top-displays.xml</path>
+		<offsets>
+			<x-m>-2.9125</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 2.3284</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>gunner left small mfd</name>
+		<path>Aircraft/rah-66/instruments/left-small-mfd/left-small-mfd.xml</path>
+		<offsets>
+			<x-m>-2.9275</x-m>
+			<y-m>-0.325</y-m>
+			<z-m> 1.9734</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>gunner right small mfd</name>
+		<path>Aircraft/rah-66/instruments/right-small-mfd/right-small-mfd.xml</path>
+		<offsets>
+			<x-m>-2.9275</x-m>
+			<y-m> 0.315</y-m>
+			<z-m> 1.9734</z-m>
+			<pitch-deg>-25</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>gunner keyboard</name>
+		<path>Aircraft/rah-66/instruments/keyboard/keyboard.xml</path>
+		<offsets>
+			<x-m>-2.8975</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 1.8384</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+</PropertyList>

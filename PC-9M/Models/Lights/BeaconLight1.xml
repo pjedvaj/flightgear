@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>BeaconLight1.ac</path>
+
+<animation>
+<type>select</type>
+<object-name>Light</object-name>
+<condition>
+<property>/sim/model/lights/beacon/state</property>
+</condition>
+</animation>
+
+<animation>
+<type>noshadow</type>
+<object-name>Light</object-name>
+</animation>
+
+</PropertyList>

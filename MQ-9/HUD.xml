@@ -1,0 +1,482 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<name>HUD</name>
+
+	<enable3d>false</enable3d>
+	
+	<tape>
+		<name>Pitch</name>
+		<x>65</x>
+		<y>-30</y>
+		<width>25</width>
+		<height>40</height>
+		<input>
+			<property>/orientation/pitch-deg</property>
+			<factor>1.0</factor>
+		</input>
+        <label-gap-width>0</label-gap-width>
+		<major-divisions>10</major-divisions>
+		<minor-divisions>5</minor-divisions>
+		<display-span>50</display-span>
+        <format>%.0f</format>
+		<option>right</option>
+		<option>vertical</option>
+		<tick-bottom>false</tick-bottom>
+		<tick-top>false</tick-top>
+		<tick-right>false</tick-right>
+		<tick-left>false</tick-left>
+		<cap-bottom>false</cap-bottom>
+		<cap-top>false</cap-top>
+		<cap-right>false</cap-right>
+		<cap-left>false</cap-left>
+		<marker-offset>0</marker-offset>
+		<enable-pointer>true</enable-pointer>
+		<pointer-type>fixed</pointer-type>
+        <tick-type>line</tick-type>
+        <tick-length>variable</tick-length>
+	</tape>
+    
+    <tape>
+		<name>Compass</name>
+		<x>-45</x>
+		<y>45</y>
+		<width>100</width>
+		<height>25</height>
+		<input>
+			<property>/orientation/heading-deg</property>
+			<factor>0.1</factor>
+		</input>
+        <label-gap-width>0</label-gap-width>
+		<major-divisions>1</major-divisions>
+		<minor-divisions>0.5</minor-divisions>
+		<display-span>6</display-span>
+        <format>%.0f</format>
+		<option>top</option>
+		<option>horizontal</option>
+		<tick-bottom>false</tick-bottom>
+		<tick-top>false</tick-top>
+		<tick-right>false</tick-right>
+		<tick-left>false</tick-left>
+		<cap-bottom>true</cap-bottom>
+		<cap-top>false</cap-top>
+		<cap-right>false</cap-right>
+		<cap-left>false</cap-left>
+		<marker-offset>0</marker-offset>
+		<enable-pointer>true</enable-pointer>
+		<pointer-type>fixed</pointer-type>
+        <tick-type>line</tick-type>
+        <tick-length>variable</tick-length>
+	</tape>
+
+	<tape>
+		<name>IASmarkers</name>
+		<x>-65</x>
+		<y>-60</y>
+		<width>0</width>
+		<height>100</height>
+		<input>
+			<property>/velocities/airspeed-kt</property>
+			<factor>0.01</factor>
+			<max>25</max>
+			<min>0</min>
+		</input>
+        <label-gap-width>0</label-gap-width>
+        <format>%.0f</format>
+		<major-divisions>5</major-divisions>
+		<minor-divisions>1</minor-divisions>
+		<display-span>25</display-span>
+		<option>left</option>
+		<option>vertical</option>
+		<tick-bottom>false</tick-bottom>
+		<tick-top>false</tick-top>
+		<tick-right>false</tick-right>
+		<tick-left>false</tick-left>
+		<cap-bottom>false</cap-bottom>
+		<cap-top>false</cap-top>
+		<cap-right>false</cap-right>
+		<cap-left>false</cap-left>
+		<marker-offset>0</marker-offset>
+		<enable-pointer>true</enable-pointer>
+		<pointer-type>moving</pointer-type>
+	</tape>
+    
+    <gauge>
+		<name>IAS</name>
+		<x>-75</x>
+		<y>-60</y>
+		<width>20</width>
+		<height>100</height>
+        <option>notext</option>
+		<input>
+			<property>/velocities/airspeed-kt</property>
+			<factor>0.01852</factor>
+			<max>25</max>
+			<min>0</min>
+		</input>
+        <label-gap-width>10</label-gap-width>
+		<major-divisions>5</major-divisions>
+		<minor-divisions>1</minor-divisions>
+		<display-span>25</display-span>
+		<option>left</option>
+		<option>vertical</option>
+		<tick-bottom>true</tick-bottom>
+		<tick-top>true</tick-top>
+		<tick-right>false</tick-right>
+		<tick-left>false</tick-left>
+		<cap-bottom>false</cap-bottom>
+		<cap-top>false</cap-top>
+		<cap-right>true</cap-right>
+		<cap-left>false</cap-left>
+		<marker-offset>0</marker-offset>
+		<enable-pointer>true</enable-pointer>
+		<pointer-type>moving</pointer-type>
+	</gauge>
+    
+ <ladder>
+  <name>Pitch Ladder</name>
+  <type>pitch</type>
+  <!-- <type>climb-dive</type> -->
+  <x>5</x>
+  <y>5</y>
+  <width>0</width>
+  <height>0</height>
+  <roll-input>
+   <property>/orientation/roll-deg</property>
+  </roll-input>
+  <pitch-input>
+   <property>/orientation/pitch-deg</property>
+  </pitch-input>
+  <compression-factor>11</compression-factor>
+  <display-span>0.0</display-span>
+  <divisions>360.0</divisions>
+  <screen-hole>50</screen-hole>
+  <zero-bar-overlength>0</zero-bar-overlength>
+  <tick-length>0</tick-length>
+  <enable-dive-bar-angle>true</enable-dive-bar-angle>
+  <lbl-pos>0</lbl-pos>
+  <glide-slope>0.0</glide-slope>
+  <enable-dynamic-origin>true</enable-dynamic-origin>
+  <enable-zenith>true</enable-zenith>
+  <enable-nadir>true</enable-nadir>
+  <enable-fuselage-ref-line>false</enable-fuselage-ref-line>
+  <enable-target-spot>false</enable-target-spot>
+  <enable-target-markers>true</enable-target-markers>
+  <enable-velocity-vector>false</enable-velocity-vector>
+  <enable-drift-marker>false</enable-drift-marker>
+  <enable-alpha-bracket>false</enable-alpha-bracket>
+  <enable-energy-marker>false</enable-energy-marker>
+  <enable-climb-dive-marker>false</enable-climb-dive-marker>
+  <enable-glide-slope-marker>false</enable-glide-slope-marker>
+  <enable-energy-worm>false</enable-energy-worm>
+  <enable-waypoint-marker>false</enable-waypoint-marker>
+ </ladder>
+ 
+	<label>
+		<name>TURRETHEADING</name>
+		<x>-65</x>
+		<y>110</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/sim/current-view/goal-heading-offset-deg</property>
+            <factor>1.0</factor>
+		</input>
+		<format>%3.2f</format>
+		<halign>right</halign>
+		<prefix>BRG </prefix>
+	</label>
+	<label>
+		<name>TURRETPITCH</name>
+		<x>-65</x>
+		<y>100</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/sim/current-view/goal-pitch-offset-deg</property>
+            <factor>1.0</factor>
+		</input>
+		<format>%3.2f</format>
+		<halign>right</halign>
+		<prefix>PITCH </prefix>
+	</label>
+	<label>
+		<name>TURRETROLL</name>
+		<x>-65</x>
+		<y>90</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/sim/current-view/goal-roll-offset-deg</property>
+            <factor>1.0</factor>
+		</input>
+		<format>%3.2f</format>
+		<halign>right</halign>
+		<prefix>ROL </prefix>
+	</label>
+	<label>
+		<name>FOV</name>
+		<x>-65</x>
+		<y>80</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/sim/current-view/field-of-view</property>
+            <factor>1.0</factor>
+		</input>
+		<format>%3.2f</format>
+		<halign>right</halign>
+		<prefix>FOV </prefix>
+	</label>
+	<label>
+		<name>ARMMSG</name>
+		<x>-65</x>
+		<y>-90</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/sim/current-view/</property>
+		</input>
+		<halign>right</halign>
+		<prefix>ARM </prefix>
+		<postfix> LTMC</postfix>
+	</label>
+	<label>
+		<name>TGTINFO</name>
+		<x>95</x>
+		<y>-70</y>
+		<input>
+		<property>/sim/</property>
+		</input>
+		<halign>left</halign>
+		<prefix>TGT</prefix>
+	</label>
+
+	<label>
+		<name>TGTLON</name>
+		<x>75</x>
+		<y>-80</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/sim/input/click/longitude-deg</property>
+            <factor>1.0</factor>
+		</input>
+		<format>%3.4f</format>
+		<halign>left</halign>
+		<prefix>LON </prefix>
+	</label>
+
+	<label>
+		<name>TGTLAT</name>
+		<x>75</x>
+		<y>-90</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/sim/input/click/latitude-deg</property>
+            <factor>1.0</factor>
+		</input>
+		<format>%3.4f</format>
+		<halign>left</halign>
+		<prefix>LAT </prefix>
+	</label>
+
+	<label>
+		<name>TGTELEV</name>
+		<x>75</x>
+		<y>-100</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/sim/input/click/elevation-m</property>
+            <factor>1.0</factor>
+		</input>
+		<format>%3.4f</format>
+		<halign>left</halign>
+		<prefix>ELEV </prefix>
+	</label>
+
+	<label>
+		<name>TGTBRG</name>
+		<x>75</x>
+		<y>-110</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/tracking/bearing</property>
+            <factor>1.0</factor>
+		</input>
+		<format>BRG   %3.2f</format>
+		<halign>left</halign>
+	</label>
+
+	<label>
+		<name>TGTRNGKM</name>
+		<x>75</x>
+		<y>-120</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/tracking/rng-km</property>
+            <factor>1.0</factor>
+		</input>
+		<format>RNG KM    %3.2f</format>
+		<halign>left</halign>
+	</label>
+
+	<label>
+		<name>TGTRNGNM</name>
+		<x>75</x>
+		<y>-130</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/tracking/rng-nml</property>
+            <factor>1.0</factor>
+		</input>
+		<format>RNG NML   %3.2f</format>
+		<halign>left</halign>
+	</label>
+
+	<label>
+		<name>AIRCRAFTINFO</name>
+		<x>95</x>
+		<y>110</y>
+		<input>
+		<property>/sim/</property>
+		</input>
+		<halign>left</halign>
+		<prefix>ACFT</prefix>
+	</label>
+
+	<label>
+		<name>LON</name>
+		<x>75</x>
+		<y>100</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/position/longitude-deg</property>
+            <factor>1.0</factor>
+		</input>
+		<format>%3.4f</format>
+		<halign>left</halign>
+		<prefix>LON </prefix>
+	</label>
+
+	<label>
+		<name>LAT</name>
+		<x>75</x>
+		<y>90</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/position/latitude-deg</property>
+            <factor>1.0</factor>
+		</input>
+		<format>%3.4f</format>
+		<halign>left</halign>
+		<prefix>LAT </prefix>
+	</label>
+
+	<label>
+		<name>AGL</name>
+		<x>75</x>
+		<y>80</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/position/altitude-agl-ft</property>
+            <factor>1.0</factor>
+		</input>
+		<format>%3.4f</format>
+		<halign>left</halign>
+		<prefix>AGL </prefix>
+	</label>
+
+	<label>
+		<name>ACFTBRG</name>
+		<x>75</x>
+		<y>70</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/orientation/heading-deg</property>
+            <factor>1.0</factor>
+		</input>
+		<format>%3.2f</format>
+		<halign>left</halign>
+		<prefix>BRG </prefix>
+	</label>
+
+	<label>
+		<name>IAS</name>
+		<x>75</x>
+		<y>60</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+		<property>/velocities/airspeed-kt</property>
+       		<factor>1.852</factor>
+		</input>
+		<format>IAS   %4.0f</format>
+		<halign>left</halign>
+	</label>
+
+	<label>
+		<name>Altitude</name>
+		<x>120</x>
+		<y>50</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/position/altitude-ft</property>
+            <factor>0.3048</factor>
+		</input>
+		<format>ALT %5.0f</format>
+		<halign>right</halign>
+	</label>
+   <!-- 
+    
+    <label>
+		<name>Acceleration</name>
+		<x>75</x>
+		<y>-55</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/accelerations/pilot-gdamped</property>
+		</input>
+		<format>A %2.1f</format>
+		<halign>right</halign>
+	</label>
+    <label>
+		<name>Mach</name>
+		<x>-30</x>
+		<y>-55</y>
+		<width>1</width>
+		<height>1</height>
+		<input>
+			<property>/velocities/mach</property>
+		</input>
+		<format>%1.2f</format>
+		<halign>right</halign>
+	</label>
+-->
+	<aiming-reticle>
+		<x>5</x>
+		<y>0</y>
+		<width>10</width> <!-- defines the diameter of the constant/inner circle -->
+		<height>10</height>
+		<!-- <active-condition> -->
+		<!-- <property>/aim/active</property> -->
+		<!-- </active-condition> -->
+		<!-- <diameter-input> -->
+		<!-- defines the diameter of the adjustable/outer circle -->
+		<!-- <property>2</property> -->
+		<!-- </diameter-input> -->
+	</aiming-reticle>
+
+</PropertyList>

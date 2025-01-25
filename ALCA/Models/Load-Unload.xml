@@ -1,0 +1,818 @@
+<PropertyList>
+
+  <nasal>
+    <load><![CDATA[
+var root = cmdarg();
+var rootindex = root.getIndex();
+var mpPath = "/ai/models/multiplayer["~ rootindex ~"]/";
+
+var lightsPath = mpPath~"lightpack/"; #path to the property node, where all internal values are placed
+
+props.globals.initNode(mpPath~"sim/is-MP-Aircraft", 1, "BOOL");
+      
+srand();
+#wherever you want to add randomization of time, use something like:  + rand()*0.05-0.025
+
+#FG version parsing
+var versionSplit = split(".", getprop("/sim/version/flightgear"));
+props.globals.initNode("/sim/version/fg-major", versionSplit[0], "INT");
+props.globals.initNode("/sim/version/fg-minor", versionSplit[1], "INT");
+
+#Livery updates
+var livery_update = aircraft.livery_update.new("Aircraft/ALCA/Models/Liveries");
+
+#list of switches for lights - if you don't intend to use some light, assign it nil value instead, like whateverSwitch = nil; and you don't need to care about anything else
+#IMPORTANT: don't put / on the start of the string, it's already included in the mpPath property
+var navSwitch = mpPath~"controls/lighting/nav-lights-switch";
+var beaconSwitch = mpPath~"controls/lighting/beacon-switch";
+var strobeSwitch = nil;
+var landingSwitch = mpPath~"controls/lighting/landing-lights-switch";
+var taxiSwitch = mpPath~"controls/lighting/taxi-light-switch";
+var probeSwitch = mpPath~"controls/lighting/probe-light-switch";
+var whiteSwitch = mpPath~"controls/lighting/nav-lights-switch";
+
+
+#I need to set listener on some MP transferred properties; this doesn't seem to work well sometimes, so I mirror them to the original location on any change
+#This also simplifies work as I can use almost the same code for MP as is the local Nasal. Furthermore, I can use meaningful property names in the model XML files instead of referencing the MP properties. 
+var mpVar = {
+	new: func(propIn, propOut) {
+		var m = { parents: [mpVar] };
+		m.propIn = propIn;
+		m.propOut = propOut; if(propIn==nil or propOut==nil) return m;
+		m.value = getprop(propIn); if(m.value!=nil) setprop(propOut, m.value);
+		return m;
+	},
+	check: func { if(me.propIn==nil or me.propOut==nil) return;
+		var newValue = getprop(me.propIn);
+		if(newValue != me.value and newValue!=nil) {
+			setprop(me.propOut, newValue);
+			me.value = newValue;
+			#print("value of "~me.propOut~" changed: "~newValue);
+		}
+	},
+};
+#init any property copy object needed in this array (anything you need to transfer over MP, but you are using the original paths in your xmls)
+#also used for properties you are using a listener on, or properties which you maybe want to manipulate during the <unload> 
+#if you're just using the pack, change the values according to the MP bindings in the -set.xml file
+#you don't need to delete the entries if the path is nil - it gets skipped automatically and the MP path is just ignored
+var mirrorValues = [
+	mpVar.new(mpPath~"sim/multiplay/generic/int[7]", mpPath~"sim/crashed"),
+	mpVar.new(mpPath~"sim/multiplay/generic/int[0]", navSwitch),
+	mpVar.new(mpPath~"sim/multiplay/generic/int[1]", beaconSwitch),
+	mpVar.new(mpPath~"sim/multiplay/generic/int[1]", strobeSwitch),
+	mpVar.new(mpPath~"sim/multiplay/generic/int[2]", landingSwitch),
+	mpVar.new(mpPath~"sim/multiplay/generic/int[3]", taxiSwitch),
+	mpVar.new(mpPath~"sim/multiplay/generic/int[3]", probeSwitch),
+	#mpVar.new(mpPath~"sim/multiplay/generic/int[0]", whiteSwitch),
+	mpVar.new(mpPath~"sim/multiplay/generic/int[8]", mpPath~"controls/switches/smokewinders"),
+];
+#loop at the default MP transfer frequency (10Hz)
+var mirrorTimer = maketimer(0.1, func {
+	foreach(var mir; mirrorValues) {
+		mir.check();
+	}
+});
+mirrorTimer.start();
+
+
+
+#### NAV LIGHTS ####
+
+#class for a periodic fade in/out animation - for flashing, use rather standard aircraft.light.new(), as in Beacon and Strobe section
+var lightCycle = {
+	#constructor
+	new: func(propSwitch, propOut) {
+		m = { parents: [lightCycle] };
+		props.globals.initNode(propOut, 0, "DOUBLE");
+		props.globals.initNode(propSwitch, 1, "BOOL");
+		m.fadeIn = 0.4 + rand()*0.05-0.025; #fade in time
+		m.fadeOut = 0.4 + rand()*0.05-0.025; #fade out time
+		m.stayOn = 1.5 + rand()*0.05-0.025; #stable on period
+		m.stayOff = 1 + rand()*0.05-0.025; #stable off period
+		m.turnOff = 0.12; #fade out time when turned off
+		m.phase = 0; #phase to be run on next timer call: 0 -> fade in, 1 -> stay on, 2 -> fade out, 3 -> stay off
+		m.cycleTimer = maketimer(0.1, func {
+			if(getprop(propSwitch)) {
+				if(m.phase == 0) {
+					interpolate(propOut, 1, m.fadeIn);
+					m.phase = 1;
+					m.cycleTimer.restart(m.fadeIn);
+				}
+				else if(m.phase == 1){
+					m.phase = 2;
+					m.cycleTimer.restart(m.stayOn);
+				}
+				else if(m.phase == 2){
+					interpolate(propOut, 0, m.fadeOut);
+					m.phase = 3;
+					m.cycleTimer.restart(m.fadeOut);
+				}
+				else if(m.phase == 3){
+					m.phase = 0;
+					m.cycleTimer.restart(m.stayOff);
+				}
+			}
+			else {
+				interpolate(propOut, 0, m.turnOff); #kills any currently ongoing interpolation
+				m.phase = 0;
+			}
+		});
+		m.cycleTimer.singleShot = 1; if(propSwitch==nil) {
+			m.listen = nil;
+			return m;
+		}
+		m.listen = setlistener(propSwitch, func{m.cycleTimer.restart(0);}); #handle switch changes
+		m.cycleTimer.restart(0); #start the looping
+		return m;
+	},
+	#destructor
+	del: func { if(me.listen!=nil) removelistener(me.listen);
+		me.cycleTimer.stop();
+	},
+};
+
+#By default, the switch property is initialized to 1 (only if no value is already assigned). Don't change the class implementation! To override this, set the property manually. You don't need to care if any other code already does it for you. 
+navLights = lightCycle.new(navSwitch, lightsPath~"nav-lights-intensity");
+var nav_lights_cycle = 2.2 + rand()*0.05-0.025; #cycle time in seconds
+navLights.fadeIn = 0.4; #fade in time
+navLights.fadeOut = 0.4; #fade out time
+navLights.stayOn = nav_lights_cycle-navLights.fadeIn-navLights.fadeOut; #stable on period
+navLights.stayOff = 0; #stable off period
+navLights.turnOff = 0.12; #fade out time when turned off
+
+
+### BEACON ###
+var beacon = nil; if(beaconSwitch!=nil) {
+	props.globals.initNode(beaconSwitch, 1, "BOOL");
+	beacon = aircraft.light.new(lightsPath~"beacon-state", 
+		[0.0, 1.0 + rand()*0.05-0.025], beaconSwitch);
+}
+	
+	
+### STROBE ###
+var strobe = nil; if(strobeSwitch!=nil) {
+	props.globals.initNode(strobeSwitch, 1, "BOOL");
+	strobe = aircraft.light.new(lightsPath~"strobe-state", 
+		[0.0, 0.87 + rand()*0.05-0.025], strobeSwitch);
+}
+
+
+### LIGHT FADING ###
+
+#class for controlling fade in/out behavior - propIn is a control property (handled as a boolean) and propOut is interpolated
+#all light brightness animations in xmls depend on propOut (Rembrandt brightness, material emission, flares transparency, ...)
+var lightFadeInOut = {
+	#constructor
+	new: func(propSwitch, propOut) {
+		m = { parents: [lightFadeInOut] };
+		m.fadeIn = 0.3; #some sane defaults
+		m.fadeOut = 0.4; if(propSwitch==nil) {
+			m.listen = nil;
+			return m;
+		}
+		props.globals.initNode(propSwitch, 1, "BOOL");
+		m.isOn = getprop(propSwitch);
+		props.globals.initNode(propOut, m.isOn, "DOUBLE");
+		m.listen = setlistener(propSwitch, 
+			func {
+				if(m.isOn and !getprop(propSwitch)) {
+					interpolate(propOut, 0, m.fadeOut);
+					m.isOn = 0;
+				}
+				if(!m.isOn and getprop(propSwitch)) {
+					interpolate(propOut, 1, m.fadeIn);
+					m.isOn = 1;
+				}
+			}
+		);
+		return m;
+	},
+	#destructor
+	del: func { if(me.listen!=nil) removelistener(me.listen);
+	},
+};
+
+fadeLanding = lightFadeInOut.new(landingSwitch, lightsPath~"landing-lights-intensity");
+fadeTaxi = lightFadeInOut.new(taxiSwitch, lightsPath~"taxi-light-intensity");
+fadeProbe = lightFadeInOut.new(probeSwitch, lightsPath~"probe-light-intensity");
+fadeWhite = lightFadeInOut.new(whiteSwitch, lightsPath~"white-light-intensity");
+#manipulate times if defaults don't fit your needs:
+#fadeLanding.fadeIn = 0.5;
+#fadeLanding.fadeOut = 0.8;
+
+
+### EXPLOSION ###
+
+props.globals.initNode(mpPath~"disintegration/explosion/explode", 0, "BOOL");
+props.globals.initNode(mpPath~"disintegration/explosion/exploded", 0, "BOOL");
+props.globals.initNode(mpPath~"disintegration/explosion/fire", 0, "BOOL");
+
+#flame Rembrandt light brightness alternation
+var flamePath = mpPath~"disintegration/explosion/";
+props.globals.initNode(flamePath ~ "flameBright", 0.0, "DOUBLE");
+var flameSeq = [0,0,0,0];
+var curSeq = 0;
+var flameBright = func {
+	flameSeq[curSeq] = 0.5 + rand()*0.5;
+
+	interpolate(flamePath ~ "flameBright", (flameSeq[0]+flameSeq[1]+flameSeq[2]+flameSeq[3]) / 4, 0.02);
+	
+	if( curSeq < 3)
+		curSeq += 1;
+	else
+		curSeq = 0;
+}
+var flameBrightExplode = func {
+	flameSeq = [2.5,2.5,2.5,2.5];
+	interpolate(flamePath ~ "flameBright", 2.5, 0);
+}
+var flameBrightLoop = maketimer(0.02, flameBright);
+
+#detonation with fire
+var explode = func(fire) {
+	setprop(mpPath~"disintegration/explosion/explode", 1);
+	setprop(mpPath~"disintegration/explosion/exploded", 1);
+	if(fire) {
+		setprop(mpPath~"disintegration/explosion/fire", 1);
+	}
+	settimer( func {setprop(mpPath~"disintegration/explosion/explode", 0);} , 0.2);
+	flameBrightExplode();
+	flameBrightLoop.start();
+}
+
+var stopFire = func {
+	setprop(mpPath~"disintegration/explosion/fire", 0);
+	setprop(mpPath~"disintegration/explosion/exploded", 0);
+	flameBrightLoop.stop();
+}
+
+
+### DISINTEGRATION ###
+
+props.globals.initNode(mpPath~"disintegration/spinSpeed", 0, "DOUBLE");
+props.globals.initNode(mpPath~"disintegration/crashTime", 0, "DOUBLE");
+props.globals.initNode(mpPath~"disintegration/negAGL", 0, "DOUBLE");
+props.globals.initNode(mpPath~"disintegration/severity", 1, "DOUBLE");
+
+var partsNode = props.globals.getNode(mpPath~"disintegration/parts");
+
+var degToRad = 3.141592654/180;
+var kt2mps = 0.51444;
+var ft2m = 0.3048;
+var maxSpin = 36; #0.6 rev/s
+var baseSpin = 4; 
+var g = 9.81;
+
+var crashSlow = 0.3; #factor by which is fwd movement slowed after crash
+
+#function for initializing parts
+var initPart = func(name, dX, dY, dZ, vX=0, vY=0, vZ=0) {
+	#geometrical center of the element
+	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dX", dX, "DOUBLE");
+	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dY", dY, "DOUBLE");
+	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dZ", dZ, "DOUBLE");
+	#initial velocities, in local coords
+	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vX", vX, "DOUBLE");
+	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vX-base", vX, "DOUBLE");
+	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vY", vY, "DOUBLE");
+	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vY-base", vY, "DOUBLE");
+	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vZ", vZ, "DOUBLE");
+	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vZ-base", vZ, "DOUBLE");
+	#stops the animation after part specific fall time
+	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/falling", 0, "BOOL");
+	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dropped", 0, "BOOL");
+}
+
+#calls of previous function to initialize parts
+initPart("wingL", 0.15410, -2.26975, -0.77074, 0.4, 0.9, 0.7);
+initPart("wingR", 0.15410, 2.26975, -0.77074, -0.6, -1.2, -0.4);
+initPart("fuselage", 0, 0, 0, 0.3, -0.1, 0.3);
+initPart("engine", 4.53874, 0.008699, -0.16101, 0.2, -0.15, -0.05);
+initPart("leftGear", 0.42088, -1.37051, -1.75547, -0.1, 0.42, -0.14);
+initPart("rightGear", 0.42088, 1.39580, -1.75547, -0.12, -0.31, -0.09);
+initPart("tipTankL", 0.11227, -4.68805, -0.66387, 0.13, 1.35, 0.45);
+initPart("tipTankR", 0.11227, 4.70542, -0.66387, 0.25, -1.61, -0.21);
+initPart("horizStabL", 4.73850, -1.29339, 0.23392, -0.61, -1.1, 0.24);
+initPart("horizStabR", 4.73850, 1.31096, 0.23392, -0.75, -1.3, -0.15);
+initPart("canopy", -2.33956, 0.008221, 0.35475, 1.25, 0.12, 1.68);
+initPart("seatFront", -2.97869, 0.003534, -0.27471, 0.94, -0.32, 1.52);
+initPart("seatRear", -1.62999, -0.00342, -0.06229, 1.15, 0.15, 1.38);
+initPart("cockpit", -3.2, 0.0, -0.4, -2.32, -0.23, -0.50);
+initPart("frontGear", -4.4105, 0.0, -1.4000, -1.35, 0.13, -0.62);
+initPart("intake", -0.4700, 0.0, -0.06699, 0.75, -0.11, 2.4);
+initPart("rudder", 5.0500, 0.0, 1.5818, -0.52, 0.21, 0.8);
+initPart("airbrake", -0.55945, 0.0, -1.08122, -0.15, 0.11, -0.75);
+initPart("aileronL", 0.88190, -3.97498, -0.70136, 0.42, 0.93, 0.64);
+initPart("aileronR", 0.88499, 3.99640, -0.70138, -0.57, -1.23, -0.23);
+initPart("flapL", 1.34842, -1.97041, -0.78875, 0.38, 0.36, 0.59);
+initPart("flapR", 1.34842, 1.98778, -0.78875, -0.37, -0.19, -0.11);
+initPart("elevatorL", 5.27882, -1.00246, 0.23300, -0.82, -0.2, 0.08);
+initPart("elevatorR", 5.27813, 1.01228, 0.23218, -1.3, -2.1, -0.05);
+#stores
+initPart("R1", 0.0, 1.9820, -1.2831, -0.08, -0.62, -0.12);
+initPart("L1", 0.0, -1.96496, -1.2831, -0.15, 1.10, -0.09);
+initPart("R2", 0.0801, 2.6996, -1.2297, -0.11, -1.8, -0.11);
+initPart("L2", 0.0801, -2.6828, -1.2831, -0.18, 2.25, -0.06);
+initPart("R3", -0.3223, 3.4567, -1.1716, -0.15, -2.9, -0.13);
+initPart("L3", -0.3223, -3.4395, -1.1716, -0.21, 2.68, -0.17);
+initPart("C", -2.043, 0.0087, -1.5200, -1.52, 0.15, -0.65);
+
+
+var partsList = partsNode.getChildren();
+
+#function for computing part specific stuff
+var setPart = func(name, AGL, groundspeed, severity, ground) {
+	var pitch = degToRad * getprop(mpPath~"orientation/pitch-deg");
+	var roll = degToRad * getprop(mpPath~"orientation/roll-deg");
+	
+	var globalVZ = ground * (2 * severity + 2 * severity * math.abs(math.sin(pitch)) + 0.04 * crashSlow * groundspeed * severity * math.abs(math.sin(pitch) * math.cos(pitch)));
+	
+	
+	var heightX = (getprop(mpPath~"disintegration/parts/"~name~"/dX")) * math.sin(pitch);
+	var heightY = (getprop(mpPath~"disintegration/parts/"~name~"/dY")) * math.cos(pitch) * math.sin(roll);
+	var heightZ = (getprop(mpPath~"disintegration/parts/"~name~"/dZ")) * math.cos(pitch) * math.cos(roll);
+	
+	var height = AGL + heightX + heightY + heightZ;
+	
+	setprop(mpPath~"disintegration/parts/"~name~"/vX", 
+		severity * getprop(mpPath~"disintegration/parts/"~name~"/vX-base") + 
+		groundspeed * kt2mps * crashSlow + 
+		globalVZ * math.sin(pitch)
+	);
+	
+	setprop(mpPath~"disintegration/parts/"~name~"/vY", 
+		severity * getprop(mpPath~"disintegration/parts/"~name~"/vY-base") + 
+		globalVZ * math.cos(pitch) * math.sin(roll)
+	);
+	setprop(mpPath~"disintegration/parts/"~name~"/vZ", 
+		severity * getprop(mpPath~"disintegration/parts/"~name~"/vZ-base") + 
+		globalVZ * math.cos(pitch) * math.cos(roll)
+	);
+	
+	
+	var velX = getprop(mpPath~"disintegration/parts/"~name~"/vX") * math.sin(pitch);
+	var velY = getprop(mpPath~"disintegration/parts/"~name~"/vY") * math.cos(pitch) * math.sin(roll);
+	var velZ = getprop(mpPath~"disintegration/parts/"~name~"/vZ") * math.cos(pitch) * math.cos(roll);
+	
+	var upV = velX + velY + velZ;
+	
+	var fallTime = (upV*upV + 2*g*height)>0 ? (upV + math.sqrt(upV*upV + 2*g*height))/g : upV/g;
+	
+	#print("name:"~name~" height:"~height~" fallTime:"~fallTime);
+	
+	setprop(mpPath~"disintegration/parts/"~name~"/falling", 1);
+	settimer(func{setprop(mpPath~"disintegration/parts/"~name~"/falling", 0);}, fallTime>0 ? fallTime : 0);
+	setprop(mpPath~"disintegration/parts/"~name~"/dropped", 1);
+}
+
+var getSeverity = func {
+	uBody = getprop(mpPath~"velocities/uBody-fps");
+	vBody = getprop(mpPath~"velocities/vBody-fps");
+	wBody = getprop(mpPath~"velocities/wBody-fps");
+	var speed = ft2m * math.sqrt(uBody*uBody + vBody*vBody + wBody*wBody);
+	return 10 - (1000/(speed + 100)); 
+}
+
+#fwd is based on groundspeed, side and up on impact severity
+
+var disintegrated = 0;
+var disintegrate = func(override=0, gr=nil, sev=nil) {
+	if(disintegrated == 0 and (getprop(mpPath~"sim/multiplay/generic/int[7]") or override)) {
+		disintegrated = 1;
+		setprop(mpPath~"sim/multiplay/generic/int[7]", 1);
+		setprop(mpPath~"disintegration/crashTime", getprop("/sim/time/elapsed-sec"));
+		
+		var groundspeed = getprop(mpPath~"sim/multiplay/generic/float[2]");
+		var negAGL = -0.3048 * getprop(mpPath~"sim/multiplay/generic/float[3]");
+		setprop(mpPath~"disintegration/negAGL", negAGL);
+		
+		var severity = 0; if(sev==nil) {
+			severity = getSeverity();
+		}
+		else {
+			severity = sev;
+		}
+		
+		var ground = 0; if(gr==nil) {
+			if(negAGL < -15) {
+				ground = 0;
+			}
+			else {
+				ground = 1;
+			}
+		}
+		else {
+			ground = gr;
+		}
+		
+		if(severity>5) {
+			explode(ground);
+		}
+		
+		setprop(mpPath~"disintegration/severity", severity);
+		setprop(mpPath~"disintegration/spinSpeed", 0);
+		interpolate(mpPath~"disintegration/spinSpeed", (severity*baseSpin)>maxSpin ? maxSpin : severity*baseSpin, 0.15);
+		settimer(func{interpolate(mpPath~"disintegration/spinSpeed", baseSpin, 3);}, 0.15);
+		
+		#loop over all parts and prepare them for animation
+		foreach(var p; partsList) {
+			setPart(p.getName(), -negAGL, groundspeed, severity, ground);
+		}
+		
+	}
+	else {
+		if(getprop(mpPath~"sim/multiplay/generic/int[7]") == 0 and disintegrated == 1) {
+			disintegrated = 0;
+			stopFire();
+			#set all falling to 1 briefly to enable position reset
+			foreach(var p; partsList) {
+				var nameStr = p.getName();
+				setprop(mpPath~"disintegration/parts/"~nameStr~"/falling", 1);
+				settimer(func{setprop(mpPath~"disintegration/parts/"~nameStr~"/falling", 0);}, 0.3);
+				setprop(mpPath~"disintegration/parts/"~nameStr~"/dropped", 0);
+			}
+		}
+	}
+}
+
+var listenCrash = setlistener(mpPath~"sim/multiplay/generic/int[7]", func{disintegrate();});
+
+
+#MP string payload info transfer
+var stringIndex = 0; #index of sim/multiplay/generic/string[i] which is used for transfer
+var intProp = "payload-int"; #expects existence of this property carrying int identifier of the payload option in every /sim/weight[i]/ - set this according to your payload management script
+var MpDecode = func {
+	var mpString = getprop(mpPath~"sim/multiplay/generic/string["~stringIndex~"]");
+	if(mpString==nil) return;
+	var decodedArray = split(",", mpString);
+	forindex(var i; decodedArray) {
+		if(i>=size(decodedArray)) break;
+		setprop(mpPath~"sim/weight["~i~"]/"~intProp, decodedArray[i]);
+	}
+}
+var listenMpDecode = setlistener(mpPath~"sim/multiplay/generic/string["~stringIndex~"]", MpDecode, 1, 0);
+
+
+
+
+
+########################
+### BOMBABLE support ###
+########################
+#(must come as last code piece)
+
+#check if bombable is installed to prevent errors
+if(props.globals.getNode("/bombable")==nil or !contains(globals, "bombable")) {
+	print("ALCA: Bombable not installed, ignoring Bombable init code...");
+	return;
+}
+
+#override Bombable functions to get rid of smoke and fire
+bombable.startSmoke = func{};
+bombable.startFire = func{};
+
+
+
+       var nodeName = cmdarg().getPath(); 
+
+       #print("Loading Bombable ALCA ", nodeName);
+
+       ##checks whether it has been initialized already; if so, just return
+       if ( bombable.check_overall_initialized (nodeName) ) return;
+
+       #makes the propellors spin in the AI version of the aircraft
+       #setprop (nodeName ~ "/engines/engine/rpm", "3000");
+			
+			
+
+       ############################################
+       #Bombable INITIALIZER
+			var object_init = func() {
+				# Datas of this object are under: cmdarg().getPath()
+				var thisNodeName = cmdarg().getPath();
+				var thisNode = props.globals.getNode(thisNodeName);
+				# Add some useful nodes
+
+
+				
+        ########################################################################
+        ########################################################################
+        # INITIALIZE BOMBABLE
+        # 
+        # Initialize constants and main routines for maintaining altitude
+        # relative to ground-level, relocating after file/reset, and 
+        # creating bombable/shootable objects.
+        # 
+        # These routines are found in FG/nasal/bombable.nas
+        #  
+        ########################################################################               
+        # INITIALIZE BOMBABLE Object
+        # This object will be slurped in the object's node as a child
+        # node named "bombable".                 
+        # All distances are specified in meters.
+        # All altitudes are relative to current ground level at the object's 
+        # location
+        # 
+         
+        thisNodeName = cmdarg().getPath(); 
+
+        var bombableObject = {  
+          
+          
+          objectNodeName : thisNodeName,
+          objectNode : props.globals.getNode(thisNodeName),
+          updateTime_s : 1/3, #time, in seconds, between the updates that 
+          #keep the object at its AGL. Tradeoff is high-speed updates look more
+          #realistic but slow down the framerate/cause jerkiness.  Faster-moving
+          #objects will need more frequent updates to look realistic.
+          #update time faster than about 1/3 seems to have a noticeable effect
+          #on frame rate                    
+
+		                        
+          #########################################                              
+          # ALTITUDE DEFINITIONS
+          #         
+          altitudes : {	
+            wheelsOnGroundAGL_m : 1 , #altitude correction to add to your aircraft or ship that is needed to put wheels on ground (or, for a ship, make it float in the water at the correct level).  For most objects this is 0 but some models need a small correction to place them exactly at ground level
+            
+            minimumAGL_m : 100, #minimum altitude above ground level this object is allowed to fly
+            maximumAGL_m : 2000, #maximum altitude AGL this object is allowed to fly, ie, operational ceiling	    
+            crashedAGL_m : -0.001, #altitude AGL when crashed.  Ships will sink to this level, aircraft or vehicles will sink into the ground as landing gear collapses or tires deflate. Should be negative, even just -0.001.
+          },
+          #  
+          #########################################
+          # VELOCITIES DEFINITIONS
+          # 
+          velocities : {               
+            maxSpeedReduce_percent : 0.0, #max % to reduce speed, per step, when damaged
+            minSpeed_kt : 280, #minimum speed to reduce to when damaged.  Ground vehicles and ships might stop completely when damaged but aircraft will need a minimum speed so they keep moving until they hit the ground.   V (s) (stall speed) for aircraft.
+            
+            cruiseSpeed_kt : 480, #cruising speed, typical/optimal cruising speed, V C for aircraft
+            
+            attackSpeed_kt : 450, #typical/optimal speed when aggressively attacking or evading, in
+                                 #level flight for aircraft
+            
+            maxSpeed_kt : 580 , #Maximum possible speed under dive or downhill conditions, V NE for aircraft
+                                #data:          
+                                #see particularly p. 59
+                                #accel limits are +7 and -3 Gs in all situations, and less in some situations
+            damagedAltitudeChangeMaxRate_meterspersecond : 30, #max rate to sink or fly downwards when damaged, in meters/second
+
+            #The terminal velocities are calculated by opening the 'real' AC 
+            #in FG, level flight, full throttle, then putting
+            #the AC at different angles of attack with the autopilot,
+            #and noting the terminal airspeed & vertical speed velocities.
+            #For best results, do it near sea level, under 5000 feet altitude.
+            #One or two each of climb & dive velocities are probably sufficient.
+            #However if you do more we may be able to use the more precise
+            #data in the future.
+            #Note that these are intended to be true airspeed whereas FG's
+            #/velocities/airspeed-kt reports indicated airspeed, so some 
+            #conversion or reference to groundspeed-kt is needed.
+            #For the F6F I have used indicated airspeed at 10,000 ft for all the above & 
+            # below values
+                                    
+            diveTerminalVelocities: {
+                point1: { airspeed_kt : 377, vertical_speed_fps : -41.8},
+                point2: { airspeed_kt : 416, vertical_speed_fps : -87.2},
+                point3: { airspeed_kt : 430, vertical_speed_fps : -188.8},
+                point4: { airspeed_kt : 547, vertical_speed_fps : -302}, 
+            },
+
+            climbTerminalVelocities: {
+                point1: { airspeed_kt : 344, vertical_speed_fps : 27.6},
+                point2: { airspeed_kt : 314, vertical_speed_fps : 52.6},
+                point3: { airspeed_kt : 297, vertical_speed_fps : 88},
+                point4: { airspeed_kt : 252, vertical_speed_fps : 88},
+
+            },
+            
+            
+          },
+          #  
+          #########################################
+          # EVASION DEFINITIONS
+          # 
+          # The evasion system makes the AI aircraft dodge when they come under
+          # fire. 
+          evasions : {               
+            dodgeDelayMax_sec : 15, #max time to delay/wait between dodges
+            dodgeDelayMin_sec : 5, #minimum time to delay/wait between dodges
+            dodgeMax_deg : 79, #Max amount to turn when dodging
+                               #90 degrees = instant turn, unrealistic
+                               #up to 80 is usually OK, somewhere in 80-85 starts to be unrealistically fast
+                               #>85 is usually very unrealistic.  You must test this in your scenario, however.
+            
+            dodgeMin_deg : 58, #minimum amount to turn when dodging
+            rollRateMax_degpersec : 65, #you can figure this out by rolling the corresponding FG aircraft and timing a 180 or 360 deg roll                                          
+            dodgeROverLPreference_percent : 50, # Preference for right turns vs. left when dodging.  90% means 90% right turns, 50% means 50% right turns.
+            dodgeAltMax_m : 5000, #Aircraft will begin to move up or down
+            dodgeAltMin_m : -5000, #Aircraft will begin to move up or down 
+            dodgeVertSpeedClimb_mps : 80, #Max speed to climb when evading
+            dodgeVertSpeedDive_mps : 160, #Max speed to dive when evading
+          },
+          #  
+          #########################################
+          # ATTACK DEFINITIONS
+          # 
+          # The attack system makes the AI aircraft turn and fly towards 
+          # other aircraft 
+          attacks : {               
+            maxDistance_m : 20000, #max distance to turn & attack main aircraft
+            minDistance_m : 1600, #min distance to turn & attack main aircraft, 
+               #ie, fly away this far before turning to attack again.  If you 
+               #make this short it will be more like a turning fighter (Zero),
+               #longer will become more like an energy fighter that zooms
+               #way out, turns around, etc.
+            
+            continueAttackAngle_deg : 80, #when within minDistance_m, the aircraft will continue to turn towards the main aircraft and attack *if* if the angle is less than this amount from dead ahead.  A wider angle will make it work more like a twisty/turning fighter, narrower angle more like an energy fighter.
+            altitudeHigherCutoff_m : 15000, # will attack the main aircraft unless this amount higher than it or more
+            altitudeLowerCutoff_m : 10000, # will attack the main aircraft unless this amount lower than it or more 
+            rollMin_deg : 58, #when turning on attack, roll to this angle min
+            rollMax_deg : 79, #when turning on attack, roll to this angle max
+                              #90 degrees = instant turn, unrealistic
+                              #up to 80 is usually OK, somewhere in 80-85 starts to be unrealistically fast
+                              #>85 is usually very unrealistic.  You must test this in your scenario, however.
+            rollRateMax_degpersec : 65, #you can figure this out by rolling the corresponding FG aircraft and timing a 180 or 360 deg roll                                          
+            climbPower : 4500, # How powerful the aircraft is when climbing during an attack; 4000 would be typical for, say a Zero--scale accordingly for others; higher is stronger
+            divePower : 9000, # How powerful the aircraft is when diving during and attack; 6000 typical of a Zero--could be much more than climbPower if the aircraft is a weak climber but a strong diver 
+            attackCheckTime_sec : 6, # check for need to attack/correct course this often  
+            attackCheckTimeEngaged_sec : 0.6, # once engaged with enemy, check/update course this frequently                
+          },
+          #  
+          #########################################
+          # WEAPONS DEFINITIONS
+          # 
+          # The weapons system makes the AI aircraft fire on the main aircraft 
+          # You can define any number of weapons--just enclose each in curly brackets
+          # and separate with commas (,).           
+          weapons : {
+              plamenCenter :  #internal name - this can be any name you want; must be a valid nasal variable name
+              {               
+                name : "Plamen cannon", # name presented to users, ie in on-screen messages
+                maxDamage_percent : 20, # maximum percentage damage one hit from the aircraft's main weapon/machine guns will do to an opponent
+                #Based on observation from within FG, a good F6F pass can easily do 18% damage to most aircraft
+                maxDamageDistance_m : 1500, # maximum distance at which the aircrafts main weapon/maching guns will be able to damage an opponent. Making this large is very expensive for FG's framerate and the chance of a hit at great than 100 meters, vanishingly small.  So set it carefully.
+                weaponAngle_deg  :  { heading: 0, elevation: 0 }, # direction the aircraft's main weapon is aimed.   
+                                                                  # 0,0 = straight ahead, 90,0=directly right, 0,90=directly up, 0,180=directly back, etc.
+                weaponOffset_m : {x:0, y:3.9745, z:-1.6355}, # Offset of the weapon from the main aircraft center
+                weaponSize_m : {start:.1, end:.1}, # Visual size of the weapon's projectile, in meters, at start & end of its path
+
+              }, 
+              
+              
+          },            
+          #  
+          #########################################
+          # DIMENSION DEFINITIONS
+          #
+          # All dimensions are in meters                   
+          dimensions : {                                                  
+            width_m : 9.8,  #width of your object, ie, for aircraft, wingspan
+            length_m : 13, #length of your object, ie, for aircraft, distance nose to tail
+            height_m : 4, #height of your object, ie, for aircraft ground to highest point when sitting on runway
+            damageRadius_m : 4.9, #typically 1/2 the longest dimension of the object. Hits within this distance of the 
+                                #center of object have some possibility of damage
+            vitalDamageRadius_m : 1.2, #typically the radius of the fuselage or cockpit or other most 
+                                     # vital area at the center of the object.  Always smaller than damageRadius_m 
+                                
+          },
+          #
+          #########################################
+          # VULNERABILITIES DEFINITIONS        
+          #
+          vulnerabilities : {                   
+            damageVulnerability : 16, #Vulnerability to damage from armament, 1=normal M1 tank; higher to make objects easier to kill and lower to make them more difficult.  This is a multiplier, so 5 means 5X easier to kill than an M1, 1/5 means 5X harder to kill. 
+            
+            engineDamageVulnerability_percent : 4, #Chance that a small-caliber machine-gun round will damage the engine or do something else to cause a trail fo smoke.       
+            
+            fireVulnerability_percent : 15, #Vulnerability to catching on fire. 100% means even the slightest impact will set it on fire; 20% means quite difficult to set on fire; 0% means set on fire only when completely damaged; -1% means never set on fire.                          
+            
+            fireDamageRate_percentpersecond : .2, #Amount of damage to add, per second, when on fire.  100%=completely damaged.
+            
+            fireExtinguishMaxTime_seconds : 50, #Once a fire starts, for this many seconds there is a chance to put out the fire; fires lasting longer than this won't be put out until the object burns out.
+            
+            fireExtinguishSuccess_percentage : 75, #Chance of the crew putting out the fire within the MaxTime above.
+            
+            explosiveMass_kg : 6000 , #mass of the object in KG, but give at least a 2-10X bonus to anything carrying flammables or high explosives.
+          },
+          #
+          #########################################
+          # LIVERY DEFINITIONS
+          #
+          # Path to livery files to use at different damage levels.
+          # Path is relative to the AI aircraft's directory.
+          # The object will start with the first livery listed and 
+          # change to succeeding liveries as the damage
+          # level increases. The final livery should indicate full damage/
+          # object destroyed.        
+          # 
+          # If you don't want to specify any special liveries simply set 
+          # damageLivery : nil and the object's normal livery will be used.  
+          #                                                            
+          damageLiveries : {
+            damageLivery : [  ]                        
+          },
+                            
+        };
+
+        #########################################
+        # INITIALIZE ROUTINES
+        # 
+        # OVERALL INITIALIZER: Needed to make all the others work
+        bombable.initialize ( bombableObject );
+        #
+        # LOCATION: Relocate object to maintain its position after file/reset       
+        # (best not used for airplanes)
+        # bombable.location_init ( thisNodeName );
+        #
+        # GROUND: Keep object at altitude relative to ground level
+        #bombable.ground_init ( thisNodeName );
+        #
+        # BOMBABLE: Make the object bombable/damageable        
+        bombable.bombable_init ( thisNodeName );
+        #
+        # ATTACK: Make the object attack the main aircraft        
+        #bombable.attack_init ( thisNodeName );
+        #
+        # WEAPONS: Make the object shoot the main aircraft        
+        #bombable.weapons_init ( thisNodeName );        
+        #
+        # SMOKE/CONTRAIL: Start a flare, contrail, smoke trail, or exhaust 
+        # trail for the object.
+        # Smoke types available: flare, jetcontrail, pistonexhaust, smoketrail,
+        # damagedengine                        
+        #bombable.startSmoke("pistonexhaust", thisNodeName );
+        #
+        # END INITIALIZE BOMBABLE
+        ########################################################################
+        ########################################################################                
+	      
+
+				
+			}
+			
+			object_init();
+
+
+    ]]>
+    </load>
+    <unload>
+      livery_update.stop();
+      
+      stopFire();
+      disintegrated = 0;
+      removelistener(listenCrash);
+      
+      #prevent multiple timers and listeners from running and fighting on next connect
+      #cleanly destroy MP property mirroring
+      mirrorTimer.stop();
+      mirrorTimer = nil;
+      mirrorValues = nil;
+      
+      #cleanly destroy nav lights if(navSwitch!=nil) setprop(navSwitch, 0);
+      navLights.del(); if(navSwitch!=nil) navLights.cycleTimer = nil;
+      navLights = nil;
+      
+      #cleanly destroy beacon if(beaconSwitch!=nil) setprop(beaconSwitch, 0);
+      beacon.del();
+      beacon = nil;
+      
+      #cleanly destroy strobe if(strobeSwitch!=nil) setprop(strobeSwitch, 0);
+      strobe.del();
+      strobe = nil;
+      
+      #cleanly destroy light fade in/out animation objects
+      fadeLanding.del();
+      fadeTaxi.del();
+      fadeProbe.del();
+      fadeWhite.del();
+      
+      removelistener(listenMpDecode);
+
+      
+########################
+### BOMBABLE support ###
+########################
+#(must come as last code piece)     
+
+#check if bombable is installed to prevent errors
+#check if bombable is installed to prevent errors
+if(props.globals.getNode("/bombable")==nil or !contains(globals, "bombable")) {
+	print("ALCA: Bombable not installed, ignoring Bombable unload code...");
+	return;
+}
+
+      var nodeName= cmdarg().getPath();
+      bombable.de_overall_initialize( nodeName );        
+      bombable.initialize_del( nodeName );
+      bombable.ground_del( nodeName );
+      bombable.location_del (nodeName);
+      bombable.bombable_del( nodeName );
+      bombable.attack_del( nodeName );
+      bombable.weapons_del (nodeName);
+      
+    </unload>
+  </nasal>
+
+</PropertyList>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>10</max-m>
+	</animation>
+
+	<model>
+		<name>Air Speed Indicator</name>
+		<path>Aircraft/Instruments-3d/asi300/asi300-3d.xml</path>
+		<offsets>
+			<x-m>-3.67</x-m>
+			<y-m>-0.050</y-m>
+			<z-m>-0.2036</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Altimeter</name>
+		<path>Aircraft/Instruments-3d/altimeter/altimeter.xml</path>
+		<offsets>
+			<x-m>-3.67</x-m>
+			<y-m>0.050</y-m>
+			<z-m>-0.2036</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Chronograph</name>
+		<path>Aircraft/Instruments-3d/chronograph/chronograph.xml</path>
+		<offsets>
+			<x-m>-3.67</x-m>
+			<y-m>0.250</y-m>
+			<z-m>-0.1536</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+
+
+	<model>
+		<name>Attitude Indicator</name>
+		<path>Aircraft/Instruments-3d/attitude-indicator.xml</path>
+		<offsets>
+			<x-m>-3.67</x-m>
+			<y-m>-0.050</y-m>
+			<z-m>-0.3036</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Heading Indicator</name>
+		<path>Aircraft/Instruments-3d/hi/hi.xml</path>
+		<offsets>
+			<x-m>-3.67</x-m>
+			<y-m>0.050</y-m>
+			<z-m>-0.3036</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Magnetic Compass</name>
+		<path>Aircraft/Instruments-3d/mag-compass.xml</path>
+		<offsets>
+			<x-m>-3.67</x-m>
+			<y-m>0.200</y-m>
+			<z-m>0.1036</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+
+	<model>
+		<name>Vertical Speed Indicator</name>
+		<path>Aircraft/Instruments-3d/vsi/vsi.xml</path>
+		<offsets>
+			<x-m>-3.67</x-m>
+			<y-m>0.050</y-m>
+			<z-m>-0.4036</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Turn and Bank Indicator</name>
+		<path>Aircraft/Instruments-3d/tc/tc.xml</path>
+		<offsets>
+			<x-m>-3.67</x-m>
+			<y-m>-0.050</y-m>
+			<z-m>-0.4036</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+</PropertyList>

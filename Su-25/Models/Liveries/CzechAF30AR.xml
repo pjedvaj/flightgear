@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Czech Air Force, 30th Attack Rgmt. #2</name>
+                <texture>Liveries/CzechAF30AR.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/CzechAF30AR.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>

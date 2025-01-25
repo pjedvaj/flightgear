@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<path>panel.ac</path>
+
+	<model>
+		<path>Aircraft/rah-66/instruments/instruments.xml</path>
+	</model>
+	
+	<model>
+		<path>Aircraft/rah-66/models/pilot/pilot.xml</path>
+		<offsets>
+			<x-m>-3.60</x-m>
+			<y-m>0</y-m>
+			<z-m>1.85</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+		<condition>
+			<not>
+				<property>/sim/current-view/internal</property>
+			</not>
+		</condition>
+	</model>
+	
+	<model>
+		<path>Aircraft/rah-66/models/pilot/gunner.xml</path>
+		<offsets>
+			<x-m>-2.22</x-m>
+			<y-m>0</y-m>
+			<z-m>1.97</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+		<condition>
+			<not>
+				<property>/sim/current-view/internal</property>
+			</not>
+		</condition>
+	</model>
+
+</PropertyList>

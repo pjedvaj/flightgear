@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <sim>
+        <model>
+            <livery>
+                <name type="string">Peruvian Air Force; Grupo Aereo 11</name>
+                <texture>Liveries/Peru.png</texture>
+            </livery>
+            <livery-logo>
+                <texture>Liveries/Peru.png</texture>
+            </livery-logo>
+        </model>
+    </sim>
+
+</PropertyList>
